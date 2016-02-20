@@ -1,0 +1,15 @@
+
+	all_previous_objects(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		all_previous_objects() - 传回所有调用目前函数的对象数组.
+	函数语法:
+		object *all_previous_objects();
+	函数用法:
+		传回一个所有调用目前函数的对象数组 (an array of object). 
+		注意, 区域函数 (local function) 的调用不会更动目前的对象
+		(current object) previous_object()  的内容.
+	参考函数:
+		call_other(3), call_out(3), origin(3), previous_object(3)
+	手册翻译:
+		Phoebus@ZH	1997.Aug.12.			(Writen 5/23/97)

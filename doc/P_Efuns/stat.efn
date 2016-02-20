@@ -1,0 +1,25 @@
+
+	stat(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		stat() - 传回与一个文件或一个目录相关的信息.
+	函数语法:
+		mixed stat( string str, int default: 0 );
+
+		混合 stat( 字符串 str, 整数 默认值: 0 ); 
+	函数用法:
+		如果 str 是一个普通文件的名字 (不是目录), 则 stat() 会
+		传回一个数组. 此数组含有关於此文件的信息. 数组的格式如
+		下:
+
+		({ file_size, last_time_file_touched, time_object_loaded })
+
+
+		({ 文件名称, 最後一次的更动日期, time_object_loaded })
+
+		如果 str  是一个目录, 或是第二个参数为 -1 , 则 stat()
+		与 get_dir(3) 的作用相同.
+	参考函数:
+		get_dir(3), file_size(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.23.		(Writen 5/23/97)

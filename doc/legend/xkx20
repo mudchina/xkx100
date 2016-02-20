@@ -1,0 +1,107 @@
+À¶²¼ÒÂ(deepblue)
+1.Á·¹¦ÐÄÌ¬
+        Óû³É¸ÇÊÀÉñ¹¦£¬ÏÈ¾øË×ÊÂ³¾Ôµ¡£ÄÐÅ®Ö®»¶£¬ÐÖµÜÖ®ÇéÄÄÁ·¹¦´ó¼É¡£
+ÐÇËÞµÄÀÏÆÅÒªÉ¢¶¾£¬¶ëáÒµÄÀÏÆÅÒª È°¼Ü£¬±ðÅÉµÄÀÏÆÅÒ²»áÒªÕâÒªÄÇ¡£ÐÖµÜ
+ÓÐÄÑ£¬ÆñÄÜ²»¾È¡£È±½ðÉÙÒø£¬Ò²ÉÙ²»ÁËÒªÑ©ÖÐËÍÌ¿¡£ÕâÒ»À´¶þÈ¥£¬Éñ¹¦Î´
+³É£¬÷Þ·¢ÏÈ°×¡£
+        »°Ëµ»ØÀ´£¬ÎÒ¾õµÃ°®ÇéºÍÓÑÇé±¾ÊÇXKX×îÎüÒýÈËµÄµØ·½¡£ÉáÈ¥¶þÕß£¬
+Ôò²»Ãâ³ÉÁËÒ»¶ÑÊý×ÖµÄ¿þÀÜ£¬ºÁÎÞÀÖÈ¤¿ÉÑÔ¡£ºÎÈ¥ºÎ´Ó£¬¾Í¿´×Ô¼ºÈ¡ÉáÁË¡£
+2.ÏÈÌìÑ¡Ôñ
+        Òª°ÝÑ©É½£¬±ÛÁ¦ºÜÖØÒª¡£Ñ©É½×î¸ßÎäÑ§ÈÕÔÂÂÖÐèÒª35±ÛÁ¦²ÅÄÜÊ¹ÓÃ
+Îå¸ö·¨ÂÖ¡£ËùÒÔÏÈÌì±ÛÁ¦×îºÃ²»ÒªµÍÓÚ20¡£Éí·¨ºÍ¸ù¹Ç´ÎÖ®(²»ÓÃ¼±ÓÚ°Ýð¯
+Ä¦ÖÇ¡£Ê±¼äÒ»³¤£¬×ÔÈ»Ë®µ½Çþ³É¡£30¸ù¹Çis a piece of  cake)¡£ ÎòÐÔÔÚSKILL
+µÍÓÚ100 LEVEL Ê±£¬×÷ÓÃ½Ï´ó£¬µ«levelÒ»¸ß£¬ÆäÖØÒªÐÔ¾Í²»Ã÷ÏÔÁË¡£
+
+3.ÃÜ×ÚÐÄ·¨
+        ³õ°ÝÑ©É½²»ÓÃ¼±ÓÚÌê¶È¡£µÈ lamaism ¶Áµ½ 40 ÔÙ³ö¼Ò¡£È»ºó¾¡¿ì°Ñ
+Lamaism¶Áµ½60¡£³ÉÁË´óÀ®Âï£¬Ò²¾Í²»ÓÃÀÏÏë×Å½ø·îËÖÓÍÁË£¬¾Í×øµÈ³Ô¹©·î
+ÁË¡£¶øÇÒlamaismÓÐÖúÓÚ¾«µÄÔö¼Ó£¬Õâ¶ÔÒÔºóµÄÑ§Ï°£¬Á·¹¦¶¼ÓÐ°ïÖú¡£
+lamaism 40 Ð¡À®Âï  40 À®Âï >60 ´óÀ®Âï£¬ >90 ¹úÊ¦£¬>120  »î·ð£¬ >150
+·¨Íõ¡£ ²Ø¾­Ö»ÄÜ¶Áµ½100 level.ÒÔºó¶¼ÒªÓÃpotsÀ´Ñ§ÁË¡£
+        ÁúÏó°ãÈô¹¦ÔÚ120 levelÒÔÇ°ÊÜlamaismµÄÏÞÖÆ£¬120 level ÒÔºó¾Í¿ÉÒÔ
+³¬¹ý lamaism¡£·¨ÍõÑ§ÁúÏó¹¦»á¿ìÒ»µã£¬µ«ÒªÏÈÑ§150µÄlamaism, ×ÜÌåÀ´ËµÒ²Ã»
+¿ì¶àÉÙ¡£
+
+4.µÃ¾­Ñé·¨
+a. ´òÄ¾ÈË
+    ×îºÃÓÃ´óÊÖÓ¡ºÍÓâåÈÄ·È­µÄcombÀ´´òÄ¾ÈË¡£Enable parry,dodge,sword
+or blade, hammer none¡£Use bandage, wear armor or mubei    À´½µµÍ×ÔÉí
+µÄ¹¥»÷Á¦ºÍ·ÀÓùÁ¦¡£ÓÃÐ¡Ê÷Ö¦(forsword)£¬Ê¯¿é£¬·¨Áå ( for  hammer ) µÈÇá
+ÎäÆ÷À´´ò¡£ ÔÚ¾«Á¦£¬¾«£¬Æø¶¼ÂúµÄÇé¿öÏÂ£¬fightµÄÊ±¼ä»á³¤Ð©£¬´ýÆø²»×ãÊ±ÔÙ
+¶ÁÊé£¬Á·skill, È»ºóË¯¾õ»Ö¸´¡£´òÄ¾ÈË²»Òª¼±ÓÚÌá¸ß×Ô¼ºµÄ±ÛÁ¦£¬±ÛÁ¦¸ßÁË£¬
+Ä¾ÈËµÄ¹¥»÷Á¦»áÏàÓ¦Ìá¸ß£¬×ÔÉíµÄÆø¾Í²»¹»¶à°¤Á½ÏÂ´òÁË¡£
+        ´ýµ½100k×óÓÒ£¬¾Í¿ÉÈ¥Ì©É½´òÇà£¬ºì£¬°×ÎÀÊ¿ºÍ½­°ÙÊ¤¡£ÕâÐ©npc¶¼±È
+Ä¾ÈË½û´ò¡£¶øÇÒ×ÊÔ´¶à£¬´óÔ¼¿ÉÄÃ1.5-2k/hour¡£µ«ÓÐÊ±Òª·ÅÆúdodge ºÍ parry,
+Ïóykai, ffyy ¶¼·ÅÆúÁË100+ levelµÄdodge¡£
+        ´òÄ¾ÈËËäÈ»ÓÐÐ©boring,µ«½Ï°²È«£¬Ê¡ÐÄ¡£
+²Î¿´wenxuan 8 15, tian's post.:)
+
+b.·¨ÊÂ&Ò»Æ·ÌÃ
+    Ò»´Î·¨ÊÂÒªcost 600ÄÚÁ¦£¬300¾«Á¦(²»Ëãfaint)¡£Ö»ÓÐ´óÀ®ÂïÒÔÉÏ¼¶±ð²ÅÄÜ×ö¡£
+    Ò»Æ·ÌÃÐèÒª¸ºÉñ(over 1/2 of exp), ´óÔ¼Òª200k×óÓÒ²ÅÄÜÍ¨¹ý²âÊÔ¼ÓÈëÒ»Æ
+ÌÃ¡£Ò»Æ·ÌÃÎÞÄÚÁ¦£¬¾«Á¦ÏûºÄ¡£µ«ÒªÊìÖªnpcµÄµØµã¡£ÓÃaliasesÍù·µÎ÷ÏÄÒÔ½ÚÊ¡Ê±
+¼ä¡£
+    Óë´òÄ¾ÈËÏà·´£¬·¨ÊÂºÍÒ»Æ·ÌÃÐèÒª°ÑskillÁ·µ½exp limit level£¬ÕâÑù²ÅÊ¹×Ô
+¼º¸üÓÐ°ÑÎÕÈ¥É±npc¡£
+    Ò»Æ·ÌÃºÍ·¨ÊÂ±È´òÄ¾ÈËÓÐ´Ì¼¤£¬µ«Ò²Î£ÏÕ¡£
+
+5.»ù±¾Îä¹¦
+ºÜ¶àÇ°±²¶¼post¹ýÁË£¬ÎÒÔÚÕâÖ»listÒ»ÏÂ¡£
+basic force          emeiÀ×¶´Æº£¬»ªÉ½waterfall, ÉÙÁÖ¿ÄÍ·(maybe cut)
+basic dodge          emeiÅÀÉ½£¬´óÀíÅÀËþ£¬ÉÙÁÖÖñÁÖ
+basic unarmed        ÉÙÁÖÊ¯×À£¬»ªÉ½waterfall(strike)
+basic parry          iron hand
+basic sword          »ªÉ½ÃÜ¶´£¬»ªÉ½waterfall
+basic blade          Ô§Ñìµ¶
+basic stuff          stuff book
+basic hammer         ´òÌ
+training             ¶Ø»Í
+²Î¿´wenxuan 1 75, xenon's post.:)
+
+6.Ñ©É½Îä¹¦
+Ñ©É½×îºÃµÄÎä¼¼ÊÇÈÕÔÂÂÖ¡£µ«ÒªÑ§µ½ÕâÎä¼¼Ò²·ÇÒ×ÊÂ¡£´ï°Í¶û¿É·ÇÍ¬Ò»°ã£¬
+ÌìÉúÉñÁ¦£¬ÊÖÖ´½µÄ§±¦èÆ¡£Èç½ñÕâ´ï°Í¶ûÊÇÒ»ÌìÇ¿ËÆÒ»Ìì¡£Ã»¸ö350K×îºÃ
+²»ÒªÈ¥ÕÒËÀ¡£
+½ð¸Õ½µÄ§èÆÊÇ½ö´ÎÓÚÈÕÔÂÂÖµÄ¹¦·ò£¬ËäÈ»Ã»ÓÐPFM,µ«ÍþÁ¦¾Þ´ó£¬¶Ô±ÛÁ¦¸ßµÄ
+ÓÈÆäºÏÊÊ¡£ÊÇÔÚÑ§ÈÕÔÂÂÖÒÔÇ°×îºÃµÄSKILLÁË¡£
+ÎÒ±¾ÈË¾õµÃÑªµ¶ºÍÃ÷Íõ½£²î²»¶à£¬Ñªµ¶ËäÓÐPFM£¬µ«ÆäÍþÁ¦¿ÉÊµÔÚ²»¸Ò¹§Î¬£¬
+ÎÒÒÔenable 150 µÄÑªµ¶£¬500K+ ¸ºÉñÓÚÒ»¸ö230KµÄplayer fight¡£PFM Éñµ¶ËÄ
+»Ø£¬°Ñ×Ô¼º¿³µô20%+µÄmaxqi£¬µ«¶ÔÊÖÈ·Ã»Ê²Ã´´óÉË¡£ËùÒÔÕâ¼ÀÑªÉñµ¶£¬Ò»
+ÕÐ±ÐÃüÖ®Ëµ£¬²»ÐÅÒ²°Õ¡£Ã÷Íõ½£Ïà¶Ô¹¥»÷Á¦Ð¡Ð©£¬·ÀÊØÁ¦¸ßÐ©¡£Á½ÕßÔÚ100
+LEVEL ÒÔÇ°¶¼¿É¶Á£¬¿´×Ô¼ºÏ²ºÃ°É¡£
+
+¿ÕÊÖ¹¦·òÑ©É½×îÓÐÃûµÄÊÇ»ðÑæµ¶£¬Ò²ÓÐPFM£¬¿ÉËãÊÇ²»´íµÄSKILL¡£´óÊÖÓ¡ºÍÓâ
+çìÄ·È­µÄCOMBÒ²ÆÄÓÐÍþÁ¦£¬µ«ÒªÍ¬Ê±Á·Á½ÖÖSKILLS£¬±Èµ¥Á·Ò»¸ö»ðÑæµ¶ÓÖÒª
+¶à·ÑÐ©ÊÂ¡£
+
+PFM£¬¿ÉËãÊÇ²»´íµÄSKILL¡£´óÊÖÓ¡ºÍÓâçìÄ·È­µÄCOMBÒ²ÆÄÓÐÍþÁ¦£¬µ«ÒªÍ¬Ê±Á·
+Éí¿ÕÐÐºÍÑ©Ê¨ÌøÃ»Ê²Ã´´óÇø±ð¡£µ«Ñ©Ê¨ÌøÔÚ150 LEVELºó¾ÍÑ§²»µ½ÁË£¬Ö»ÄÜ¿¿
+×Ô¼ºÁìÎò(Ñªµ¶ÀÏ×æÖ»ÓÐ150 LEVEL)¡£µ«Éí¿ÕÐÐ¿ÉÑ§µ½200 LEVEL¡£
+
+7.Áéµ¤ÃîÒ©
+Ò©ÎïÔÚµÈ¼¶¸ßµãÊ±¾ÍÏÔµÃºÜÖØÒªÁË¡£¶à³ÔµãÒ©£¬ÄÜÊ¡È¥´óÁ¿´ò×øÍÂÄÅµÄÊ±¼ä¡£
+ÎÒÖ»¼òµ¥ÁÐ³ö²¿·ÖÒ©Îï¡£»¹ÓÐºÜ¶àÒ©£¬ÎÒ¶¼Ã»³Ô¹ýÄØ :(
+
+
+ÆÐÌá×Ó¼ÓMAXÄÚÁ¦( >30£¬random )
+ÈË²Î¹û¼ÓMAXÄÚÁ¦(  2£¬random) full all
+´óÑªÌÙ¼ÓMAXÄÚÁ¦( 1 µã ) full ÄÚÁ¦
+Ç§ÄêÊ×ÎÚ¼ÓMAXÄÚÁ¦( 1 µã£¬random )
+¹éÔªµ¤¼Ó200ÄÚÁ¦
+
+ÉáÀû×Ó¼ÓMAX¾«Á¦( >17£¬random )
+¶ëáÒòþÉßµ¨¼ÓMAX¾«Á¦( 1 µã ) full all
+ÌìÉ½Ñ©Á«¼ÓMAX¾«Á¦( 1 µã£¬random ) full all
+µ±¹é¼ÓMAX¾«Á¦( 1 µã  ) full ¾«Á¦
+ÀÏÉ½²Î¼ÓMAX¾«Á¦( 1 µã )
+Ê×ÎÚ¾«full ¾«Á¦ºÍ¾«
+
+ÁéÖ¥ full all
+ÐøÃü°Ëµ¤ full all
+¾Å×ª»¹»êµ¤ full all, add all skills 0.5 level, add exp. µ«Ö»ÓÐÉñÏÉ²ÅÓÐ, :(
+
+MAXÄÚÁ¦=10* enable force
+MAX¾«Á¦= 8*  enable force
+
+ÄãÐ¡Éù¶ÔÑ©É½µÜ×ÓÃÇËµ  : ¶à½»¼¸¸öÎäµ±µÄÅóÓÑ£¬ËûÃÇÓÐlifesave,
+µÖµÄÉÏÒ»¿Å¾Å×ª»¹»ê£¬¿ìÈ¥°Í½á°É¡£

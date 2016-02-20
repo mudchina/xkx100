@@ -1,0 +1,17 @@
+ 
+	find_object(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		find_object() - 以指定的文件名称寻找一个对象.
+	函数语法:
+		object find_object( string str );
+
+		对象 find_object( 字符串 str );
+	函数用法:
+		用文件名称 str  寻找一个对象. 如果要寻找的对象是一个复
+		制出来的对象, 亦可以用 file_name()  传回的文件名称作为
+		参数来寻找.
+	参考函数:
+		file_name(3), stat(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)

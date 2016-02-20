@@ -1,0 +1,24 @@
+
+	enable_wizard(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		enable_wizard() - 将巫师的特权给予一个对象.
+	函数语法:
+		void enable_wizard( void );
+
+		无传回值 enable_wizard( 无参数 );
+	函数用法:
+		任何调用 enable_wizard() 的可互动 (interactive) 对象,
+		会让 wizardp() 对此对象传回真值 (true). 而 
+		enable_wizard() 可以让这个对象有以下三项特权:
+
+		1.  如果编译 MUD 驱动程序当时定义 RESTRICTED_ED 选项, 
+		    则可以使用 ed 的受限制模式 (restricted modes).
+
+		2.  可以收到详细的执行错误讯息.
+
+		3.  可以使用 trace(3) 和 traceprefix(3) 函数.
+	参考函数:
+		disable_wizard(3), wizardp(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)

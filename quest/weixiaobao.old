@@ -1,0 +1,252 @@
+// /quest/wei.c
+// Modified by Zeratul Jan 5 2001
+// Modified by Sir 5/17/2001 
+// 10个任务一轮,奖励累加,增加两个任务之间的时间限制，恢复用钱取消的功能
+
+inherit NPC;
+inherit F_SKILL;
+#include <ansi.h>;
+#include <quest.h>
+
+int time_period(int timep,object me);
+void create()
+{
+	set_name("韦小宝", ({ "wei xiaobao", "wei", "xiaobao" }));
+	set("title", HIC"大清国抚远大将军"HIY"一等鹿鼎公"NOR);
+	set("nickname", HIW"小白龙"NOR);
+	set("gender", "男性");
+	set("age", 18);
+	set("str", 20);
+	set("int", 30);
+	set("con", 30);
+	set("dex", 20);
+	set("per", 28);
+	set("long", 
+"这位少年将军头戴红顶子，身穿黄马褂，眉花眼笑，贼忒兮
+兮，左手轻摇羽扇，宛若诸葛之亮，右手倒拖大刀，俨然关
+云之长，正乃韦公小宝是也。见你看着他，“哈哈哈”，仰
+天大笑三声，学足了戏文中曹操的模样，你顿时忍不住凑个
+趣，问一句：“将军为何发笑？”\n");
+	set("combat_exp", 50000);
+	set("shen_type", 1);
+	set("attitude", "peaceful");
+	set("max_qi", 2500);
+	set("max_jing", 1000);
+	set("neili", 500);
+	set("max_neili", 500);
+	set("jiali", 50);
+
+	set_skill("force", 20);
+	set_skill("parry", 20);
+	set_skill("hand", 20);
+	set_skill("dodge", 20);
+	set_skill("shenxing-baibian", 20);
+	set_skill("yunlong-shengong", 20);
+	set_skill("qianye-shou", 90);
+
+	map_skill("force", "yunlong-shengong");
+	map_skill("parry", "qianye-shou");
+	map_skill("dodge", "shenxing-baibian");
+	map_skill("hand", "qianye-shou");
+	prepare_skill("hand", "qianye-shou");
+	set("inquiry", ([
+			"天地会" : "别烦我！\n",
+			"陈近南" : "那是我师父！\n",
+			"茅十八" : "就是那十八个毛虫啊？他还没死吧！\n",
+			"独臂神尼": "那是我美貌尼姑师父！\n",
+			"韦春芳" : "我娘做婊子生意越来越差了，现在改行作老鸨了！\n",
+			"康熙"	 : "那是我皇帝师父！\n",
+			"小玄子" : "那是我皇帝师父！\n",
+			"小桂子" : "别提这个名字了，我怕怕！\n",
+			"阿珂"	 : "她是我明媒正娶的大老婆！\n",
+			"双儿"	 : "你认识她？大功告成，亲个嘴儿！\n",
+			"曾柔"	 : "我老婆你问那么多干嘛？皇上洪福齐天，我艳福齐天！\n",
+			"方怡"	 : "我老婆你问那么多干嘛？皇上洪福齐天，我艳福齐天！\n",
+			"苏荃"	 : "我老婆你问那么多干嘛？皇上洪福齐天，我艳福齐天！\n",
+			"沐剑屏" : "我老婆你问那么多干嘛？皇上洪福齐天，我艳福齐天！\n",
+			"建宁公主" : "这个骚娘皮，亲厚不及双儿、美貌不及阿珂、武功不及苏荃、机巧不及方怡、天真纯善不及沐剑屏、温柔斯文不及曾柔，差有一日之长者，不过横蛮泼辣而已！\n",
+	]) );
+
+	setup();
+	carry_object(CLOTH_DIR"jinduan")->wear();
+}
+
+void init()
+{
+	object ob;
+
+	::init();
+	add_action("give_quest", "quest");
+}
+
+int give_quest()
+{
+	mapping quest;
+	object me = this_player();
+	int combatexp, timep, factor;
+
+	combatexp = (int) (me->query("combat_exp"));
+	if(combatexp<1000)
+	{
+		tell_object(me,"韦小宝对你哼了一声道：“辣块妈妈，东西还没长齐想干嘛？”\n");
+		return 1;
+	}
+	if(combatexp>10000000)
+	{
+		tell_object(me,"韦小宝对你哼了一声道：“辣块妈妈，花差大爷我忙着呢，没空理你！”\n");
+		return 1;
+	}
+
+// Let's see if this player still carries an un-expired task
+	if( me->query("quest/wei") && !me->query( "quest/wei/finished" ) )
+	{
+		if( ((int) me->query("quest/wei/time")) > time() )
+		{
+			tell_object(me,"韦小宝对你笑道：说你不行吧，还不服气？\n");
+			return 1;
+		}
+		else
+		{
+			tell_object(me,"韦小宝对着你叹了一口气：没关系去拿别的也成。\n");
+			me->add("qi",-(int)(me->query("qi")/5));
+			quest_failed( me, "wei" );
+		}
+	}
+	else
+		if ( me->query("/quest/wei/time") + 90 + random(60) > time())   
+		{
+			tell_object(me,"韦小宝对你微微一笑道：你过于劳累，歇息会儿再上路吧。\n");
+			return 1;
+		}
+
+	factor=10;
+	quest = __DIR__"qwlist"->query_quest();
+	timep = random(60) * 10 + 300;
+
+	time_period(timep, me);
+	tell_object(me,"找到『"+quest["quest"]+HIW"』给我，我会好好谢你。\n" NOR);
+
+	quest["quest_type"] = "寻";
+	quest["exp_bonus"] = 10 + random(10);
+	quest["pot_bonus"] = 2 + random(4);
+	quest["score"] = 2 + random(4);
+
+	me->set("quest/wei", quest);
+	me->set("quest/wei/time", (int)time()+timep);
+	me->set("quest/wei/factor",factor);
+	me->delete( "quest/wei/finished" );
+	if(!me->query_temp("wei_quest_num") ||
+		(int)me->query_temp("wei_quest_num")==10)
+		me->set_temp("wei_quest_num",1);
+	if ((int)me->query_temp("wei_quest_num")<0)	
+		me->set_temp("wei_quest_num",1);
+
+//add by sega 4/11/2000
+//	me->set("last_quest_time",(int)time());
+//	me->add("quests/require", 1);
+	return 1;
+}
+
+int time_period(int timep, object me)
+{
+	int t, d, h, m, s;
+	string time;
+	t = timep;
+	s = t % 60; t /= 60;
+	m = t % 60; t /= 60;
+	h = t % 24; t /= 24;
+	d = t;
+
+	if(d) time = chinese_number(d) + "天";
+	else time = "";
+
+	if(h) time += chinese_number(h) + "小时";
+	if(m) time += chinese_number(m) + "分";
+	time += chinese_number(s) + "秒";
+
+	tell_object(me,HIW "韦小宝吩咐道：给你在" + time + "内");
+	return 1;
+}
+
+int accept_object(object who, object ob)
+{
+	int exp, pot, score, num;
+	mapping quest;
+
+	if (ob->query("id") == "bao wu")
+	{
+		if (who->query_temp("baowunum") < 0)		
+		        return notify_fail("去去去，哪儿找的假货，想来蒙韦爵爷我？！\n");		        		
+		if (ob->query("owner") != who->query("id") )
+		{
+			tell_object(who,HIW"韦小宝高兴地说，我正想要" + ob->query("name")+ HIW"呢，多谢你把别人的宝物转送给我。\n"NOR);
+		}
+		else
+		{
+			exp = 10 + random(10);
+			pot = 7 + random(5);
+			score= 40 + random(20);
+                        who->add("combat_exp",exp);
+			who->add("potential", pot);
+			who->add("score",score);
+			who->add_temp("baowunum",-1);
+			tell_object(who,HIW"韦小宝高兴地说，我正想要" + ob->query("name")+ HIW"呢，蒙你见爱，我也送你些东西吧。\n（"+ chinese_number(exp) + "点经验，" + chinese_number(pot) + "点潜能，"+ chinese_number(score) + "点江湖阅历。)\n"NOR);
+		}
+		return 1;
+	}
+	if ( ob->query("money_id") )
+	{			
+		if ( !who->query("quest/wei") ||
+			who->query("quest/wei/finished") ||
+			ob->value() < 5000 )
+			tell_object(who,"韦小宝笑道：那我可就不客气了。\n");
+		else
+		{
+			tell_object(who, "韦小宝笑道：那好，咱们买卖不成仁义在。想要好处再找我吧！\n");
+			who->set( "quest/wei/finished", 1 );
+			who->delete( "quest/wei/time" );
+			who->add_temp("wei_quest_num",-1);
+		}
+		return 1;
+	}
+	
+	if ( ( !quest = who->query( "quest/wei" ) ) ||
+		who->query( "quest/wei/finished" ) )
+	{
+		tell_object( who,"韦小宝说道：这不是我想要的。\n" );
+		return 0;
+	}
+	if( ob->query("name") != quest["quest"] || ob->is_character() )
+	{
+		tell_object(who, "韦小宝说道：这是什么东西？我叫你办的事你就这样糊弄我？！\n");
+		return 0;
+	}
+	if ((int) who->query("quest/wei/time") < time() )
+	{
+		tell_object(who,"韦小宝说道：真是废物！你没在指定时间回来！\n");
+		quest_failed( who, "wei" );
+		who->add_temp("wei_quest_num",-1);
+//	destruct(ob);
+		return 0;
+	}
+	else
+	{
+		tell_object(who,"韦小宝赞许地点头说道：不错！差使办得不错！\n");
+
+		num = (int)who->query_temp("wei_quest_num");
+		exp = 70 + 70* num + random(20);
+		pot = 20 + 20* num + random(10);
+		score = 20 + 20* num + random(10);
+		destruct(ob);
+		who->add("combat_exp", exp);
+		who->add("potential", pot);
+		who->add("score", score);
+		who->add_temp("wei_quest_num",1);
+		who->set("quest/wei/time", (int)time());
+		tell_object(who,HIW"经过一番辛苦奔波，你增长了：" + chinese_number(exp) + "点实战经验，"+ chinese_number(pot) + "点潜能，" + chinese_number(score)+"点江湖阅历。\n"NOR);
+		tell_object(who,HIW"恭喜你完成一个差使！\n"NOR);		
+		quest_finished( who, "wei" );
+		return 0;
+	}
+	return 1;
+}

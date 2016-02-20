@@ -1,0 +1,29 @@
+
+	map_array(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		map_array() - 经由一个函数修改一个数组的元素 (element)
+	函数语法:
+		mixed *map_array( mixed *arr, string fun, object ob,
+			mixed extra, ... );
+		mixed *map_array( mixed *arr, function f, mixed extra,
+			... );
+
+		混合 *map_array( 混合 *arr, 字符串 fun, 对象 ob,
+			混合 extra, ... );
+		混合 *map_array( 混合 *arr, 函数指针 f, 混合 extra,
+			... );
+	函数用法:
+		经由 ob->fun()  或 f  处理每一个 arr  中的元素之後, 
+		传回一个新的数组. 每一个 arr  中的元素会当成指定函数
+		的参数并调用一次指定的函数. 参数 extra  会在每次调用
+		函数时当成第二个以後的参数. 原则上函数的运作如下:
+
+		foreach (index) arr[index] = ob->fun(arr[index],extra);
+
+		ob->fun( arr[.index.], extra ) 传回的值会替换掉数组中
+		的元素. 如果 arr 不是一个数组, 则 map_array()  传回 0.
+	参考函数:
+		filter_array(3), sort_array(3), map(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.18.		(Writen 5/23/97)

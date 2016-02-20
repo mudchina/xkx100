@@ -1,0 +1,17 @@
+
+	objectp(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		objectp() - 判断一个指定的变量是否为一个对象 (object).
+	函数语法:
+		int objectp( mixed arg );
+
+		整数 objectp( 混合 arg );
+	函数用法:
+		如果 arg 是一个对象就传回 1.
+	参考函数:
+		mapp(3), stringp(3), pointerp(3), intp(3), bufferp(3),
+ 		floatp(3), functionp(3), nullp(3), undefinedp(3), 
+		errorp(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.24.		(Writen 5/23/97)

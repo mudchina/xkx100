@@ -1,0 +1,15 @@
+
+	atan(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		atan() - 传回一个浮点数的正切值 (tangent).
+	函数语法:
+		float atan( float f );
+
+		浮点数 atan( 浮点数 f );
+	函数用法:
+                传回参数 f  的反正切值, f 的单位是弧度 (radians).
+	参考函数:
+		acos(3), asin(3), cos(3), sin(3), tan(3)
+	手册翻译:
+		Phoebus@ZH	1997.Aug.15.		(Writen 5/23/97)

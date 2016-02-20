@@ -1,0 +1,15 @@
+
+        all_inventory(3)        LP MudOSv21c7             (7 Jul 1996)
+
+	函数名称:
+		all_inventory() - 传回一个对象的内容物品.
+	函数语法:
+		object *all_inventory( object ob );
+
+		对象 *all_inventory( 对象 ob );
+	函数用法:
+                传回一个数组, 此数组为对象 ob 的内容物品.
+	参考函数:
+		first_inventory(3), next_inventory(3), deep_inventory(3)
+        手册翻译:
+                Phoebus@ZH	1997.Aug.12.		(Writen 5/23/97)

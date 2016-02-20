@@ -1,0 +1,69 @@
+Can't find "mudos", ignoring old binaries.
+Try invoking the driver using the full pathname.
+System Error: init_addr_server: connect: 由于目标机器积极拒绝，无法连接。
+
+
+Loading preloaded files ...
+Initializations complete.
+
+Accepting connections on port 5555.
+get_user_data: read on fd 368
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 360
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 356
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 368
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 360
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 356
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 368
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 360
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 356
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 368
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 360
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 356
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 368
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 360
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 356
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 368
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 360
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 356
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 368
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+
+get_user_data: read on fd 360
+System Error: get_user_data: read: 当文件已存在时，无法创建该文件。
+

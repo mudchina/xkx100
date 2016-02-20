@@ -1,0 +1,18 @@
+
+	intp(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		intp() - 判断一个给定的变量是否为一个整数.
+	函数语法:
+		int intp( mixed arg );
+
+		整数 intp( 混合 arg );
+	函数用法:
+		如果 arg 是一个整数则传回 1, 不是则传回 0.
+	参考函数:
+		mapp(3), stringp(3), pointerp(3), objectp(3),
+		bufferp(3), floatp(3), functionp(3), nullp(3), 
+		undefinedp(3), errorp(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.14.		(Writen 5/23/97)
+

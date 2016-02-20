@@ -1,0 +1,36 @@
+
+	bind(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		bind() - 变更一个函数指针 (function pointer)  所指向的
+			 函数.
+	函数语法:
+		function bind( function f, object ob )
+
+		函数指针 bind( 函数 f, 对象 ob )
+	函数用法:
+		传回一个指向 f  的函数指针, 但是指针属於对象 ob , 
+		而不是创造 f  的对象. 如果 f  的创造者被摧毁、f 
+		是一个超越函数 (emulated function,  即 efun)  的
+		指针、或是指针指向的超越函数会对 this_object  做
+		一些处理时,  bind() 就很有用.
+
+		□例:
+
+		void make_living(object ob) {
+			function f;
+
+			f = bind( (: enable_commands :), ob );
+
+			evaluate(f);
+		}
+
+		以上例子的作用, 相当於对象 ob 自己处理 
+		enable_commands() 的超越函数. 注意 !! 这个例子会引
+		发一些系统安全上的风险, 因为 bind() 可以让你强迫其
+		他的对象执行一段程序代码. 为了要防止 bind() 被滥用,
+		有一个主宰对象函数 (master apply) valid_bind()  可
+		以用来决定 bind() 的执行与否. 调用 bind() 时, 如果
+		valid_bind() 传回 1 即可执行, 传回 0  就无法执行.
+	手册翻译:
+		Phoebus@ZH	1997.Aug.16.		(Writen 5/23/97)

@@ -1,0 +1,17 @@
+
+	query_heart_beat(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		query_heart_beat() - 询问一个对象的心跳 (heart beat) 状况.
+	函数语法:
+		int query_heart_beat( object );
+
+		整数 query_heart_beat( 对象 );
+	函数用法:
+		对於已经调用过 set_heart_beat() 函数的对象,
+		query_heart_beat() 传回其心跳值. 如果不指定 ob, 则预设为
+		目前的对象. 没有心跳的对象则传回 0.
+	参考函数:
+		heart_beat(4), set_heart_beat(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.30.		(Writen 5/23/97)

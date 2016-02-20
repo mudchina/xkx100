@@ -1,0 +1,17 @@
+
+	query_verb(3)		MudOS	v21c2		(7 Jul 1996)
+
+	函数名称:
+		query_verb() - 传回现在执行的命令名称.
+	函数语法:
+		string query_verb( void );
+
+		字符串 query_verb( 无参数 );
+	函数用法:
+		传回目前执行的命令名称. 如果现在没有执行任何命令,
+		则传回 0. 这个函数的用途是: 当好几个命令会执行同一
+		个函数时, 判断到底是哪一个命令调用此函数.
+	参考函数:
+		add_action(3)
+	手册翻译:
+		Phoebus@ZH	97.May.2.		(Writen 5/23/97)

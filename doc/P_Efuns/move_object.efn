@@ -1,0 +1,17 @@
+
+	move_object(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		move_object() - 把目前的对象搬到其他的环境 (environment) 中.
+	函数语法:
+		void move_object( object item, mixed dest );
+
+		无传回值 move_object( 对象 item, 混合 dest );
+	函数用法:
+		把对象 item 搬到对象 dest 里面. item 必须是 this_object().
+		如果 item 是 this_object(), move_object() 可以只指定 dest
+		一个参数.
+	参考函数:
+		this_object(3), move(4)
+	手册翻译:
+		Phoebus@ZH	97.Apr.15.		(Writen 5/23/97)

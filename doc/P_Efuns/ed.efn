@@ -1,0 +1,45 @@
+
+	ed(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		ed() - 编辑一个文件.
+	函数语法:
+		void ed( string file, string exit_fn, int restricted );
+		void ed( string file, string write_fn, string exit_fn,
+			int restricted );
+
+		无传回值 ed( 字符串 file, 字符串 exit_fn, 整数 restricted );
+		无传回值 ed( 字符串 file, 字符串 write_fn, 字符串 exit_fn,
+			整数 restricted );
+	函数用法:
+		这个函数只有在定义了 __OLD_ED__ 之後有效.
+
+		这个函数很有趣. 它会启动一个文书编辑程序来编辑一个指定
+		的文件. 这个程序与 UNIX 的 ed 程序几乎相容. 当你进入这
+		个程序後, 可以输入 h 了解用法.
+
+		write_fn  函数可以让 mudlib 控制文件的写入权限和文件修
+		改纪录. 当编辑程序写入一个文件时, MUD 驱动程序 (driver)
+		会调用 write_fn 两次. 第一次调用时, 是在写入文件之前,
+		而 flag 标识为 0. 如果被调用的函数传回「真」值 (true, 
+		即为非零值) , 编辑程序就会继续写入文件. 第二次调用时, 
+		是在写入文件完成之後, 此时的 flag 标识为非零值. 被调用
+		的函数必须符合以下的格式:
+
+			int write_fn(string fname, int flag)
+
+		离开编辑程序时, MUD 驱动程序 (driver) 会调用 exit_fn
+		函数. 这个被调用的函数可以让 mudlib 清除. 这个函数要
+		符合以下的格式:
+
+			void exit_fn()
+
+		而可以省略的 restricted 标识则限制编辑程序的功能.
+		像是: 插入一个文件, 以不同的名字储存文件. 这些功能
+		在 restricted 标识为「真」值时, 就无法使用.
+	参考函数:
+		regexp(3), valid_read(4), valid_write(4),
+		get_save_file_name(4)
+	手册翻译:
+		Phoebus@ZH	97.Feb.7.		(Writen 5/23/97)
+

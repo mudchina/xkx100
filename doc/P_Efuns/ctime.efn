@@ -1,0 +1,16 @@
+
+	ctime(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		ctime() - 传回一个时间字符串
+	函数语法:
+		string ctime( int clock );
+
+		字符串 ctime( 整数 clock );
+	函数用法:
+		传回一个日期和时间的字符串, 而参数 clock 是自从
+		1970 年算起的秒数.
+	参考函数:
+		time(3), time_expression(3), localtime(3), uptime(3)
+	手册翻译:
+		Phoebus@ZH	97.Jan.27.		(Writen 5/23/97)

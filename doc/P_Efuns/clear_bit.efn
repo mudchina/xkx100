@@ -1,0 +1,16 @@
+
+	clear_bit(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		clear_bit() - 清除一个字符串中的某一个 bit .
+	函数语法:
+		string clear_bit( string str, int n );
+
+		字符串 clear_bit( 字符串 str, 整数 n );
+	函数用法:
+		传回一个新的字符串 (string) , 而新字符串中第 n  个 bit
+		清除为 0. 请注意, 原来的字符串 str  并没有更动内容.
+	参考函数:
+		set_bit(3), test_bit(3)
+	手册翻译:
+		Phoebus@ZH	97.Jan.27.		(Writen 5/23/97)

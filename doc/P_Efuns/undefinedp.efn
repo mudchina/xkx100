@@ -1,0 +1,22 @@
+
+	undefinedp(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		undefinedp() - 判断指定的变量是否尚未定义.
+	函数语法:
+		int undefinedp( mixed arg );
+
+		整数 undefinedp( 混合 arg );
+	函数用法:
+		如果 arg  已有定义, 则传回 1. arg 在以下的情形视为未定
+		义:
+
+		(1) 变量设定为 call_other 以不存在的方式调用所传回的值.
+		     (即 arg = call_other( obj, "???"); )
+
+		(2) 变量设定为读取一个映射变量中不存在的元素.
+	参考函数:
+		mapp(3), stringp(3), pointerp(3), objectp(3), intp(3),
+		bufferp(3), floatp(3), functionp(3), nullp(3), errorp(3)
+	手册翻译:
+		Phoebus@ZH	97.jul.25.		(Writen 5/23/97)

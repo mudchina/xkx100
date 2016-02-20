@@ -1,0 +1,6 @@
+#clone/npc/shang-shan.c
+alias (["a":"abandon $1",])
+dbase (["winner":"afei","id":"shangshan","actions":,"max_qi":764,"neili":292,"max_neili":2200,"weapon":"/d/city2/obj/hlbian","shen_type":0,"jing":220,"age":25,"dex":21,"armor":0,"str":18,"kar":29,"con":19,"name":"玄阿","no_clean_up":1,"qi":764,"max_jing":220,"per":30,"startroom":"/d/taishan/xiayi","disable_type":" <昏迷不醒>","long":"一位笑容可掬的中年人，他就是乐善好施，爱贫如子的武林赏善使者。","attitude":"heroism","potential":8,"registered":1,"race":"人类","default_actions":,"gender":"男性","jiali":0,"int":22,"eff_jing":220,"shen":0,"combat_exp":712791,"eff_qi":764,"short":"第五代赏善使者 玄阿(shangshan shizhe)","generation":5,"pighead":0,])
+skills (["shaolin-shenfa":166,"shenxing-baibian":58,"weituo-gun":78,"hand":85,"sword":118,"zui-gun":100,"cibei-dao":100,"fengyun-shou":100,"blade":4,"force":147,"literate":137,"jingang-quan":99,"cuff":134,"riyue-bian":91,"buddhism":122,"parry":156,"whip":123,"hunyuan-yiqi":147,"fumo-jian":118,"claw":83,"pudu-zhang":100,"staff":77,"strike":80,"dodge":158,"finger":78,])
+skill_map (["parry":"fumo-jian","hand":"fengyun-shou","sword":"fumo-jian","whip":"riyue-bian","blade":"cibei-dao","force":"hunyuan-yiqi","staff":"pudu-zhang","cuff":"jingang-quan","dodge":"shaolin-shenfa",])
+skill_prepare (["cuff":"jingang-quan",])

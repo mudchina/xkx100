@@ -1,0 +1,18 @@
+// Room: /d/yanping/duchuan.c
+// Date: Sep 28, 2002  Winder
+
+inherit ROOM;
+
+void create()
+{
+	set("short", "客船");
+	set("long", @LONG
+这是一艘在闽江上航行的大客船，大概能载上那么百把个人。两边
+十几个水手握着长长的桨，船尾一名六十多岁的老艄公把着橹。江面的
+水非常清澈，两边的山峰险峻，苍翠的森林中时而传来野兽的嘶嚎。
+LONG );
+	set("no_clean_up", 0);
+	set("outdoors", "yanping");
+	setup();
+	replace_program(ROOM);
+}

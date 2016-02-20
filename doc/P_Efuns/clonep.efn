@@ -1,0 +1,24 @@
+
+	clonep(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		clonep() - 检查给定的一个变量是否为复制的对象.
+	函数语法:
+		int clonep( void | mixed arg );
+
+
+		整数 clonep( 无参数 | 混合 arg );
+	函数用法:
+		如果参数 arg 有设定 objectp() 和 O_CLONE 标识 (flag),
+		此函数就传回「真」 (true) 的值 (也就是 1). MUD 的
+		驱动程序 (driver) 会对经由 new(3) (clone_object(3))
+		创造出来的对象, 设定 O_CLONE  标识. clonep() 函数
+		对於主对象 (master copy,  经由 call_other(3) 载入) 不
+		会传回「真」值. 请注意, 如果 clonep() 传回「真」值,
+		则 file_name()  对此对象传回的文件名称会加上 #n ( n
+		为整数). clonep() 不加上参数则预定对象为 this_object().
+	参考函数:
+		virtualp(3), userp(3), wizardp(3), objectp(3), new(3),
+		clone_object(3), call_other(3), file_name(3)
+	手册翻译:
+		Phoebus@ZH	97.Jan.27.		(Writen 5/23/97)

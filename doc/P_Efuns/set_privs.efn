@@ -1,0 +1,18 @@
+
+	set_privs(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		set_privs() - 设定一个对象的私有字符串 (privs string).
+	函数语法:
+		void set_privs( object ob, string privs );
+
+		无传回值 set_privs( 对象 ob, 字符串 privs );
+	函数用法:
+		设定 privs 为 ob 的私有字符串.
+
+		这个超越函数 (efun) 只有在驱动程序编译时定义 PRIVS
+		才有效.
+	参考函数:
+		privs_file(4), query_privs(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.21.		(Writen 5/23/97)

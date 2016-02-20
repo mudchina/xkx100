@@ -1,0 +1,21 @@
+
+	match_path(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		match_path() - 在一个映射变量 (mapping) 中找寻
+			       路径名称 (path)
+	函数语法:
+		mixed match_path( mapping m, string str );
+
+		混合 match_path( 映射 m, 字符串 str );
+	函数用法:
+		match_path() 在一个映射变量中找路径名. match_path()
+		会假设所有的关键字 (key) 为字符串 (string) 类型. 而内容值
+		(value) 是啥则无关紧要. 这个超越函数 (efun) 会找出符合条
+		件的最长字符串. 以 / 结尾的关键字会找出此关键字底下所有的
+		路径名称, 意即 / 算是一个万用字符 (wildcard), 视为此路径
+		底下的任何东西 (译按: 相当於文件或路径名称用的 * 号).
+	作者:
+		Cygnus
+	手册翻译:
+		Phoebus@ZH	97.Apr.13.		(Writen 5/23/97)

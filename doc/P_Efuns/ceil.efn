@@ -1,0 +1,16 @@
+
+	ceil(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		ceil() - 把一个浮点数进位成最近的整数值.
+	函数语法:
+		float ceil( float f );
+
+		浮点数 ceil( 浮点数 f );
+	函数用法:
+		传回一个最接近 f  而且等於或大於 f  的整数浮点数, 
+		即 f  的小数位都无条件进位成整数.
+	参考函数:
+		floor(3), to_int(3), to_float(3)
+	手册翻译:
+		Phoebus@ZH	1997.Aug.24.		(Writen 5/23/97)

@@ -1,0 +1,16 @@
+
+	crypt(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		crypt() - 对一个字符串进行编代码.
+	函数语法:
+		string crypt( string str, string seed );
+
+		字符串 crypt( 字符串 str, 字符串 seed );
+	函数用法:
+		以字符串 seed 的前两个字符当作种子数, 对字符串 str  进行
+		编代码. 如果 seed 为 0  , 就会用随机数字进行编代码.
+
+		传回字符串的前两个字母即为种子数.
+	手册翻译:
+		Phoebus@ZH	97.Jan.27.		(Writen 5/23/97)

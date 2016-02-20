@@ -1,0 +1,16 @@
+
+	living(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		living() - 判断一个指定的对象是否「活著」
+	函数语法:
+		int living( object ob );
+
+		整数 living( 对象 ob );
+	函数用法:
+		如果 ob 是一个活著的对象则传回真值 (true, 即非零值)
+		.  (也就是说, ob 曾经调用过 enable_commands() )
+	参考函数:
+		interactive(3), enable_commands(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.18.		(Writen 5/23/97)

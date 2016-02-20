@@ -1,0 +1,15 @@
+
+	evaluate(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		evaluate() - 执行一个函数指针 (function pointer)
+	函数语法:
+		mixed evaluate(mixed f, ...)
+
+		混合 evaluate( 混合 f, ... )
+	函数用法:
+		如果 f  是一个函数, 就会以第二个参数以後 (即上面 ...
+		的地方) 为 f  使用的参数调用 f. 而 f  如果有传回值, 
+		evaluate( f, ... )  就相当于直接调用 f  的结果. 
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)

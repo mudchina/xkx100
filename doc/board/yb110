@@ -1,0 +1,150 @@
+侠客行一百之高级指南（二）神州处处是我家 凡狗-fandog(Sun Jan 24)
+----------------------------------------------------------------------
+
+                    侠客行一百之高级指南  之二
+
+       神州处处是我家--无相帮之联络图(Wuxiangxinmo's alias)
+
+    本狗自杀后复出，在侠客行一百中已找不着北，幸有泥友无相心魔和店
+小二寄来所有他们搜集编写的alias，可从武庙去往几乎所有门派和城市，堪
+称任务宝典、泥潭秘籍。如今，无相萍踪杳杳，侠影难觅，谨以此联络图纪
+念昔日辉煌的无相帮，及帮中众多好友，如冷气技工试试啦等，并恭祝帮主
+无相心魔他老人家洪福永驻，寿与天齐。
+
+*alias for xkx100, all from wumiao, or back wumiao
+*rbj = give 1 silver to ma fu;ridebj, and so on
+
+
+#alias changan      e;s;s;#9 w;nw;w;w
+#alias -changan     e;e;se;#9 e;n;n;w
+#alias hangzhou     e;s;s;#5 e;se;s;e;s;se;#3 ne;n;ne
+#alias -hangzhou    sw;s;#3 sw;nw;n;w;n;nw;#5 w;n;n;w
+#alias suzhou       e;s;s;#5 e;se;s;#3 w;nw;n;e
+#alias -suzhou      w;s;se;#3 e;n;nw;#5 w;n;n;w
+#alias chengdu      e;#9 s;w;nw;w;sw;w;sw;sw;w;s;w;nw;w;w
+#alias -chengdu     e;e;se;e;n;e;ne;ne;e;ne;e;se;e;#9 n;w
+#alias beijing      e;s;e;e;rbj;w;w;n
+#alias -beijing     s;e;e;ryz;w;w;n;w
+#alias jiaxing      e;s;s;#5 e;se;s;e;e;se;s
+#alias -jiaxing     n;nw;w;w;n;nw;#5 w;n;n;w
+#alias quanzhou     fuzhou;#7 s;e
+#alias -quanzhou    w;#7 n;-fuzhou
+#alias fuzhou       e;s;s;#5 e;se;s;s;e;su;s;sd;su;sd;#2 se;#4 e;e
+#alias -fuzhou      #5 w;#2 nw;nu;nd;nu;n;nd;w;n;n;nw;#5 w;n;n;w
+#alias nanyang      e;s;e;e;rbj;w;w;#3 s;#2 se;e;#5 s;s
+#alias -nanyang     #6 n;w;#2 nw;#3 n;e;e;ryz;w;w;n;w
+#alias foshan       e;#9 s;su;se;sw;#5 w;s;e;e;su;sd;s;s;e;s
+#alias -foshan      n;w;n;n;nu;nd;n;#3 n;nw;nw;e;ne;e;se;e;#9 n;w
+#alias guanwai      beijing;#4 e;#2 se;ne;nw;#3 ne;n;#2 ne;n;n;n
+#alias -guanwai     #3 s;sw;s;s;#3 sw;se;sw;#2 nw;#4 w;-beijing
+#alias huqingyu     hangzhou;e;e;ne;e;#4 s;sw;e
+#alias -huqingyu    w;ne;#4 n;w;sw;w;w;-hangzhou
+#alias twt huqingyu   w;ne;e;#alias -twt;w;sw;e;-huqingyu
+#alias twt2         give 5 silver to waiter;u;enter
+#alias yanziwu      suzhou;w;#7 s;sw;yell boat;enter;yzw1
+#alias yzw1         #action 少女说: “到啦，上岸吧。”，随即一点竹篙，
+把舟泊好。;yzw2
+#alias yzw2         out;#unaction 少女说: “到啦，上岸吧。”，随即一
+点竹篙，把舟泊好。
+#alias yzw3         #action 小舟终于恋恋不舍地靠岸了。你走下小舟来。
+少女挥手道别。;ne;#6 n;e;-suzhou
+#alias hufei        guanwai;#3 n;e;e;ne;e;n;e;e;ne;e;se;e;n
+#alias -hufei       s;w;nw;w;nw;w;w;s;w;sw;w;w;#3 s;-guanwai
+#alias drinkwater   chengdu;w;n;#7 drink wan;s;e;-chengdu
+#alias yongdeng     e;n;#3 w;n;n;e;ne;n;n;n;w;sw;sw;w;w
+#alias -yongdeng    e;e;ne;ne;e;s;s;s;sw;w;s;s;#3 e;s;w
+#alias lingzhou     yongdeng;w;w;give 1 silver to ma fu;ridelz;w;w;n
+#alias -lingzhou    s;e;e;give 1 silver to ma fu;rideyd;e;e;-yongdeng
+#alias yptang       lingzhou;w;n;open north;n;n
+#alias -yptang      s;s;s;e;-lingzhou
+#alias mingjiao     e;s;s;#9 w;nw;#5 w;nu;wd;#7 w;n;n;w;w;s;s
+#alias -mingjiao    n;n;e;e;s;s;#7 e;eu;sd;#5 e;se;#9 e;n;n;w
+#alias mingjiao2    n;n;w;w;#2 wu;#4 nu;enter;#4 nu;n;nu;n
+#alias -mingjiao2   s;sd;s;#4 sd;out;#4 sd;#2 ed;e;e;s;s
+#alias mingjiaomd   s;sd;s;#4 sd;out;#4 sd;w;w
+#alias gaibang      e;s;s;#3 e;n;e;n;w;n;e;w;n
+#alias -gaibang     s;s;#3 w;n;n;w
+#alias riyuejiao    beijing;#7 w;sw
+#alias -riyuejiao   ne;#7 e;-beijing
+#alias quanzhen     e;s;s;#16 w;ne;eu;se;eu;n;#3 nu;#2 wu;n;w;nw;n;#5 nu;
+                    se;eu;su;e;eu;knock gate;e
+#alias -quanzhen    w;wd;w;nd;wd;nw;#5 sd;s;se;e;s;#2 sd;#2 ed;#3 sd;s;wd;
+                    nw;wd;sw;#16 e;n;n;w
+#alias xiaoyao      e;#9 s;e;e;s;w;w
+#alias -xiaoyao     #3 e;n;w;#9 n;w
+#alias lingjiu      e;s;s;#9 w;nw;#5 w;nu;wd;w;w;nw;w;nw;wu;n;nu;wu;wu;nu;
+                    zou tiesuo;eu;n;n
+#alias -lingjiu     s;s;wd;sd;sd;ed;ed;sd;s;ed;se;e;se;e;e;eu;sd;#5 e;se;
+                    #9 e;n;n;w
+#alias shaolin      e;s;e;e;rbj;w;w;#3 s;#2 se;e;#4 s;w;w;#2 nu;wu;#3 nu;e;
+                    eu;#3 nu;n
+#alias -shaolin     s;#3 sd;wd;w;#3 sd;ed;#2 sd;e;e;#4 n;w;#2 nw;#3 n;e;e;
+                    ryz;w;w;n;w
+#alias emei         e;#9 s;w;nw;w;sw;w;sw;sw;w;s;sw;su;w
+#alias -emei        e;nd;ne;n;e;ne;ne;e;ne;e;se;e;#9 n;w
+#alias emei1        sw;w;#7 wu;nw;sw;s;s;sw;wu;sw;wu;sw;nw
+#alias -emei1       se;ne;ed;ne;ed;ne;n;n;ne;se;#7 ed;e;ne
+#alias emei2        #3 wu;#4 su;sw;su;se;wu;su
+#alias -emei2       nd;ed;nw;nd;ne;#4 nd;#2 ed;ed
+#alias emei3        emei1;emei2;s;enter;s
+#alias -emei3       n;out;n;-emei2;-emei1
+#alias emeiclap     sw;w;#7 wu;nw;nw;nu;wu;sw;wu
+#alias -emeiclap    ed;ne;ed;sd;se;se;#7 ed;e;ne
+#alias emeiforce    sw;w;#7 wu;nw;sw;s;s;sw;wu;sw;wu;sw;nw;#3 wu;#2 su
+#alias -emeiforce   #2 nd;#3 ed;se;ne;ed;ne;ed;ne;n;n;ne;se;#7 ed;e;ne
+#alias emei3force   n;out;n;nd;ed;nw;nd;ne;nd
+#alias -emei3force  su;sw;su;se;wu;su;s;enter;s
+#alias emeisheshen  emei;emei1;emei2;s;s;w;
+#alias wudang       e;#9 s;w;nw;w;sw;w;se;s;w;w;#2 wu;w;#4 su;sd;su;sd;#4 su;s
+#alias -wudang      n;#4 nd;nu;nd;nu;#4 nd;e;#2 ed;e;e;n;nw;e;ne;e;se;e;#9 n;w
+#alias wudanggm     n;#4 nd;nu;nd;nu;#3 nd;nd
+#alias -wudanggm    #4 su;sd;su;sd;#4 su;s
+#alias wudangjm     n;ed;e;e;#2 ed;sd;ed;#4 e;e
+#alias -wudangjm    #5 w;wu;#2 nu;wu;w;w;wu;s
+#alias tianlong     e;#9 s;w;nw;w;sw;w;sw;sw;w;s;#4 sw;#3 s;nw;n;ne;e;#3 s;s
+#alias -tianlong    #4 n;w;sw;s;se;#3 n;#4 ne;n;e;ne;ne;e;ne;e;se;e;#9 n;w
+#alias dali         e;#9 s;w;nw;w;sw;w;sw;sw;w;s;#4 sw;#5 s;e;n
+#alias -dali        s;w;#5 n;#4 ne;n;e;ne;ne;e;ne;e;se;e;#9 n;w
+#alias shedao       beijing;#4 e;#2 se;#4 s;e;chuhai;
+#alias -shedao      w;#4 n;#2 nw;#4 w;-beijing
+#alias xueshan      e;s;s;#9 w;nw;#5 w;nu;wd;w;w;nw;w;sw;w;w;n;n;e;e;ne;n;n;
+                    wu;s;su;su;wu;wu;s;wu;n;n
+#alias -xueshan     s;s;ed;n;ed;ed;nd;nd;n;ed;s;s;sw;w;w;s;s;e;e;ne;e;se;e;
+                    e;eu;sd;#5 e;se;#9 e;n;n;w
+#alias xuedaomen    e;s;s;#9 w;nw;#5 w;nu;wd;w;w;nw;w;sw;w;w;n;n;e;e;ne;n;n;wu
+#alias -xuedaomen   ed;s;s;sw;w;w;s;s;e;e;ne;e;se;e;e;eu;sd;#5 e;se;#9 e;n;n;w
+#alias xuedaolz     s;#3 su;#2 wu;su;wu;ed;n;su;e;enter
+#alias -xuedaolz    out;w;nd;s;nu;su;#2 ed;#3 nd;n
+#alias xingxiu      e;s;s;#9 w;nw;#5 w;nu;wd;w;w;nw;w;nw;wu;n;nd
+#alias -xingxiu     su;s;ed;se;e;se;e;e;eu;sd;#5 e;se;#9 e;n;n;w
+#alias baituoshan   e;s;s;#9 w;nw;#5 w;nu;wd;w;w;nw;#12 w;nw;w;w;nw;nu;nu;n;nu
+#alias -baituoshan  sd;s;sd;sd;se;e;e;se;#12 e;se;e;e;eu;sd;#5 e;se;#9 e;n;n;w
+#alias huashan      e;s;s;#7 w;n;n;nw;#6 n;#5 e;se;#2 su;#2 eu;su;#2 eu;#4 su;
+                    eu;n;n
+#alias -huashan     s;s;wd;#4 nd;#2 wd;nd;#2 wd;#2 nd;nw;#5 w;#6 s;se;s;s;#7 e;
+                    n;n;w
+#alias huashan2     e;s;s;#7 w;n;n;ne;e;e;eu;su;use fire;zuan dong;wu;su;s;e
+#alias -huashan2    w;n;nd;ed;enter;nd;wd;w;w;sw;s;s;#7 e;n;n;w
+#alias huashancun   e;s;s;#7 w;n;n;nw;#5 n;n
+#alias -huashancun  #6 s;se;s;s;#7 e;n;n;w
+#alias henshan1     e;#9 s;su;se;sw;w;#9 n;nu;nw;nu;nd;nw;nu;nu;nw;ne;ne;nu;nu
+#alias -henshan1    sd;sd;sw;sw;se;sd;sd;se;su;sd;se;sd;#9 s;e;ne;nw;nd;#9 n;w
+#alias henshan2     e;s;e;e;rbj;w;w;#3 s;se;sw;#2 se;u;wu;eu;s;s;#2 su;e;#2 ne;
+                    #4 nu;eu
+#alias -henshan2    wd;#4 sd;#2 sw;w;#2 nd;n;n;wd;ed;d;#2 nw;ne;nw;#3 n;e;e;
+                    ryz;w;w;n;w
+#alias songshan     e;s;e;e;rbj;w;w;#3 s;#2 se;e;#4 s;w;#3 n;nu;nw;#2 nu;#2 nw;
+                    nu;ne;#3 nu;nu
+#alias -songshan    #4 sd;sw;#2 sd;se;#2 sd;se;sd;#3 s;e;#4 n;w;#2 nw;#3 n;e;e;
+                    ryz;w;w;n;w
+#alias taishan      e;s;s;#5 e;ne;#3 n;#3 nu;eu;#5 nu;nu
+#alias -taishan     #6 sd;wd;#3 sd;#3 s;sw;#5 w;n;n;w
+#alias shanz        e;s;s;#5 e;ne;n;n;n;give $target to shan
+#alias -shanz       #3 s;sw;#5 w;n;n;w
+#alias qingcheng    e;#9 s;w;nw;w;sw;w;sw;sw;w;s;w;nw;#7 w;n;ne;e;#3 n;w;#3 n;
+                    nw;#3 wu;nu;nu;eu;nu;eu;s
+#alias -qingcheng   n;wd;sd;wd;sd;sd;#3 ed;se;#3 s;e;#3 s;w;sw;s;#7 e;se;e;n;e;
+                    ne;ne;e;ne;e;se;e;#9 n;w
+#alias motianya     e;#9 s;su;se;sw;#6 w;s
+#alias -motianya    n;#6 e;ne;nw;nd;#9 n;w
+

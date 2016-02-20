@@ -1,0 +1,15 @@
+
+	master(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		master() - 传回主宰对象 (master object)
+	函数语法:
+		object master( void );
+
+		对象 master( 无参数 );
+	函数用法:
+		传回指向主宰对象 (master object) 的指针 (pointer).
+	参考函数:
+		find_object(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.13.		(Writen 5/23/97)

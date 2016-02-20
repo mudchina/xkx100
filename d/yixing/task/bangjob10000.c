@@ -1,0 +1,271 @@
+//Cracked by Kafei
+// /d/huanghe/changle/bangjob10000.c
+// by aln 2 / 98
+
+// inherit SKILL;
+
+inherit F_CLEAN_UP;
+
+mapping *bangjobs = ({
+        ([      "name"  :  "∞¢¿≠≤Æ…Ã»À",
+                "file"  :  "/d/quanzhou/npc/alabo",
+                "area"  :  "»™÷›∞¢¿≠≤Æ’¨«¯",
+                "type"  :  "…±",
+                "bonus" :  10,
+                "score" :  4,
+        ]),
+
+        ([      "name"  :  "≤®Àπ…Ã»À",
+                "file"  :  "/d/xingxiu/npc/trader",
+                "area"  :  "ÃÏ…ΩΩ≈œ¬",
+                "type"  :  "…±",
+                "bonus" :  20,
+                "score" :  6,
+        ]),
+
+        ([      "name"  :  "ªÿªÿ",
+                "file"  :  "/d/quanzhou/npc/huihui",
+                "area"  :  "«ÂæªÀ¬",
+                "type"  :  "…±",
+                "bonus" :  15,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "∑Á¡º",
+                "file"  :  "/d/yixing/npc/fengliang",
+                "area"  :  "—Ô÷›ΩºÕ‚",
+                "type"  :  "…±",
+                "bonus" :  40,
+                "score" :  12,
+        ]),
+
+        ([      "name"  :  "…Ú«‡∏’",
+                "file"  :  "/d/huanghe/npc/shen",
+                "area"  :  "ª∆∫”∞Ô",
+                "type"  :  "…±",
+                "bonus" :  20,
+                "score" :  10,
+        ]),
+
+        ([      "name"  :  "Œ‚«‡¡“",
+                "file"  :  "/d/huanghe/npc/wu",
+                "area"  :  "ª∆∫”∞Ô",
+                "type"  :  "…±",
+                "bonus" :  18,
+                "score" :  9,
+        ]),
+
+        ([      "name"  :  "¬Ì«‡–€",
+                "file"  :  "/d/huanghe/npc/ma",
+                "area"  :  "ª∆∫”∞Ô",
+                "type"  :  "…±",
+                "bonus" :  16,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "«Æ«‡Ω°",
+                "file"  :  "/d/huanghe/npc/qian",
+                "area"  :  "ª∆∫”∞Ô",
+                "type"  :  "…±",
+                "bonus" :  15,
+                "score" :  7,
+        ]),
+
+        ([      "name"  :  "∫Ïªı",
+                "file"  :  "/d/xingxiu/obj/red",
+                "type"  :  "—∞",
+                "bonus" :  12,
+                "score" :  4,
+        ]),
+
+        ([      "name"  :  "π˛√‹πœ",
+                "file"  :  "/d/xingxiu/obj/hamigua",
+                "type"  :  "—∞",
+                "bonus" :  15,
+                "score" :  5,
+        ]),
+
+        ([      "name"  :  "∞Ÿ≤›µ§",
+                "file"  :  "/clone/medicine/nostrum/baicaodan",
+                "type"  :  "—∞",
+                "bonus" :  30,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "–€ª∆",
+                "file"  :  "/clone/medicine/vegetable/xionghuang",
+                "type"  :  "—∞",
+                "bonus" :  30,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "µ±πÈ",
+                "file"  :  "/clone/medicine/vegetable/danggui",
+                "type"  :  "—∞",
+                "bonus" :  30,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "ˆËµ®",
+                "file"  :  "/clone/medicine/vegetable/shadan",
+                "type"  :  "—∞",
+                "bonus" :  30,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "»À≤Œπ˚",
+                "file"  :  "/clone/medicine/nostrum/renshenguo",
+                "type"  :  "—∞",
+                "bonus" :  60,
+                "score" :  16,
+        ]),
+
+        ([      "name"  :  "∫Œ ◊Œ⁄",
+                "file"  :  "/clone/medicine/vegetable/heshouwu",
+                "type"  :  "—∞",
+                "bonus" :  30,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "√ßÍÙ÷Ï∏Ú",
+                "file"  :  "/clone/medicine/nostrum/mangguzhuha",
+                "type"  :  "—∞",
+                "bonus" :  30,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "Œﬁ≥£µ§",
+                "file"  :  "/clone/medicine/nostrum/wuchangdan",
+                "type"  :  "—∞",
+                "bonus" :  30,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "»˝«Âªª÷ µ§",
+                "file"  :  "/clone/medicine/nostrum/huanzhidan",
+                "type"  :  "—∞",
+                "bonus" :  30,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "√œ∆≈≤Ë",
+                "file"  :  "/clone/medicine/nostrum/mengpotea",
+                "type"  :  "—∞",
+                "bonus" :  30,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "¿œ…Ω≤Œ",
+                "file"  :  "/clone/medicine/vegetable/laoshanshen",
+                "type"  :  "—∞",
+                "bonus" :  30,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "»À≤Œ",
+                "file"  :  "/clone/medicine/vegetable/renshen",
+                "type"  :  "—∞",
+                "bonus" :  40,
+                "score" :  10,
+        ]),
+
+        ([      "name"  :  "Õ®ÃÏ≤›",
+                "file"  :  "/d/wuliang/obj/cao",
+                "type"  :  "—∞",
+                "bonus" :  10,
+                "score" :  2,
+        ]),
+
+        ([      "name"  :  "π∑∆§∏‡“©",
+                "file"  :  "/clone/medicine/nostrum/gaoyao",
+                "type"  :  "—∞",
+                "bonus" :  10,
+                "score" :  3,
+        ]),
+
+        ([      "name"  :  "π∑»‚Ã¿",
+                "file"  :  " /d/guanwai/npc/obj/gouroutang",
+                "type"  :  "—∞",
+                "bonus" :  20,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "≥§∞◊…Ω¬√”ŒÕº",
+                "file"  :  "/d/guanwai/npc/obj/map",
+                "type"  :  "—∞",
+                "bonus" :  20,
+                "score" :  8,
+        ]),
+
+        ([      "name"  :  "∞◊‘∆ Ø",
+                "file"  :  "/d/xingxiu/obj/yushi",
+                "type"  :  "—∞",
+                "bonus" :  10,
+                "score" :  3,
+        ]),
+
+        ([      "name"  :  "¿∂”Ò≤ß",
+                "file"  :  "/d/xingxiu/obj/lanyubo",
+                "type"  :  "—∞",
+                "bonus" :  10,
+                "score" :  3,
+        ]),
+
+        ([      "name"  :  "ŒﬁŒ˝Ω¥≈≈π«",
+                "file"  :  "/d/wuxi/npc/obj/paigu",
+                "type"  :  "—∞",
+                "bonus" :  10,
+                "score" :  3,
+        ]),
+
+        ([      "name"  :  "√∑ª®",
+                "file"  :  "/d/lingxiao/obj/mei",
+                "type"  :  "—∞",
+                "bonus" :  10,
+                "score" :  3,
+        ]),
+
+        ([      "name"  :  "πÍ…ﬂæ∆∫¯",
+                "file"  :  "/d/yueyang/npc/obj/guishejiu",
+                "type"  :  "—∞",
+                "bonus" :  10,
+                "score" :  3,
+        ]),
+        
+        ([      "name"  :  "Õ√»‚",
+                "file"  :  "/d/baituo/npc/obj/turou",
+                "type"  :  "—∞",
+                "bonus" :  10,
+                "score" :  3,
+        ]),
+        
+        ([      "name"  :  "”Õ≤º∞¸",
+                "file"  :  "/d/mingjiao/obj/bag",
+                "type"  :  "—∞",
+                "bonus" :  10,
+                "score" :  3,
+        ]),
+        
+        ([      "name"  :  "Œß≤±",
+                "file"  :  "/d/mingjiao/obj/weibo",
+                "type"  :  "—∞",
+                "bonus" :  10,
+                "score" :  3,
+        ]),
+        
+        ([      "name"  :  "˜º˜√Õ∑π«",
+                "file"  :  "/d/mobei/npc/obj/baigu",
+                "type"  :  "—∞",
+                "bonus" :  10,
+                "score" :  3,
+        ]),
+});
+
+void create() { seteuid(getuid()); }
+
+mapping query_job()
+{
+        return bangjobs[random(sizeof(bangjobs))];
+}
+
+

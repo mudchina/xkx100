@@ -1,0 +1,52 @@
+
+	replace_string(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		replace_string() - 替换一个字符串中符合条件的字.
+	函数语法:
+		string replace_string( str, pattern, replace );
+		string replace_string( str, pattern, replace, max );
+		string replace_string( str, pattern, replace, first, last );
+
+		string str, pattern replace;
+		int max, first, last;
+
+		字符串 replace_string( str, pattern, replace );
+		字符串 replace_string( str, pattern, replace, max );
+		字符串 replace_string( str, pattern, replace, first, last );
+
+		字符串 str, pattern replace;
+		整数 max, first, last;
+	函数用法:
+		replace_string() 将 str 中所有符合条件的字 pattern 替换成
+		指定的字 replace. 如果 pattern 没有内容 (为零) , 就传回原
+		来的 str . 如果传回的字符串超过定义的最大字符串长度, 则传回一
+		个 undefindp() 传回 1, stringp() 传回 0  的值.
+
+		replace_string() 可以指定 replace  为空的字符串, 以用来除去
+		字符串中特定的字. 举例来说: replace_string(" 1 2 3 ", " ", "")
+		会传回 "123". replace_string() 执行的速度比用 explode() 和
+		implode() 快.
+
+		第四和第五个参数可有可无 (这是为了相容於以前的版本). 这两个
+		附加的参数有以下的功用:
+
+		第四个参数 first:
+
+		指定同一个字符串最多替换几次 (从 1  开始算). 如果这里指定为 0,
+		就当作是全部都换. 所以 replace_string("xyxx", "x", "z", 2) 
+		会传回 "zyzx".
+
+		第五个参数 last:
+
+		第五个参数限制符合条件的□围:
+		first < 1: 从头开始全部替换.
+		last == 0 或 last > 最高符合数(max_matches): 全部替换到最後. 
+		first > last: 完全不改变.
+		举例: replace_string("xyxxy", "x", "z", 2, 3) 传回 "xyzzy".
+	参考函数:
+		sscanf(3), explode(3), strsrch(3)
+	作者:
+		Zak@TMI-2 撰写限制条件的部份.
+	手册翻译:
+		Phoebus@ZH	97.Jun.2.		(Writen 5/23/97)

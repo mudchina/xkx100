@@ -1,0 +1,102 @@
+// lian gengyao
+
+#include <ansi.h>
+inherit NPC;
+inherit F_MASTER;
+string ask_me();
+
+void greeting(object);
+void init();
+void create()
+{
+	set_name("年羹尧", ({"lian gengyao", "lian" }));
+	set("nickname", HIC"无敌大将军"NOR );
+	set("gender", "男性" );
+	set("age", 40);
+	set("long", "在这位叱咤风云的大将军面前,每个人都觉得有如芒刺在背.\n");
+	set("attitude", "friendly");
+	set("shen_type", 1);
+
+	set("str", 30);
+	set("int", 25);
+	set("con", 22);
+	set("dex", 29);
+
+	set("max_qi", 3000);
+	set("max_jing", 1500);
+	set("neili", 3000);
+	set("max_neili", 3000);
+	set("combat_exp", 500000);
+	set("score", 30000);
+	set("jiali", 50);
+	set_skill("force", 140);
+	set_skill("dodge", 120);
+	set_skill("unarmed", 120);
+	set_skill("parry", 120);
+	set_skill("claw", 120);
+	set_skill("blade",100);
+	set_skill("xixing-dafa", 100);
+	set_skill("sougu", 120);
+	set_skill("tiyunzong", 120);
+	set_skill("taiji-dao", 100);
+
+	map_skill("force", "xixing-dafa");
+	map_skill("dodge", "tiyunzong");
+
+	map_skill("parry", "sougu");
+	map_skill("blade", "taiji-dao");
+
+
+	create_family(HIR"大清王朝"NOR,2,"官员"+HIB"平西王"NOR );
+
+     set("inquiry", ([
+		"朝庭" : "\n朝庭正当用人之际,大清子民凡有德有才者,都可入朝为官(j
+oin chaoting)",
+	 ]) );
+
+	set("chat_chance", 2);
+	set("chat_msg", ({
+	  }) );
+	setup();
+	carry_object(__DIR__"obj/aaa")->wield();
+	carry_object(__DIR__"obj/jinduan")->wear();
+
+}
+
+
+void attempt_apprentice(object ob)
+{
+	if ((int)ob->query_skill("force", 1) > 4) {
+	command("say 好吧, 我就收下你了。\n");
+	command("recruit "+ ob->query("id"));
+		ob->set("class", "guanyuan");
+		return;
+	}
+		command("say 你还是多学点东西,再来为国效力吧.\n");
+}
+
+void init()
+{
+::init();
+add_action("do_join", "join");
+}
+
+
+int do_join(string arg)
+{
+	object ob;
+	ob = this_player();
+	if( !arg || arg!="chaoting")
+	return notify_fail("你要加入什么组织\n");
+	else
+	{
+		ob->create_party(HIR"大清王朝"NOR"正五品官");
+		ob->set("class", "officer");
+		return notify_fail("你已经是朝庭官员了\n");
+		command("年羹尧仰天大笑:好,朝庭又多了一个人材\n");
+
+	}
+	return 0;
+
+}
+

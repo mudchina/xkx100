@@ -1,0 +1,168 @@
+// xianglong-zhang.c 降龙十八掌
+// Last Modified by sega on Mar. 10 2000
+
+#include <ansi.h>;
+inherit SKILL;
+string type() { return "martial"; }
+string martialtype() { return "skill"; }
+
+string *order = ({""HIY"", ""HIG"", ""RED"", ""MAG"", ""YEL"", ""HIC"", ""HIW"", ""HIR"",""HIB"", ""CYN"",""WHT"",""HIM"",""BLU""});
+mapping *action = ({
+([	"action" : "$N双掌平平提到胸前，神色沉重的缓缓施出"+(order[random(13)])+"「亢龙有悔」"NOR"推向$n的$l",
+	"lvl"    : 0,
+	"skill_name" : "亢龙有悔",
+]),
+([	"action" : "$N突然身形飞起，双掌居高临下一招"+(order[random(13)])+"「飞龙在天」"NOR"拍向$n的$l",
+	"lvl"    : 10,
+	"skill_name" : "飞龙在天",
+]),
+([	"action" : "$N右掌一招"+(order[random(13)])+"「见龙在田」"NOR"，迅捷无比地劈向$n的$l",
+	"lvl"    : 20,
+	"skill_name" : "见龙在田",
+]),
+([	"action" : "$N双掌施出一招"+(order[random(13)])+"「鸿渐于陆」"NOR"，隐隐带着风声拍向$n的$l",
+	"lvl"    : 30,
+	"skill_name" : "鸿渐于陆",
+]),
+([	"action" : "$N左掌聚成拳状，右掌一招"+(order[random(13)])+"「潜龙勿用」"NOR"缓缓推向$n的$l",
+	"lvl"    : 40,
+	"skill_name" : "潜龙勿用",
+]),
+([	"action" : "$N施出一招"+(order[random(13)])+"「利涉大川」"NOR"，右掌插腰，左掌劈向$n的$l",
+	"lvl"    : 50,
+	"skill_name" : "利涉大川",
+]),
+([	"action" : "$N使出"+(order[random(13)])+"「突如其来」"NOR"，右掌从不可能的角度向$n的$l推出",
+	"lvl"    : 60,
+	"skill_name" : "突如其来",
+]),
+([	"action" : "$N大吼一声，双掌使出"+(order[random(13)])+"「震惊百里」"NOR"，不顾一切般击向$n",
+	"lvl"    : 70,
+	"skill_name" : "震惊百里",
+]),
+([	"action" : "$N使出"+(order[random(13)])+"「或跃在渊」"NOR"，向$n的$l连拍数掌",
+	"lvl"    : 80,
+	"skill_name" : "或跃在渊",
+]),
+([	"action" : "$N身形滑动，双掌使一招"+(order[random(13)])+"「双龙取水」"NOR"一前一后按向$n的$l",
+	"lvl"    : 90,
+	"skill_name" : "双龙取水",
+]),
+([	"action" : "$N使出"+(order[random(13)])+"「鱼跃于渊」"NOR"，身形飞起，双掌并在一起向$n的$l劈下",
+	"lvl"    : 100,
+	"skill_name" : "鱼跃于渊",
+]),
+([	"action" : "$N双掌立起，使出"+(order[random(13)])+"「时乘六龙」"NOR"向$n连砍六下",
+	"lvl"    : 110,
+	"skill_name" : "时乘六龙",
+]),
+([	"action" : "$N使出"+(order[random(13)])+"「密云不雨」"NOR"，左掌封住$n的退路，右掌斜斜地劈向$l",
+	"lvl"    : 120,
+	"skill_name" : "密云不雨",
+]),
+([	"action" : "$N使出"+(order[random(13)])+"「损则有孚」"NOR"，双掌软绵绵地拍向$n的$l",
+	"lvl"    : 130,
+	"skill_name" : "损则有孚",
+]),
+([	"action" : "$N脚下一转，突然欺到$n身前，一招"+(order[random(13)])+"「龙战于野」"NOR"拍向$n的$l",
+	"lvl"    : 140,
+	"skill_name" : "龙战于野",
+]),
+([	"action" : "$N门户大开，一招"+(order[random(13)])+"「履霜冰至」"NOR"向$n的$l劈去",
+	"lvl"    : 150,
+	"skill_name" : "履霜冰至",
+]),
+([	"action" : "$N使出"+(order[random(13)])+"「羝羊触蕃」"NOR"，双掌由下往上击向$n的$l",
+	"lvl"    : 160,
+	"skill_name" : "羝羊触蕃",
+]),
+([	"action" : "$N左掌护胸，右掌使一招"+(order[random(13)])+"「神龙摆尾」"NOR"上下晃动着击向$n的$l",
+	"lvl"    : 170,
+	"skill_name" : "神龙摆尾",
+]),
+});
+
+int valid_enable(string usage) { return usage=="strike" || usage=="parry"; }
+int valid_combine(string combo) { return combo=="suohou-hand"; }
+
+int valid_learn(object me)
+{
+	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
+		return notify_fail("练降龙十八掌必须空手。\n");
+	if ((int)me->query_skill("huntian-qigong", 1) < 20)
+		return notify_fail("你的混天气功火候不够，无法练降龙十八掌。\n");
+	if ((int)me->query("max_neili") < 100)
+		return notify_fail("你的内力太弱，无法练降龙十八掌。\n");
+	return 1;
+}
+
+int practice_skill(object me)
+{
+	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
+		return notify_fail("你的必须空手才能练习。\n");
+	if ((int)me->query("qi") < 60)
+		return notify_fail("你的体力太低了。\n");
+	if ((int)me->query("neili") < 40)
+		return notify_fail("你的内力不够练降龙十八掌。\n");
+	me->receive_damage("qi", 55);
+	me->add("neili", -35);
+	return 1;
+}
+string query_skill_name(int level)
+{
+	int i;
+	for(i = sizeof(action); i > 0; i--)
+		if(level >= action[i-1]["lvl"])
+			return action[i-1]["skill_name"];
+}
+mapping query_action(object me, object weapon)
+{
+/* d_e=dodge_effect p_e=parry_effect f_e=force_effect m_e=damage_effect */
+	int d_e1 = -60;
+	int d_e2 = -40;
+	int p_e1 = -20;
+	int p_e2 = 10;
+	int f_e1 = 350;
+	int f_e2 = 550;
+	int i, lvl, seq, ttl = sizeof(action);
+
+	lvl = (int) me->query_skill("xianglong-zhang", 1);
+	for(i = ttl; i > 0; i--)
+		if(lvl > action[i-1]["lvl"])
+		{
+			seq = i; /* 获得招数序号上限 */
+			break;
+		}
+	seq = random(seq);       /* 选择出手招数序号 */
+	return ([
+		"action"      : action[seq]["action"],
+		"dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
+		"parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,
+		"force"       : f_e1 + (f_e2 - f_e1) * seq / ttl,
+		"damage_type" : random(2) ? "内伤" : "瘀伤",
+	]);
+}
+int learn_bonus() { return 0; }
+int practice_bonus() { return 0; }
+int success() { return 5; }
+int power_point() { return 1.0; }
+
+string perform_action_file(string action)
+{
+	return __DIR__"xianglong-zhang/" + action;
+}
+int help(object me)
+{
+	write(HIC"\n降龙十八掌："NOR"\n");
+	write(@HELP
+
+    降龙十八掌是丐帮镇帮之宝，是天下最刚猛的武功。
+
+	学习要求：
+		混天气功20级
+		内力100
+HELP
+	);
+	return 1;
+}
+

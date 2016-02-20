@@ -1,0 +1,17 @@
+
+	mapp(3)			LP MudOSv21c7		( 5 Sep 1994 )
+
+	名称 :
+		mapp() - 判断一个指定的变量是否为映射变量 (mapping).
+	语法 :
+		int mapp( mixed arg );
+
+		整数 mapp( 混合 arg );
+	用法 :
+		如果 arg 是个映射变量, 则传回 1.
+	参考 :
+		stringp(3), pointerp(3), objectp(3), intp(3),
+		bufferp(3), floatp(3) functionp(3), nullp(3),
+		undefinedp(3), errorp(3)
+	翻译 :
+		Phoebus@ZH	97.Mar.14.		(Writen 5/23/97)

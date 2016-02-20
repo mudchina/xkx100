@@ -1,0 +1,21 @@
+
+	read_file(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		read_file() - 把一个文件的内容读进一个字符串变量里.
+	函数语法:
+		string read_file( string file, int start_line,
+			int number_of_lines );
+
+		字符串 read_file( 字符串 file, 整数 start_line, 
+			整数 number_of_lines );
+	函数用法:
+		从一个文件中读入几行文字到一个字符串中. 第二个和第三个参数
+		可以选择. 如果只指定 file 的参数, 整个文件都会被读进一个
+		字符串中.
+		start_line  是指定你要从文件的第几行开始读取. 如果你指定
+		的行数超过文件的尾端或是指定的数字为负数, 则会传回 0. 
+	参考函数:
+		write_file(3), read_buffer(3)
+	手册翻译:
+		Phoebus@ZH	97.May.24.		(Writen 5/23/97)

@@ -1,0 +1,18 @@
+
+	time_expression(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		time_expression() - 传回计算一个式子 (expression) 所需
+				    的真实时间.
+	函数语法:
+		int time_expression( mixed expr );
+
+		整数 time_expression( 混合 expr );
+	函数用法:
+		计算 expr,  并以微秒 (microsecond)  为单位传回计算 expr
+		所需的时间. 传回数值的精确度并不需要精确到一微秒, 实际
+		上, 此数值的精确度比微秒还差.
+	参考函数:
+		rusage(3), function_profile(3), time(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.25.		(Writen 5/23/97)

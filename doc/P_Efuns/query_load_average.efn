@@ -1,0 +1,18 @@
+
+	query_load_average(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		query_load_average()  - 报告 mud 的系统平均负载量 (load
+					average).
+	函数语法:
+		string query_load_average( void );
+
+		字符串 query_load_average( 无参数 );
+	函数用法:
+		这个函数传回一个字符串, 报告两个统计数字:
+		(1) 平均每秒钟的使用者命令数量.
+		(2) 平均每秒钟编译的程序行数.
+	参考函数:
+		rusage(3)
+	手册翻译:
+		Phoebus@ZH	97.May.1.		(Writen 5/23/97)

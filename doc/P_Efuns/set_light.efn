@@ -1,0 +1,14 @@
+
+	set_light(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		set_light() - 更改或询问一个对象的照明程度 (light level).
+	函数语法:
+		int set_light( int light_level_adjustment );
+
+		整数 set_light( 整数 light_level_adjustment );
+	函数用法:
+		将 light_level_adjustment 指定为 0, 则询问对象目前的
+		照明程度. 指定为正整数则增加照明的程度, 负整数降低.
+	手册翻译:
+		Phoebus@ZH	97.Jul.21.		(Writen 5/23/97)

@@ -1,0 +1,16 @@
+
+	restore_variable(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		restore_variable() - 从一个字符串读回变量值.
+	函数语法:
+		mixed restore_variable( string value );
+
+		混合 restore_variable( 字符串 value );
+	函数用法:
+		从一个字符串读回变量值. 字符串的格式与 save_object() 和
+		restore_object() 所使用的相同.
+	参考函数:
+		restore_object(3)
+	手册翻译:
+		Phoebus@ZH	97.Jun.2.		(Writen 5/23/97)

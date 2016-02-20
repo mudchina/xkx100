@@ -1,0 +1,21 @@
+
+	explode(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		explode() - 打断一个字符串.
+	函数语法:
+		string *explode( string str, string del );
+
+		字符串 *explode( 字符串 str, 字符串 del );
+	函数用法:
+		explode() 传回一个字符串的数组 (array), 此数组是
+		字符串 str 以 del 分界打断的片段.
+	□例:
+		explode( str, " " );
+
+		这样会传回一个 str 中所有英文单字的字符串数组 (假设
+		str 是英文句子, 每一个单字由空白字符隔开).
+	参考函数:
+		sscanf(3), extract(3), replace_string(3), strsrch(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)

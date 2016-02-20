@@ -1,0 +1,37 @@
+
+	shadow(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		shadow() - 作为一些对象的一个或多个函数的投影 (shadow).
+	函数语法:
+		object shadow( object ob, int flag );
+
+		对象 shadow( 对象 ob, 整数 flag );
+	函数用法:
+		如果 flag 是 1, 或是不指定 flag , 则目前的对象将会作为
+		ob  的投影. 如果 flag 是 0, 则不是传回 0, 就是传回早已
+		作为 ob 投影的对象. 
+
+		valid_shadow()  函数由主宰对象定义. 如果 valid_shadow()
+		传回 1, 目标对象就无法投影, shadow()  函数会传回 0  而不
+		是 ob.
+		
+		如果对象 a  作为对象 b  的投影, 则所有对 b  的
+		call_other(func)  将会重新导向 (redirect) 到 a. 如果对象
+		a 没有定义 func 函数, 则 call_other(func) 会向 b  调用
+		func (等於没有 a 作为投影). 只有 a  可以用 call_other()
+		调用 b  的函数. b 无法以 call_other() 调用自己. 所有 b
+		内部的函数调用仅限於 b 自己本身.
+
+		有两个方法可以取消投影. 摧毁作为投影的对象, 或是摧毁被
+		投影的对象. 後者被摧毁之後, 作为其投影的对象也会自动销毁.
+
+		利用投影, 可以使一个对象遮盖另一个对象, 而运作时又似乎像
+		是没有遮住. shadow()  可以在不更动原始对象程序代码的情形下
+		, 改变一个对象的行为. 举例来说, shadow()  可以为玩家增加
+		一些职业上的特殊能力, 像是贼、战士、魔法师等等的特殊能力.
+		这样一来, 可以使玩家的对象不会因为各种职业而变得太复杂.
+	参考函数:
+		destruct(3), shadowp(3), query_shadowing(3), valid_shadow(4)
+	手册翻译:
+		Phoebus@ZH	97.Jul.22.		(Writen 5/23/97)

@@ -1,0 +1,18 @@
+
+	error(3)		LP MudOSv21c7		error(3)
+
+	函数名称:
+		error - 产生一个执行时段 (run_time) 错误.
+	函数语法:
+		void error( string err );
+
+		无传回值 error( 字符串 err );
+	函数用法:
+		调用 error() 时, 会产生一个执行时段错误 err. 并中止
+		目前正在执行的执行绪脉络 (thread). 而发生错误的程序
+		会被追踪错误的出处, 并纪录在除错纪录 (debug log) 的
+		文件中.
+	参考函数:
+		catch(3), throw(3), error_handler(4)
+
+	手册翻译:	Phoebus@ZH	97.Feb.12.	(Writen 5/23/97)

@@ -1,0 +1,15 @@
+
+	log(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		log() - 传回一个浮点数的自然对数
+	函数语法:
+		float log( float f );
+
+		浮点数 log( 浮点数 f );
+	函数用法:
+		传回参数 f  的自然对数. f 必须为正值.
+	参数:
+		exp(3), pow(3), sqrt(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.18.		(Writen 5/23/97)

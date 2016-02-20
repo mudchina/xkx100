@@ -1,0 +1,18 @@
+
+	sizeof(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		sizeof() - 传回一个数组 (array)、映射 (mapping)、
+			   缓冲区 (buffer)、或是字符串 (string) 的
+			   元素数目.
+	函数语法:
+		int sizeof( mixed var );
+
+		整数 sizeof( 混合 var );
+	函数用法:
+		传回 var 中元素的数目, var 可以是数组、数组、字符串、
+		或是缓冲区. 如果 var 不属於以上四种类型, 就传回 0.
+	参考函数:
+		allocate(3), allocate_mapping(3), strlen(3)
+	手册翻译:
+		Phoebus@ZH	97. Jul.23.		(Writen 5/23/97)

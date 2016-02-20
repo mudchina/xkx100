@@ -1,0 +1,16 @@
+
+	mkdir(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		mkdir() - 创造一个目录.
+	函数语法:
+		int mkdir( string directory );
+
+		整数 mkdir( 字符串 directory );
+	函数用法:
+		创造指定的目录. 成功传回 1, 失败则传回 0.
+	参考函数:
+		rm(3), rmdir(3), link(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.15.		(Writen 5/23/97)
+

@@ -1,0 +1,154 @@
+// hong.c
+
+#include <ansi.h>;
+inherit NPC;
+inherit F_MASTER;
+inherit F_MANAGER;
+
+void create()
+{
+	set_name("洪七公", ({"hong qigong", "hong", "qigong"}));
+	set("nickname", "九指神丐");
+	set("gender", "男性");
+	set("age", 75);
+	set("long", 
+		"他就是丐帮第十七任帮主，号称“北丐”的洪七公老爷子。\n");
+	set("attitude", "peaceful");
+	set("class", "beggar");
+ 	set("beggarlvl", 10);
+	
+	set("str", 30);
+	set("int", 24);
+	set("con", 30);
+	set("dex", 24);
+
+	set("chat_chance", 1);
+	set("chat_msg", ({
+	"洪七公叹了口气道：“唉……何时能再吃到蓉儿做的「叫化鸡」啊……”\n",
+	"洪七公说道：“俗话说「吃在江南」，所以老叫化特地跑来扬州看看。”\n",
+	"洪七公喃喃道：“我们丐帮的「降龙十八掌」是天下最霸道的掌法。”\n",
+	}));
+	set("inquiry", ([
+		"青竹林" : "东北西北东西北。\n",
+		"丐帮" : "东北西北东西北。\n",
+	]));
+
+        set("qi", 2500);
+	set("max_qi", 2500);
+	set("jing", 800);
+	set("max_jing", 800);
+	set("neili", 3000);
+	set("max_neili", 3000);
+	set("jiali", 300);
+	
+	set("combat_exp", 3000000);
+	set("score", 200000);
+	set("shen", 100000);
+	 
+	set_skill("force", 200);             // 基本内功
+	set_skill("huntian-qigong", 200);    // 混天气功
+	set_skill("unarmed", 200);           // 基本拳脚
+	set_skill("dodge", 200);      	     // 基本躲闪
+	set_skill("xiaoyaoyou", 300);        // 逍遥游
+	set_skill("parry", 200);             // 基本招架
+	set_skill("strike", 200);            // 基本掌法
+	set_skill("xianglong-zhang", 300);   // 降龙十八掌
+	set_skill("hand", 200);              // 基本手法
+	set_skill("suohou-hand", 300);       // 锁喉擒拿手
+	set_skill("blade", 200);             // 基本刀法
+	set_skill("liuhe-blade", 300);       // 四象六合刀
+	set_skill("staff", 200);             // 基本杖法
+	set_skill("fengmo-staff", 300);      // 疯魔杖法
+	set_skill("stick", 200);             // 基本棒法
+	set_skill("dagou-bang", 300);        // 打狗棒法
+	set_skill("begging", 100);           // 叫化绝活
+	set_skill("checking", 100);          // 道听途说
+	set_skill("training", 100);         // 驭兽术
+	
+	map_skill("force", "huntian-qigong");
+	map_skill("strike", "xianglong-zhang");
+	map_skill("hand",  "suohou-hand");
+	map_skill("dodge", "xiaoyaoyou");
+	map_skill("blade", "liuhe-blade");
+	map_skill("parry", "dagou-bang");
+	map_skill("stick", "dagou-bang");
+	map_skill("staff", "fengmo-staff");
+	prepare_skill("hand",  "suohou-hand");
+	prepare_skill("strike", "xianglong-zhang");
+
+	set("party/party_name", HIC"丐帮"NOR);
+	set("party/rank", HIR"帮主"NOR);
+	set("party/level", 10);
+	create_family("丐帮", 17, "帮主");
+
+	setup();
+	
+	carry_object(__DIR__"obj/lvyv_bang")->wield();
+	carry_object(__DIR__"obj/jiaohuaji");
+	carry_object(__DIR__"obj/cloth")->wear();
+}
+
+void init()
+{
+ 	object ob; 
+	ob = this_player();
+
+	::init();
+	if( interactive(ob) && !is_fighting() )
+	{
+		remove_call_out("greeting");
+		call_out("greeting", 1, ob);
+	}
+	add_action("do_qiecuo","qiecuo");
+}
+
+
+void greeting(object me)
+{
+       
+       	mapping myfam;
+	myfam = (mapping)me->query("family");
+	if((myfam["family_name"] == "丐帮")&&(!me->query_skill("huntian-qigong",1))&&(me->query("combat_exp")>500000))
+        {
+                command("say 你竟敢放弃本门心法！从我这里滚出去吧！");
+                command("expell " + me->query("id"));
+        }
+        
+}
+
+void attempt_apprentice(object ob)
+{
+	if ((int)ob->query_str() < 20 || (int)ob->query_con() < 20) {
+		command("say 当叫化子需要能吃苦耐劳，依我看" + RANK_D->query_respect(ob) + "的资质似乎不适合当叫化子？");
+		return;
+	}
+	if ((string)ob->query("family/family_name") != "" &&
+	    (string)ob->query("family/family_name") != "丐帮")
+	{
+		command("say " + RANK_D->query_respect(ob) + "既然已有名师指点，何必又来拜老叫化呢？");
+		return;
+	}
+	if (ob->query_temp("jiahuoji")) command("recruit "+ob->query("id"));
+	else
+	command("say " + RANK_D->query_respect(ob) + "各项条件都不错，只可惜老叫化现在没力气收徒……");
+	
+}
+
+int accept_object(object who, object ob)
+{
+	if (ob->query("food_supply") <= 0)
+		return 0;
+	if ((string)ob->query("id") != "jiaohua ji")
+	{
+		command("say 老叫化对" + (string)ob->query("name") + "没什么兴趣……");
+		return 0;
+	}
+	if (query("food") >= max_food_capacity() - ob->query("food_supply")) {
+		command("say 老叫化现在饱得很。");
+		return 0;
+	}
+	command("say 啊……这正是我想吃的叫化鸡呀！");
+	command("eat ji");
+	who->set_temp("jiahuoji",1);
+	return 1;
+}

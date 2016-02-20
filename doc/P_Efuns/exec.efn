@@ -1,0 +1,28 @@
+
+	exec(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		exec() -  将一个可互动的 (interactive) 玩家 (player) 
+			  对象切换连结 (connection) 到另外一个对象上.
+	函数语法:
+		int exec( object to, object from );
+
+		整数 exec( 对象 to, 对象 from );
+	函数用法:
+		这个函数允许指定的对象把可互动的连结 (link) 迁移到另
+		外一个对象上. 也就是说, 成功地执行 exec( to, from )
+		之後, interactive( to ) 会传回 1, 而 interactive( from )
+		会传回 0. 而控制 from 的玩家会转移控制权到 to 的身上.
+
+		请注意这个函数的权力非常大, 不当地使用会危及 MUD  的
+		系统安全. 正确地限制使用此函数的方法是另外写一个同名的
+		模拟超越函数 (simulated emulated function, simul_efun)
+		, 并使用 valid_override(4)  来限制此一模拟超越函数的使
+		用. (意即 efun::exec() )
+
+		exec() 函数在成功地转换之後传回 1, 转换失败则传回 0.
+	参考函数:
+		interactive(3), valid_override(4)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)
+

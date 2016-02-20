@@ -1,0 +1,23 @@
+
+	nullp(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		nullp() - 判断指定的一个变量是否为空值 (null).
+	函数语法:
+		int nullp( mixed arg );
+
+		整数 nullp( 混合 arg );
+	函数用法:
+		如果 arg 是空值就传回 1. arg 在以下三种状况视为空值:
+
+		1. arg 还未初始化 (initialize).
+
+		2. arg 指向一个已被摧毁的对象.
+
+		3. arg 是一个函数的参数, 对应到一个实际上已经遗失的参数.
+	参考函数:
+		mapp(3), stringp(3), pointerp(3), objectp(3), intp(3),
+		bufferp(3), floatp(3), functionp(3), undefinedp(3),
+		errorp(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.24.		(Writen 5/23/97)

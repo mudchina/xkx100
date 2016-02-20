@@ -1,0 +1,18 @@
+
+	inherit_list(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		inherit_list() - 取得一个对象所继承的父对象 (parents)
+				 清单.
+	函数语法:
+		string *inherit_list( object obj );
+
+		字符串 *inherit_list( 对象 obj );
+	函数用法:
+		传回对象 obj  所继承之父对象的文件名称, 以字符串数组
+		(array) 的形式传回. 例如: A 继承 B, 而 B  继承 C  ,
+		inherit_list(A) 会传回一个含有 B 的数组, 而没有 C.
+	参考函数:
+		deep_inherit_list(3), inherits(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.14.		(Writen 5/23/97)

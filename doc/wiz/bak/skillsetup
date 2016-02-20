@@ -1,0 +1,888 @@
+                         关于武功的设置
+
+一、打斗程序公式：
+攻击能力：ap
+躲避能力：dp
+招架能力：pp
+上述三个初始值由skill_power函数得出，与武功的action参数设定无关。
+
+目前我们要求下列四个武功action参数：
+dodge parry force damage
+其中，空手武功不允许有damage参数。
+
+dp = dp + action["dodge"]/100   躲避成功的公式是：random(ap+dp) < dp
+pp = pp + action["parry"]/100   招架成功的公式是：random(ap+pp) < pp
+
+所以，dodge和parry参数越高，对手就越容易躲避或招架成功。这两个参数
+允许范围：-90 <-> 90。
+
+最终伤害力 = damage + damagebonus
+
+damage = 兵器伤害力 * (1+action["damage"]/200)
+damagebonus = 后天膂力 * (1+action["force"]/200)
+
+由于没有apply/damage，所以空手功夫的damage等于0，action["damage"]也
+不起作用。而无论空手还是兵器，damagebonus是永远都有的。
+
+建议大家set combat verbose。
+
+二、skill设定标准
+  1) 是按照基本的技能把特殊技能分类,比如sword,hand,finger等等
+  2) 在每一类中分4个档次 强(6) 较强(4) 中(2) 中下(1) 来调整
+  3) 在每个档次中 再根据force ,dodge, parry, damage来有侧重的
+   修改, 争取做出层次性和多样性来
+
+    a) 要考虑到玩家的气血长短, 目前一般门派玩家的气血都在1000
+左右,同时一些特殊兵器杀伤力太牛 ,双手兵器(这个建议改掉 呵呵),
+所以在设的时候建议damage不应该太高
+
+    b) 针对目前全天下差不多都是用sword的情况,建议对一些特殊兵
+器的设定给予照顾 可以放到强或较强的档次来调整
+
+    c) 同时建议综合考虑一下门派的总体情况,比如内功,轻功,兵器,
+空手等,还有地理位置,做任务的难易程度(迷宫),我会针对门派情况具
+体做出一张表来
+
+    d)  兵器大体先分2类    
+长兵器 有鞭 棍 杖 棒 枪 钩 等
+短兵器  有axe blade sword hammer dagger等
+然后再具体分轻重考虑
+长兵器 设计的想法是 对方容易招架 却不容易闪避
+      体现在招式参数上是parry 高 dodge 底
+短兵器 设计的想法是 对方不易招架到 却容易闪避
+      体现在招式的参数上是parry 低 dodge 高
+具体分轻重设计 重兵器,双手兵器force高 
+             轻兵器，软兵器 force底 
+
+    force 空手参数 
+          走刚猛一路的force 高(上限600)
+          轻巧一路的 force 低(上限400)
+          兵器
+          重兵器,双手兵器force高(上限400)
+          轻兵器，软兵器 force底(上限200) 
+    dodge 兵器:
+          长兵器攻击范围大对手不易闪避设的低些,(-60到0)
+          短兵器攻击范围小对手易闪避设的高,(0到60)
+          空手:
+          走刚猛一路的对手多用闪避dodge高(0到60)
+          轻巧一路的对手多用招架所以dodge低(-60到0)
+    parry 兵器
+          长兵器和重兵器招式变化慢对手易招架parry高些(0-60)
+          短兵器和软兵器招式变化快对手不易招架parry低些(-60-0)
+          空手          
+          走刚猛一路对手不易招架多用闪避所以parry低(-60到0)
+          轻巧一路的对手易招架所以parry高(0到60)
+
+    damage 只有兵器上用
+           锋利兵器设得高些(上限600)           
+           钝兵器类设的低(上限300)
+
+dodge :对手极难闪避 -60到-30 
+       对手难闪避   -30到0 
+       对手易闪避    0到30 
+       对手极易闪避  30到60
+parry 对手极难招架 -60到0 
+      对手难招架   -30到0
+      对手易招架    0到30
+      对手极易招架  0到60
+  伤害度: 中下    中     较强       强 
+force   0-150,100-300,200-400,400-600
+damage  0-150,100-300,200-400,400-600           
+
+三. 门派平衡数据参数  (待补充)
+参考依据:
+  
+  内功 6 能涨气 练丹的
+       4 能吸内力 roar 等的
+       2 能疗他人
+       1 能疗自己
+ 
+  剑法 6 能出连5招以上perform的,能伤精气的
+       4 能出命中率很高的perform 
+       2 能出perform
+       1 不能出perform
+
+  空手 6 能出杀伤力很大的perform,长busy的
+       4 能出命中率很高的perform,能busy的
+       2 能出perform,有毒的,有内伤的
+       1 不能出perform
+
+  剑法和空手只从perform考虑,做基本招式的时候可以相应互补
+  
+  兵器  包括刀 棍 鞭 暗器等等
+
+  其他  包括( 结婚, 门派任务, 入门容易度等)
+        6 能结婚 入门容易 有特殊福利的
+        4 能结婚 地图大 入门容易
+        2 不能结婚 地图大 任务难 
+        1 地理偏僻 入门难 迷宫难 
+         
+         
+ 门派   内功   剑法  兵器  空手 毒、兽 其他 基本招式 
+ 少林     4     2      6     6     0     2     4
+ 武当     1     6      2     4     0     6     2
+ 峨嵋     6     6      4     4     0     2     2
+ 全真     6     4      2     6     0     4     4         
+ 古墓     4     4      2     6     2     4     4
+ 星宿     6     1      2     2     6     6     6
+ 逍遥     6     2      2     2     2     6     4
+ 雪山     4     1      2     6     0     4     6    
+ 大理     1     2      6     6     0     4     4
+ 桃花     4     4      2     4     0     1     6
+ 凌霄     1     6      4     2     0     4     2   
+ 昆仑     2     2      2     4     0     4     4
+ 华山     1     6      4     2     0     6     4
+ 恒山     2     6      2     2     0     6     2
+ 衡山     1     2      2     2     0     6     4
+ 嵩山     1     2      2     2     2     6     4
+ 泰山     1     4      2     2     0     6     2
+ 五毒     4     6      2     2     6     1     2
+ 丐帮     4     1      4     6     6     2     4
+ 铁掌     2     1      4     6     0     2     4
+ 白驼     6     1      6     6     4     2     4
+ 神龙     1     1      4     2     2     1     4
+ 明教     4     2      2     4     0     4     4
+ 慕容     2     6      4     4     0     4     2
+ 日月     4     6      6     2     4     2     4
+ 天地     1     4      4     4     0     2     4 
+ 红花     2     6      4     4     0     2     2
+
+
+四、南少林范例
+                            force
+      少林南拳┬少林弹腿    50-100
+        罗汉拳┼风云手      60-120
+        韦驮掌┼如来千叶手  70-150
+        散花掌┼摩诃指      80-200
+      波罗蜜手┼寂灭爪     100-250
+    大金刚神掌┼多罗叶指   120-300
+        拈花指┼鹰爪功     140-350
+        般若掌┼龙爪功     160-400
+        一指禅┼如影随形腿 180-450
+      大金刚拳┴无相劫指   200-500
+                                                   force
+      普渡杖法 慈悲刀   九节鞭  韦驮棍  达摩剑法   50-250
+damage  15-60  50-200    20-60   10-50   50-200
+         │      │       │      │      │
+      无常杖法 修罗刀   降魔鞭 少林醉棍 伏魔剑法   80-400
+damage  15-60 100-400    50-80   20-80   80-400
+                 │       │      │
+              燃木刀法 日月鞭法 韦陀杵            100-600
+damage        100-450   100-300  20-100
+
+六、目前武功列表  
+                      招式  从低级到高级  从低级到高级 从低级到高级 从低级到高级
+"axe":          "斧法", 1       family    dodge      parry      force     damage learn practice success
+duanyun-fu.c        断云斧     大理      60~30      -30~-60    200~400   300~500  5      5        20
+
+"blade":        "刀法", 18    family    dodge      parry      force     damage learn practice success
+cibei-dao.c         慈悲刀     少林      60~40      10~-10     50~100    10~120   20     20        5     
+cibei-blade.c:      慈悲刀     南少林    60~40      10~-10     50~100    10~120   20     20        5     
+kuangfeng-blade.c:  狂风刀法   公共      60~35       5~-10     50~100    30~140   20     20        5     
+wuhu-duanmendao.c:  五虎断门刀 云龙      55~35       5~-15     50~100    30~140   20     20        5     
+liuhe-blade.c:      四象六合刀 丐帮      55~35       5~-15    100~150    50~160   15     15        10     
+fanliangyi-dao.c:   反两仪刀法 华山      55~30       0~-15    100~150    50~160   15     15        10 
+hujia-daofa.c:      胡家刀法   公共      50~30       0~-20    100~150    70~180   15     15        10 
+liuhe-blade.c:      四象六合刀 丐帮      50~30       0~-20    100~150    70~180   15     15        10 
+murong-blade.c:     慕容刀法   慕容      50~25      -5~-20    100~150    90~200  15     15        10 
+qiuge-dao.c:        秋歌七刀   红花      45~25      -5~-25    100~150    90~200  15     15        10 
+ruyi-dao.c:         如意刀法   逍遥      45~25      -5~-25    100~150   110~220   10     10       15
+taiji-dao.c:        太极刀法   武当      45~20     -10~-25    100~150   110~220   10     10       15 
+xiuluo-blade.c:     修罗刀     南少林    40~20     -10~-30    100~150   130~240   10     10       15
+xiuluo-dao.c:       修罗刀     少林      40~20     -10~-30    100~150   130~240   10     10       15
+jinwu-blade.c:      金乌刀法   凌霄      40~15     -15~-30    150~200   150~260   5     5       20
+xue-dao.c:          血刀       雪山寺    35~15     -15~-35    150~200   150~260   5     5       20
+yanxing-dao.c:      雁行刀     峨嵋      35~15     -15~-35    150~200   170~280   5     5       20
+ranmu-blade.c:      燃木刀法   南少林    30~10     -20~-40    150~200   190~300   5     5       20
+"claw":         "爪法",  9     family    dodge      parry      force     damage  learn practice success
+sanyin-wugongzhao.c:三阴蜈蚣爪 星宿      60~40       0~-20    100~250    中下     20     20        5  
+jimie-claw.c:       寂灭爪     南少林    60~30      -5~-20    100~250    中下     20     20        5  
+yingzhua-gong.c:    鹰爪功     少林      50~30      -5~-30    200~350    中      15     15        10
+eagleg-claw.c:      鹰爪功     南少林    50~20     -10~-30    200~350    中      15     15        10
+sougu.c:            搜骨鹰爪功 明教      40~20     -10~-40    250~400    较强     10     10       15
+yunlong-zhua.c:     云龙爪     云龙      40~10     -15~-40    250~400    较强    10     10       15
+longzhua-gong.c:    龙爪功     少林      30~10     -15~-50    300~450    较强    10     10       15
+dragon-claw.c:      龙爪功     南少林    30~5      -20~-50    300~450    较强     10     10       15
+jiuyin-baiguzhao.c: 九阴白骨爪 公共      20~5      -20~-60    300~600    强        5     5       20
+"club" :        "棍法", 6      family    dodge      parry      force     damage  learn practice success
+weituo-club.c:      韦陀棍     南少林   -30~-40     30~15     200~250    50~150   15     15        10
+weituo-gun.c:       韦陀棍     少林     -30~-45     25~15     200~250    50~150   15     15        10
+zui-club.c:         少林醉棍   南少林   -35~-45     25~10     250~300   100~200    10     10       15
+zui-gun.c:          少林醉棍   少林     -35~-50     20~10     250~300   100~200    10     10       15
+weituo-chu.c:       韦驮杵     南少林   -40~-60     10~-5     300~400   150~250    5     5       20
+juemen-gun.c:       绝门棍(未用) 少林   -40~-60     10~-5     300~400   150~250     5     5       20
+"cuff":         "拳法",   16   family    dodge      parry      force    damage  learn practice success
+changquan.c:        太祖长拳   公共      60~40       0~-20     50~200    中下       20     20        5 
+huhe-quan.c:        虎鹤双形拳 公共      60~40       0~-20     60~210    中下       20     20        5 
+shaolin-cuff.c:     少林南拳   南少林    60~35      -5~-20     70~220    中下       20     20        5 
+houquan.c:          猴拳       云龙      55~35      -5~-25     80~230    中下       20     20        5 
+jinyu-quan.c:       金玉拳     大理      55~35      -5~-25     90~240    中下       20     20        5 
+yujiamu-quan.c:     金刚瑜迦母拳 雪山寺  55~30     -10~-25     100~250    中下       20     20        5 
+luohan-quan.c:      少林罗汉拳 少林      50~30     -10~-30    110~260    中         15     15        10
+luohan-cuff.c:      少林罗汉拳 南少林    50~30     -10~-30    120~270    中         15     15        10
+baihua-cuoquan.c:   百花错拳   红花      50~25     -15~-30    130~280    中        15     15        10
+zhentian-cuff.c:    震天拳法   昆仑      45~25     -15~-35    140~290    中         15     15        10
+hamaquan.c:         蛤蟆拳     白驼      45~25     -15~-35    150~300    中        15     15        10
+poyu-quan.c:        破玉拳     华山      45~20     -20~-35    160~310    中        15     15        10
+chunyang-quan.c:    纯阳拳     全真      40~20     -20~-40    200~400   较强        10     10       15
+qishang-quan.c:     七伤拳     明教      30~5       -5~-50    250~450    较强       10     10       15
+jingang-cuff.c:     大金刚拳   南少林    40~20     -20~-40    210~410    强         5     5       20
+jingang-quan.c:     大金刚拳   少林      40~15     -15~-40    200~400    强         5     5       20
+"dagger":       "短兵",   1    family    dodge      parry      force     damage learn practice success
+shigu-bifa.c:       石鼓打穴笔法 黑木崖  20~0      -30~-40    250~300    400~600   10     10       15
+"finger":       "指法",  13    family    dodge      parry      force     damage learn practice success
+mohe-finger.c:      摩诃指     南少林    60~40       0~-20    100~200    中下     20     20        5 
+duoluoye-finger.c:  多罗叶指   南少林    60~40       0~-20    150~250    中下     20     20        5 
+nianhua-finger.c:   拈花指     南少林    60~35      -5~-20    200~300    中       15     15        10
+nianhua-zhi.c:      拈花指     少林      55~35      -5~-25    220~320    中       15     15        10
+xuantian-zhi.c:     玄天无情指 黑木崖    55~35      -5~-25    240~340    中        15     15        10
+tiangang-zhi.c:     天罡指穴法 峨嵋      55~30     -10~-25    260~360    中        15     15        10
+canhe-finger.c:     参合指     慕容      50~30     -10~-30    280~380    中        15     15        10
+tanzhi-shentong.c   弹指神通   桃花      50~30     -10~-30    300~400    中        15     15        10
+yizhi-chan.c:       一指禅     少林      50~25     -15~-30    360~460    较强     10     10       15
+one-finger.c:       一指禅     南少林    45~25     -15~-35    330~430    较强     10     10       15
+sun-finger.c:       一阳指     大理      45~25     -15~-35    390~490    较强     10     10       15
+wuxiang-finger.c:   无相劫指   南少林    30~10     -25~-45    450~550    强        5     5       20
+six-finger.c:       六脉神剑   大理      25~5      -30~-50    500~600    强        5     5       20
+"hammer":       "锤法",  1     family    dodge      parry      force     damage  learn practice success
+riyue-lun.c:        日月轮法   雪山寺    40~20     -20~-40    300~400   100~250   10     10       15
+"hand":         "手法", 18      family    dodge      parry      force     damage  learn practice success
+sanshou.c:          岳家散手   公共       0~-30     60~30      50~150    中下      20     20        5
+fengyun-hand.c:     风云手     南少林     0~-30     60~30      60~160    中下      20     20        5
+fengyun-shou.c:     风云手     少林       0~-35     55~30      70~170    中下      20     20        5
+suohou-hand.c:      锁喉擒拿手 丐帮      -5~-35     55~25      80~180    中下       20     20        5
+chuanyun-shou.c:    穿云手     恒山      -5~-35     55~25      90~190    中        15     15        10
+dashou-yin.c:       大手印     雪山寺    -5~-40     50~25     100~200    中         15     15        10
+luoyan-hand.c:      大落雁手   衡山     -10~-40     50~20     110~210    中         15     15        10
+poyun-hand.c:       破云手     嵩山     -10~-40     50~20     120~220    中         15     15        10
+shexing-diaoshou.c: 蛇行刁手   白驼     -10~-45     45~20     130~230    中          15     15        10
+yunlong-shou.c:     云龙手     云龙     -15~-45     45~15     140~240    较强      10     10       15
+qianye-hand.c:      如来千叶手 南少林   -15~-45     45~15     150~250    较强      10     10       15
+qianye-shou.c:      如来千叶手 少林     -15~-50     40~15     160~260    较强      10     10       15
+lanhua-shou.c:      兰花拂穴手 桃花     -20~-50     40~10     170~270    较强      10     10       15
+benlei-shou.c:      奔雷手     红花会   -20~-50     40~10     180~280    较强      10     10       15
+qianzhu-wandushou.c:千蛛万毒手 五毒     -20~-55     35~10     190~290    强         5     5       20
+shenlong-bashi.c:   神龙八式   神龙     -25~-55     35~5      200~300    强          5     5       20
+boluomi-hand.c:     波罗蜜手   南少林   -25~-60     30~0      210~310    强          5     5       20
+zhemei-shou.c:      天山折梅手 逍遥     -30~-60     30~0      220~320    强          5     5       20
+"hook":         "钩法",  1      family    dodge      parry      force     damage  learn practice success
+wudu-goufa.c:       五毒钩法   五毒     -20~-50     50~20     100~200   200~400    5     5       20
+"leg":          "腿法", 3       family    dodge      parry      force     damage  learn practice success
+shaolin-leg.c:      少林弹腿   南少林     0~-30     30~0      100~200    中下       20     20        5
+chuanyun-leg.c:     穿云腿法   昆仑     -10~-40     25~-5     200~300    中        15     15        10
+ruying-leg.c:       如影随形腿 南少林   -20~-50     20~-10    300~400    较强       10     10       15
+"spear":        "枪法",  2      family    dodge      parry      force     damage  learn practice success
+zhongping-qiang.c:  中平枪法   公共     -10~-30     20~0      200~300   200~350   15     15        10
+tiexue-qiang.c:     铁血枪法   铁掌     -30~-60     10~-10    300~400   300~500   5     5       20
+"staff":        "杖法",  10    family    dodge      parry      force     damage  learn practice success
+pudu-staff.c:       普渡杖法   南少林     0~-30     60~30     200~250   100~200  20     20        5
+pudu-zhang.c:       普渡杖法   少林       0~-35     55~30     200~250   150~250  20     20        5
+wuchang-staff.c:    无常杖法   南少林    -5~-35     55~20     250~300   160~260  15     15        10
+wuchang-zhang.c:    无常杖法   少林      -5~-40     50~20     250~300   170~270  15     15        10
+tianshan-zhang.c:   天山杖法   星宿     -10~-40     50~15     250~300   280~280  10     10       15
+xiangmo-chu.c:      金刚降魔杵 雪山寺   -10~-45     45~15     250~300   190~290   10     10       15
+fengmo-staff.c:     疯魔杖法   丐帮     -15~-45     45~10     250~300   200~300  10     10       15
+duanjia-sword.c:(剑杖)段家剑法 大理     -15~-50     40~10     300~400   200~300   10     10       15
+lingshe-zhangfa.c:  灵蛇杖法   白驼     -20~-50     40~5      300~400   210~300  5     5       20
+shedao-qigong.c:(剑杖)蛇岛奇功 神龙     -30~-60     30~0      300~400   220~300   5     5       20
+"stick":        "棒法",   1    family    dodge      parry      force     damage learn practice success
+dagou-bang.c:       打狗棒法   丐帮     -30~-60     10~-10    300~400   100~300   10     10       15
+"strike":       "掌法",        family    dodge      parry      force     damage learn practice success
+huashan-zhangfa.c:  华山掌法   华山(未用)
+weituo-strike.c:    韦陀掌     南少林    10~-10     60~30     100~200    中下  20     20        5
+jinshe-zhang.c:     金蛇游身掌 公共      10~-10     60~30     100~210    中下  20     20        5
+heisha-zhang.c:    黑砂掌     红花       10~-15     55~30     110~210    中下  20     20        5
+hanbing-mianzhang.c:寒冰绵掌   明教       5~-15     55~25     110~220    中下  20     20        5
+zhusha-zhang.c:    朱砂掌     铁掌        5~-15     55~25     120~220    中下  20     20        5
+wudu-zhang.c:       五毒掌     五毒       5~-20     50~25     120~230    中下  20     20        5
+wuluo-zhang.c:      五罗轻烟掌 大理       0~-20     50~20     130~230    中下  20     20        5
+snow-strike.c:      飞雪映梅掌 凌霄       0~-20     50~20     130~240    中下  20     20        5
+sanhua-strike.c:    散花掌     南少林     0~-25     45~20     140~240    中  15     15        10
+sanhua-zhang.c:     散花掌     少林      -5~-25     45~15     140~250    中  15     15        10
+hunyuan-zhang.c:    混元掌     华山      -5~-25     45~15     150~250    中  15     15        10
+kuaihuo-strike.c:   快活十三掌 泰山      -5~-30     40~15     150~260    中  15     15        10
+kunlun-strike.c:    昆仑掌     昆仑     -10~-30     40~10     160~260    中  15     15        10
+liuyang-zhang.c:    天山六阳掌 逍遥     -10~-30     40~10     160~270    中  15     15        10
+songyang-strike.c:  大嵩阳掌   嵩山     -10~-35     35~10     170~270    中  15     15        10
+tianchang-zhang.c:  天长掌法   恒山     -15~-35     35~5      170~280    中  15     15        10
+xingyi-strike.c:    星移掌     慕容     -15~-35     35~5      180~280    中  15     15        10
+jinding-zhang.c:    金顶绵掌   峨嵋     -15~-40     30~5      180~290    较强 10     10       15
+haotian-zhang.c:    昊天掌     全真     -20~-40     30~0      190~290    较强 10     10       15
+hamagong.c:(内功&掌)蛤蟆功     白驼     -20~-40     30~0      190~300    较强  10     10       15
+huagu-mianzhang.c:  化骨绵掌   神龙     -20~-45     25~0      200~300    较强  10     10       15
+cuixin-strike.c:    摧心掌     青城     -25~-45     25~-5     200~310    较强  10     10       15
+chousui-zhang.c:    抽髓掌     星宿     -25~-45     25~-5     210~310    较强  10     10       15
+jingang-strike.c:   大金刚神掌 南少林   -25~-50     20~-5     210~320    较强  10     10       15
+banruo-zhang.c:     般若掌     少林     -30~-50     20~-10    250~350    强  5     5       20
+boruo-strike.c:     般若掌     南少林   -30~-50     20~-10    260~360    强  5     5       20
+tiezhang-zhangfa:   铁掌掌法   铁掌     -30~-55     15~-10    300~450    强  5     5       20
+huoyan-dao.c:       火焰刀     雪山     -35~-55     15~-15    310~460    强  5     5       20
+xianglong-zhang.c:  降龙十八掌 丐帮     -40~-60     10~-20    350~550    强  5     5       20
+"sword":        "剑法",        family    dodge      parry      force     damage  learn practice success
+huashan-jian.c:     华山剑法   华山(未用)
+huashan-jianfa.c:   华山剑法   华山(未用)
+bixie-sword.c:      假辟邪剑法 公共      60~40      30~10      50~100    10~100  20     20        5
+tangshi-jian.c:     唐诗剑法   公共      60~40      30~10      50~100    10~110  20     20        5
+chongling-sword.c:  冲灵剑法   华山      60~35      25~10      50~100    20~110  20     20        5
+wudang-jian.c:      武当剑法   武当      55~35      25~5       50~100    20~120  20     20        5
+jinshe-jian.c:      金蛇剑法   公共      55~35      25~5       50~100    30~120  20     20        5
+qingmang-sword.c:   青蟒剑法   五毒      55~30      20~5       50~100    30~130  20     20        5
+mingwang-jian.c:    不动明王剑 雪山      50~30      20~0       50~100    40~130  20     20        5
+damo-jian.c:        达摩剑     少林      50~30      20~0      100~150    40~140  20     20        5
+damo-sword.c:       达摩剑     南少林    50~25      15~0      100~150    50~140 20     20        5
+luoying-shenjian.c: 落英神剑   桃花      45~25      15~-5     100~150    50~150 15     15        10
+taiji-jian.c:       太极剑法   武当      45~25      15~-5     100~150    60~150  15     15        10
+liangyi-sword.c:    正两仪剑法 昆仑      45~20      10~-5     100~150    60~160  15     15        10
+shenghuo-ling.c:    圣火令法   明教      40~20      10~-10    100~150    70~160  15     15        10
+wuyun-jian.c:       五韵七弦剑 黑木崖    40~20      10~-10    100~150    70~170  15     15        10
+yunu-sword.c:       玉女金针十三剑 华山  40~15       5~-10    100~150    80~170   15     15        10
+kuangfeng-jian.c:   狂风剑法   华山      25~15       5~-15   100~150     80~180  15     15        10
+changge-jian.c:     长歌剑法   公共      35~15       5~-15   100~150     90~190  15     15        10
+songfeng-jian.c:    松风剑法   青城      35~10       0~-20   100~150    100~190  15     15        10
+hengshan-jian.c:    恒山剑法   恒山      30~10       0~-20   100~150    100~200  10     10       15
+hengshan-sword.c:   衡山剑法   衡山      30~5       -5~-20   100~150    110~200  10     10       15
+taishan-sword.c:    泰山剑法   泰山      30~5       -5~-25   100~150    110~210   10     10       15
+songshan-sword.c:   嵩山剑法   嵩山      25~5       -5~-25   100~150    120~210  10     10       15
+huashan-sword.c:    华山剑法   华山      25~0      -10~-25   100~150    120~220  10     10       15
+murong-sword.c:     慕容剑法   慕容      20~0      -10~-30   100~150    130~220  10     10       15
+fumo-jian.c:        伏魔剑     少林      20~0      -10~-30   150~200    130~230  10     10       15
+fumo-sword.c:       伏魔剑     南少林    20~-5     -15~-30   150~200    140~230  10     10       15
+luohua-jian.c:      落花十三剑 红花      15~-5     -15~-35   150~200    140~240  10     10       15
+duanjia-sword.c:(剑杖)段家剑   大理      15~-5     -15~-35   150~200    150~240  10     10       15
+shedao-qigong.c:(剑杖)蛇岛奇功 神龙      15~-10    -20~-35   150~200    150~250  5     5       20
+xunlei-sword.c:     迅雷十六剑 昆仑      10~-10    -20~-40   150~200    160~250  5     5       20
+huifeng-jian.c:     回风拂柳剑 峨嵋      10~-10    -20~-40   150~200    160~260  5     5       20
+xueshan-sword.c:    雪山剑法   凌霄      10~-15    -25~-40   150~200    170~260  5     5       20
+tianyu-qijian.c:    天羽奇剑   逍遥       5~-15    -25~-45   150~200    170~270  5     5       20
+yunlong-jian.c:     云龙剑法   云龙       5~-15    -25~-45   150~200    180~270  5     5       20
+yunv-jian.c:        玉女素心剑 古墓       5~-20    -30~-45   150~200    180~280  5     5       20
+quanzhen-jian.c:    全真剑法   全真       0~-20    -30~-50   150~200    190~280   5     5       20
+yuxiao-jian.c:      玉箫剑法   桃花       0~-20    -30~-50   150~200    190~290  5     5       20
+liangyi-jian.c:     两仪剑法   武当       0~-25    -35~-50   150~200    200~300  5     5       20
+lonely-sword.c:     独孤九剑   华山      -5~-25    -35~-55   150~230    220~320  5     5       20
+iron-sword.c:       玄铁剑法   古墓      -5~-25    -35~-55   150~230    240~340  5     5       20
+bixie-jian.c:       辟邪剑法   公共     -20~-40    -40~-60   150~230    250~400  5     5       20
+"unarmed":      "拳脚",        family    dodge      parry      force     damage  learn practice success
+huashan-ken.c:      华山拳法   华山      60~40       0~-20    100~200    中下      20     20        5
+wudang-quan.c:      武当拳     武当      55~35      -5~-25    120~220    中下      20     20        5
+taixuan-gong.c:     太玄功     公共      50~30     -10~-30    160~260    中        15     15        10
+shenzhao-jing.c:    神照经     公共      45~25     -10~-30    140~240    中       15     15        10
+meinv-quan.c:       美女拳     古墓      40~20     -15~-35    200~300    中       15     15        10
+wuying-leg.c:       无影腿     青城      35~15     -20~-40    250~350    中       15     15        10
+anran-zhang.c:      黯然销魂掌 古墓      30~10     -25~-45    300~400    较强       10     10       15
+xuanfeng-leg.c:     旋风扫叶腿 桃花      25~5      -30~-45    350~450    较强      10     10       15
+kongming-quan.c:    空明拳     公共      20~5      -30~-50    400~500    强        5     5       20
+taiji-quan.c:       太极拳     武当      20~0      -30~-50    500~600    强         5     5       20
+"whip":         "鞭法",        family    dodge      parry      force     damage   learn practice success
+jiujie-whip.c:      九节鞭法   南少林   -30~-40     20~10      50~100    50~150    20     20        5
+feifeng-whip.c:     飞凤鞭法   大理     -35~-40     20~5       50~100   100~200    20     20        5
+qiufeng-chenfa.c:   秋风尘法   古墓     -35~-45     15~5       50~100   150~250    15     15        10
+wudu-whip.c:        五毒鞭法   五毒     -40~-45     15~0      100~150   200~350    15     15        10
+xiangmo-whip.c:     降魔鞭     南少林   -40~-50     10~0      100~150   250~400    10     10       15
+yunlong-bian.c:     云龙鞭     云龙     -45~-50     10~-5     100~150   300~450   10     10       15
+duanyun-bian.c:     断云鞭法   全真     -45~-55      0~-20    150~200   350~500      5     5       20
+riyue-bian.c:       日月鞭法   少林     -50~-60     -5~-25    150~200   400~550    5     5       20
+riyue-whip.c:       日月鞭法   南少林   -45~-60     -5~-30    150~200   400~550    5     5       20
+"throwing":     "暗器",        family    dodge      parry      force     damage
+xuanyuan-arrow.c:   轩辕箭     神箭八骑                          
+hanxing-bada.c:  寒星八打 公共(应改为红花会)
+jinshe-zhui.c:      金蛇锥法   公共
+mantian-huayu.c:    满天花雨   昆仑
+wuying-feidao.c:    无影飞刀   红花
+duoming-jinhua.c:   夺鸣金花   明教
+feixing-shu.c:      飞星术     星宿
+"force":        "内功",        family    dodge      parry      force     damage
+huiyan-xinfa.c      回雁心法   衡山
+hanbing-zhenqi.c    寒冰真气   嵩山
+yunlong-shengong.c  云龙神功   云龙
+bahuang-gong        八荒六合唯我独尊功 逍遥
+baiyun-xinfa.c      白云心法   恒山
+beiming-shengong.c  北冥神功   逍遥
+bibo-shengong.c     碧波神功   桃花
+binxue-xinfa.c      冰雪心法   凌霄
+guiyuan-tunafa.c    归元吐纳法 铁掌
+honghua-shengong.c  红花神功   红花会
+huashan-neigong.c   华山内功   华山
+huntian-qigong.c    混天气功   丐帮
+hunyuan-yiqi.c      混元一气功 少林
+jiuyang-shengong.c  九阳神功   明教
+kuihua-xinfa.c      葵花心法   黑木崖
+kurong-changong.c   枯荣禅功   大理
+longxiang.c         龙象般若功 雪山寺
+panshi-shengong.c   磐石神功   泰山
+qingming-xuangong.c 青冥玄功   青城
+shenlong-xinfa.c    神龙心法   神龙
+shenyuan-gong.c     神元功     慕容
+taiji-shengong.c    太极神功   武当
+xiaowuxiang.c       小无相功   雪山寺
+xixing-dafa.c       吸星大法   黑木崖
+xuantian-wuji.c     玄天无极功 昆仑
+yunv-xinfa.c        玉女心法   古墓
+zhanzhuang-gong.c   站桩功     南少林
+zixia-shengong.c    紫霞神功   华山
+hamagong.c          蛤蟆功     白驼
+taixuan-gong.c      太玄功     公共
+yijinjing.c         易筋经     南北少林
+wudu-shengong.c     五毒神功   五毒
+xiantian-qigong.c   先天气功   全真
+linji-zhuang.c      临济十二庄 峨嵋
+huagong-dafa.c      化功大法   星宿
+shenzhao-jing.c     神照经     公共
+
+"dodge":        "轻功",        family    power_point
+lingboweibu.c       凌波微步   逍遥      1.5
+bixie-jian.c        辟邪剑法   公共      1.5
+qiankun-danuoyi.c   乾坤大挪移 明教      1.5
+tiyunzong.c         梯云纵     武当      1.4
+qingfu-shenfa.c     青蝠身法   明教      1.4
+shenxing-baibian.c  神行百变   公共      1.4 (要限制条件)
+yunv-shenfa.c       玉女身法   古墓      1.4
+shaolin-shenfa.c    少林身法   少林      1.3
+yiwei-dujiang.c     一苇渡江   南少林    1.3
+zhutian-bu.c        诸天化身步 峨嵋      1.3
+jinyan-gong.c       金雁功     全真      1.3 (要限制条件)
+kunlun-shenfa.c     昆仑身法   昆仑      1.3
+chuanhua.c          穿花绕树   青城      1.3
+shuishangpiao.c     铁掌水上飘 铁掌      1.3
+xiaoyaoyou.c        逍遥游     丐帮      1.2
+feiyan-huixiang.c   飞燕回翔   华山      1.2
+huashan-shenfa.c    华山身法   华山      1.2
+fengshenjue.c       风神诀     泰山      1.2
+fuguanglueying.c    浮光掠影   嵩山      1.2
+qiuyan-nanhui.c     秋雁南回   衡山      1.2
+lingxu-bu.c         凌虚步     恒山      1.2
+taxue-wuhen.c       踏雪无痕   昆仑      1.1
+yueying-wubu.c      月影舞步   逍遥      1.1
+anying-fuxiang.c    暗影浮香   桃花      1.1
+youlong-shenfa.c    游龙身法   红花      1.1
+tiannan-step.c      天南步法   大理      1.1
+yunlong-shenfa.c    云龙身法   云龙      1.1
+snowstep.c          梅雪飘香步 凌霄      1.1
+shenkong-xing.c     身空行     雪山寺    1.1
+piaoyibu.c          飘逸步法   黑木崖    1.1
+yanling-shenfa.c    燕灵身法   慕容      1.1
+zhaixinggong.c      摘星功     星宿      1.0
+feixing-shu.c       飞星术     星宿      1.0
+chanchu-bufa.c      蟾蜍步法   白驼      1.0
+wudu-yanluobu.c     五毒烟萝步 五毒      1.0
+yixingbu.c          意形步法   神龙      1.0
+taixuan-gong.c      太玄功     公共      1.0
+yanfly.c            燕双飞     公共      1.0
+
+
+
+参考资料：
+                      内  功  排  名
+
+taixuan-force   太玄神功,
+
+ninesun-force   九阳神功,       ninemoon-force  九阴神功,
+wuxiang-force   小无相功,       yijing-force    易筋神功,
+bahuang-force   八荒六合唯我独尊,
+
+taiji-force     太极神功,       yunu-force      玉女心经,
+
+dazhoutian-force大周天功,       luoying-force   落英心法,
+gumu-force      枯木神功,       hama-force      蛤蟆功,
+lotus-force     莲花心法,       emei-force      峨眉心法,
+tianmo-force    天魔大法,       hunyuan-force   混元神功,
+beiming-force   北冥神功,       huagong-force   化功大法,
+xixing-force    吸星大法,       mizong-force    密宗心法,
+huangting-force 黄庭心法,       douzhuan-force  斗转星移,
+wuxiang-force   小无相功,       yijing-force    易筋神功,
+bahuang-force   八荒六合唯我独尊,
+
+taiji-force     太极神功,       yunu-force      玉女心经,
+
+dazhoutian-force大周天功,       luoying-force   落英心法,
+gumu-force      枯木神功,       hama-force      蛤蟆功,
+lotus-force     莲花心法,       emei-force      峨眉心法,
+tianmo-force    天魔大法,       hunyuan-force   混元神功,
+beiming-force   北冥神功,       huagong-force   化功大法,
+xixing-force    吸星大法,       mizong-force    密宗心法,
+huangting-force 黄庭心法,       douzhuan-force  斗转星移,
+shenlong-force  神龙心法,       guangming-force 大光明心法,
+kunlun-force    昆仑心法,       zixia-force     紫霞神功,
+songshan-force  嵩山心法,       taishan-force   泰山心法,
+hengshan-force  衡山心法,       heng-shan-force 恒山心法,
+
+By Micro Liang (97-07-01)
+
+
+
+                      轻  功  排  名
+
+kuihua-steps    葵花神功,       lingbo-steps    凌波微步,
+
+ghostbat-steps  鬼蝠身法,
+
+tiyun-steps     梯云纵,         feixian-steps   天外飞仙步,
+
+jinyan-steps    金雁神功,       yingfeng-steps  迎风拂柳步,
+xuanfeng-steps  旋风扫叶步,     qiankun-steps   乾坤步法,
+zhaixing-steps  摘星步法,       piaomiao-steps  飘渺身法,
+
+yiwei-steps     一苇渡江,       shenxing-steps  神行百变,
+taxue-steps     踏雪无痕,
+
+baituo-steps    白驼步法,       xiaoyao-steps   逍遥游,
+shenlong-steps  神龙步法,       lieyan-steps    烈焰身法,
+kunlun-steps    昆仑步法,       emei-steps      峨眉步法,
+songshan-steps  嵩山身法,       taishan-steps   泰山身法,
+hengshan-steps  衡山身法,       heng-shan-steps 恒山身法,
+
+By Micro Liang (97-07-01)
+
+
+
+                       内  功  的  运  用
+
+内功运用总表：
+
+regenerate 提振精力    recover    调匀气息    refresh    恢复心神
+transfer   传输内力    heal       运功疗伤    lifeheal   为人疗伤
+powerup    提升战力    powerfade  压制杀气    protect    护体真气
+roar       狮 子 吼    erase      化力之术    hitback    转力之术
+absorb_force    吸取内力          absorb_max_force       吸取真元
+lostmind   摄魂大法
+
+内功运用详表：
+
+force           基本内功：      提振精力、调匀气息、恢复心神、传输内力、
+                                运功疗伤
+
+taixuan-force   太玄神功：      提升战力（无杀气，无延时）、  为人疗伤、
+                                护体真气、狮 子 吼
+ninemoon-force  九阴神功：      提升战力、压制杀气、为人疗伤、护体真气、
+                                摄魂大法
+ninesun-force   九阳神功：      提升战力、为人疗伤、护体真气
+wuxiang-force   小无相功：      提升战力、压制杀气、护体真气
+yijing-force    易筋神功：      提升战力、为人疗伤、护体真气、狮 子 吼
+bahuang-force   八荒六合唯我独尊：        提升战力（无杀气）、护体真气、
+                                永褒青春
+taiji-force     太极神功：      为人疗伤、护体真气
+yunu-force      玉女心经：      为人疗伤、护体真气
+nuoyi-force     乾坤大挪移：    化力之术、转力之术
+dazhoutian-force大周天功：      为人疗伤、护体真气
+luoying-force   落英心法：      为人疗伤、护体真气
+gumu-force      枯木神功：      为人疗伤、护体真气
+hama-force      蛤蟆功：        护体真气
+lotus-force     莲花心法：      为人疗伤、护体真气、摄魂大法
+emei-force      峨眉心法：      为人疗伤、护体真气
+tianmo-force    天魔大法：      护体真气、狮 子 吼
+hunyuan-force   混元神功：      为人疗伤、护体真气、狮 子 吼
+beiming-force   北冥神功：      为人疗伤、护体真气、吸取内力、吸取真元
+huagong-force   化功大法：      护体真气、吸取内力、吸取真元
+xixing-force    吸星大法：      护体真气、吸取内力、吸取真元
+mizong-force    密宗心法：      为人疗伤、护体真气
+huangting-force 黄庭心法：      为人疗伤、护体真气
+douzhuan-force  斗转星移：      护体真气、转力之术
+shenlong-force  神龙心法：      护体真气
+guangming-force 大光明心法：    护体真气
+kunlun-force    昆仑心法：      为人疗伤、护体真气
+zixia-force     紫霞神功：      为人疗伤、护体真气
+songshan-force  嵩山心法：      为人疗伤
+taishan-force   泰山心法：      为人疗伤
+hengshan-force  衡山心法：      为人疗伤
+heng-shan-force 恒山心法：      为人疗伤
+
+By Micro Liang (97-07-01)
+
+
+
+                      轻  功  绝  技
+
+kuihua-steps    葵花神功：      quick_attack（快速攻击）
+ghostbat-steps  鬼蝠身法：      quick_attack（快速攻击）
+
+By Micro Liang (97-07-01)
+
+
+                      兵  器  排  名
+
+pixie-sword     辟邪剑法,
+
+dugu-sword      独孤九剑,       dugu-jianqi     独孤剑气,
+
+liumai-sword    六脉神剑,       taiji-sword     太极剑法,
+
+xuantie-sword   玄铁剑法,       yunu-sword      玉女素心剑,
+ruyixiaoyao-sword 如意逍遥剑,   dagou-stick     打狗棒法,
+
+damo-sword      达摩剑法,       fumo-whip       伏魔鞭法,
+qixing-sword    七星剑法,       yuxiao-sword    玉萧剑法,
+baituo-staff    白驼杖法,       tianmo-sword    天魔剑法,
+tianmo-blade    天魔刀法,
+
+xiaoyao-sword   逍遥剑法,       ruyi-blade      如意刀法,
+xingsu-staff    星宿杖法,       guangming-sword 光明剑法,
+yitian-sword    倚天剑法,       tulong-blade    屠龙刀法,
+murong-sword    慕蓉剑法,       wulun-dafa      五轮大法,
+shenlong-blade  神龙刀法,       tianshi-ling    天师伏魔铃,
+
+jinhua-staff    金花杖法,       tianlong-staff  天龙杖法,
+huashan-sword   华山剑法,       liangyi-sword   两仪剑法,
+fanliangyi-blade反两仪刀法,     fumo-sword      伏魔剑法,
+puti-blade      菩提刀法,       weituo-stick    韦陀棍法,
+wuchang-fork    无常叉法,       zui-gun         少林醉棍,
+jingang-hammer  金刚锤法,       songshan-sword  嵩山剑法,
+taishan-sword   泰山剑法,       hengshan-sword  衡山剑法,
+heng-shan-sword 恒山剑法,
+
+By Micro Liang (97-07-01)
+ 
+
+
+                      拳  脚  排  名
+
+xianglong-zhang 降龙十八掌,
+
+liumai-sword    六脉神剑,       liuyang-zhang   天山六阳掌,
+zhemei-shou     天山折梅手,     xiaohun-zhang   黯然销魂掌,
+
+taiji-quan      太极拳法,       rulai-zhang     如来神掌,
+kongming-quan   空明拳,
+
+damo-quan       达摩拳,         qixing-zhang    七星掌法,
+luoying-zhang   落英神剑掌,     yiyang-zhi      一阳指,
+lingshe-zhang   灵蛇掌法,       tianxian-zhang  天仙散花掌,
+qishier-yi      七十二般绝艺,   tianmo-zhang    天魔掌法,
+
+qishang-quan    七伤拳,         tianying-zhuza  天鹰神爪,
+xingsu-zhang    星宿毒掌,       chuanyun-zhang  飘雪穿云掌,
+tianshi-zhang   天师掌法,       murong-zhang    慕蓉掌法,
+hanbing-zhang   寒冰神掌,       bosi-guaizhao   波斯怪招,
+dashouyin       大手印,
+
+nianhua-zhi     拈花指,         yizhi-chan      一指禅,
+longzhua-gong   龙爪功,         yingzhua-gong   鹰爪功,
+fengyun-shou    风云手,         qianye-shou     如来千叶手,
+luohan-quan     罗汉神拳,       sanhua-zhang    散花掌,
+banruo-zhang    般若掌,         guangming-zhang 光明掌法,
+kunlun-zhang    昆仑掌法,       huashan-zhang   华山掌法,
+xiaobao-juehuo  小宝绝活,       songshan-zhang  嵩山掌法,
+taishan-zhang   泰山掌法,       hengshan-zhang  衡山掌法,
+heng-shan-zhang 恒山掌法,
+
+By Micro Liang (97-07-01)
+
+
+----------------------------------------------------------------------
+飞狐外传：
+   四象步
+   八卦游身掌
+
+雪山飞狐：
+   胡家刀法
+   苗家剑法
+   虎爪擒拿手
+
+连城诀：
+   神照功
+   无影神拳
+   连城剑法
+   唐诗剑法
+   躺尸剑法
+   血刀刀法
+
+天龙八部：
+  逍遥派：
+   凌波微步
+   天山六阳掌
+   逍遥折梅手
+   生死符
+   白虹掌力
+   北冥神功
+   小无相功
+   八荒六合唯我独尊功
+  星宿派：
+   化功大法
+   腐尸爪
+  姑苏慕容：
+   斗转星移
+   叁合指
+  大理段氏：
+   六脉神剑
+   五罗轻烟掌
+  其它：
+   火焰刀
+   易筋经
+   蛇鹤八打
+   鳄嘴剪法
+   无量剑法
+   排云掌
+   太祖长拳
+   锁喉擒拿手
+   缠丝擒拿手
+   天灵千裂
+   周公剑
+   五虎断门刀
+   六合刀
+   八卦刀法
+   渔叟钩法
+   柴刀十八路
+   回风拂柳刀
+
+射??英雄传：
+  东邪：
+   落英剑法
+   落英神剑掌
+   旋风扫叶腿
+   狂风绝技
+   玉萧剑法
+   弹指神通
+   兰花拂穴手
+   碧海潮笙曲
+  西毒：
+   蛤蟆功
+   灵蛇拳
+  南帝：
+   一阳指
+  北丐：
+   降龙十八掌
+   打狗棒法
+   逍遥游
+  中神通：
+   先天功
+   全真剑法
+   金雁功
+   天殍北斗阵
+  其它：
+   左右互博之术
+   空明拳
+   金龙鞭法
+   越女剑
+   疯魔杖法
+   南山掌
+   九阴真经：
+    九阴白骨爪
+    摧心掌
+    易筋锻骨篇
+    蛇行狸翻
+    飞絮劲
+   空明拳
+   铁掌
+
+白马啸西风：
+
+鹿鼎记：
+   凝血神爪
+   美人三式：
+    贵妃回眸
+    小怜横陈
+    飞燕回翔
+   英雄三式
+   太极刀
+
+笑傲江湖：
+   嵩山剑法
+   大嵩阳手
+   衡山剑法
+   百变千幻衡山云雾十三式
+   恒山剑法
+   万花剑法
+   泰山剑法
+   泰山十八盘
+   华山剑法
+   玉女金针十三式
+   冲灵剑法
+   狂风刀法
+   独孤九剑
+   吸星大法
+   葵花宝典
+   辟邪剑法
+   七弦无形剑
+   玄天指
+   泼墨剑法
+
+书剑恩仇录：
+   百花错拳
+   三分剑法
+   柔云剑法
+   黑沙掌
+
+神??侠侣：
+  古墓派：
+   五毒神掌
+   冰魄银针
+   玉蜂针
+   玉女心经
+   玉女剑法
+   玉女素心剑
+  其它：
+   黯然销魂掌
+   龙象般若功
+   寒阴箭
+   泥鳅功
+   阴阳倒乱刃法
+   九阴神爪
+   鱼网阵
+
+侠客行：
+   雪山剑法
+   金乌刀法
+   上清观剑法
+   梅花拳
+   丁家擒拿手
+   金龙鞭法
+   五行六合拳
+   碧针清掌
+   炎炎功
+   罗汉伏魔神功
+   侠客岛石壁武功
+
+倚天屠龙记：
+  明教：
+   乾坤大挪移
+   圣火令武功
+  波斯明教：
+   阴风刀
+   透骨钉
+  崆峒派：
+   七伤拳
+  华山派：
+   鹰蛇生死博
+   反两仪刀法
+  昆仑派：
+   两仪剑法
+   无声无息
+  峨萆派：
+   四象掌
+   飘雪穿云掌
+   截手九式
+  武当：
+   纯阳无极功
+   神门十三剑
+   绕指柔剑
+   梯云踪
+   太极拳
+   太极剑
+   虎爪绝户手
+   武当长拳
+   真武七截阵
+  少林：
+    龙爪手
+  其它：
+   寒冰绵掌
+   鹰爪擒拿手
+   九阳神功
+   幻阴指
+   混元功
+   玄冥神掌
+   千蛛万毒手
+
+碧血剑：
+   神行百变
+   破玉拳
+   伏虎掌
+   长拳十段锦
+   混元掌
+   金蛇剑法
+   金蛇游身掌
+   金蛇锥法
+
+鸳鸯刀：
+   夫妇刀法
+
+
+

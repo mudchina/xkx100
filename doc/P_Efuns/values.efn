@@ -1,0 +1,29 @@
+
+	values(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		values() - 从一个映射变量的 (关键字, 内容值) 
+			   ( (keys, values) )  中, 以数组传回内容值.
+	函数语法:
+		mixed *values( mapping m );
+
+		混合 *values( 映射 m );
+	函数用法:
+		values() 传回一个数组. 此数组为映射变量 m  中,  
+		(关键字, 内容值) 的所有内容值元素.
+
+		□例:
+
+			mapping m;
+
+			m = (["hp" : 35, "sp" : 42, "mass" : 100]);
+
+		则
+
+			values(m) == ({35, 42, 100})
+
+		请注意, 传回的内容值数组, 其元素顺序与关键字的顺序一样.
+	参考函数:
+		keys(3), each(3)
+	手册翻译:
+		Phoebus@ZH	97.jul.25.		(Writen 5/23/97)

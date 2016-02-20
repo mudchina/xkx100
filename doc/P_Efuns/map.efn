@@ -1,0 +1,27 @@
+
+	map(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		map() - 经过一个函数修改一个映射变量、数组或字符串.
+	函数语法:
+		mapping map( mapping | mixed* | string x, string fun, 
+			object ob, mixed extra, ... );
+		mapping map( mapping | mixed* | string x, function f,
+			mixed extra, ... );
+
+		映射 map( 映射 或 混合* 或 字符串 x, 字符串 fun,
+			对象 ob, 混合 extra, ... );
+
+		映射 map( 映射 或 混合* 或 字符串 x, 函数指针 f,
+			混合 extra, ... );
+	函数用法:
+		如果第一个参数是一个映射变量, map() 的做法与 
+		map_mapping() 相似. 如果是一个数组, map() 的做法就像
+		map_array() . 如果是一个字符串, 则 map()  会把字符串中的
+		每一个字符 (character)  以整数的类型传入函数, 而且以
+		函数传回的非零整数值替换原来的字符.
+	参考函数:
+		filter_array(3), sort_array(3), map_array(3), 
+		map_mapping(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.18.		(Writen 5/23/97)

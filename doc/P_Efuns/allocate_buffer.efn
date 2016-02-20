@@ -1,0 +1,21 @@
+
+	allocate_buffer(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		allocate_buffer() - 配置内存给一个缓冲区 (buffer).
+	函数语法:
+		buffer allocate_buffer( int size );
+
+		缓冲区 allocate_buffer( 整数 size );
+	函数用法:
+		配置一块有 size 个元素 (elements) 的缓冲区. 元素
+		的数目必须大於 0, 而且不可超过系统设定的上限值 
+		(通常是 10000 左右) . 所有数组元素的初始值
+		(initialized) 均为 0.
+	参考函数:
+		bufferp(3), read_buffer(3), write_buffer(3), sizeof(3),
+		to_int(3)
+	原著:
+		Truilkan
+	手册翻译:
+		Phoebus@ZH	1997.Aug.12.		(Writen 5/23/97)

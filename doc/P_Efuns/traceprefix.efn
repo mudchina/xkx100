@@ -1,0 +1,16 @@
+
+	traceprefix(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		traceprefix() - 决定该追踪哪一个对象.
+	函数语法:
+		string traceprefix( string prefix );
+
+		字符串 traceprefix( 字符串 prefix );
+	函数用法:
+		如果设定追踪前置 (traceprefix) (不能为 0), 只有在遇到
+		追踪前置所指名的对象才进行追踪.
+	参考函数:
+		trace(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.25.		(Writen 5/23/97)

@@ -1,0 +1,32 @@
+
+	break_string(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		break_string() - 以固定的间隔打断一个字符串 (string).
+	函数语法:
+		string break_string( string str | int foobar, int len,
+			void | int indent | string indent );
+
+		字符串 break_string( 字符串 str 或 整数 foobar, 整数 len,
+			无参数 或 整数 indent 或 字符串 indent );
+	函数用法:
+		break_string() 以每 len  个字符 (character) 打断一个
+		没有换行的字符串, 并在每一个打断的片段後面换行. 如果 
+		indent 是一个字符串, 那每个片段在换行之前会加上 indent.
+
+		如果第一个参数 (argument) 是一个整数, break_string()
+		就只会传回 0.
+	错误:
+		break_string()  的处理完全与字符串内容无关. 这个函数不
+		会认得句号 '.' 和换行 '\n' .  所以这个函数执行的结果, 
+		不见得会如你预期的一样. 我的经验是: 您应该在句号之後
+		加一个空白, 也别加上 '\n' , 然後再使用 break_string()
+		. 您也许不会喜欢用 break_string() 提供的格式. 在往後
+		MudOS 的版本里, 也许会让 break_string() 认得 '\n' .
+	参考函数:
+		implode(3), explode(3), sprintf(3)
+	作者:
+		Cygnus
+	手册翻译:
+		Phoebus@ZH	1997.Aug.16.		(Writen 5/23/97)
+

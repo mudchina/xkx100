@@ -1,0 +1,19 @@
+
+	cache_stats(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		cache_stats() - 报告驱动程序 (driver) 和 Mud 函数库
+				(mudlib) 的变化统计数据.
+	函数语法:
+		void cache_stats( void );
+
+		无传回值 cache_stats( void );
+	函数用法:
+		这个函数只有在编译驱动程序时, options.h 中有定义 
+		CACHE_STATS 才有用. 这个超越函数 (emulated function
+		, 即 efun)  会列出 call_other() 的快取 (cache)
+		效率.
+	参考函数:
+		opcprof(3), mud_status(3)
+	手册翻译:
+		Phoebus@ZH	1997.Aug.16.		(Writen 5/23/97)

@@ -1,0 +1,17 @@
+
+	random(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		random() - 传回一个「假性」乱数 (pseudo-random number).
+	函数语法:
+		int random( int n );
+
+		整数 random( 整数 n );
+	函数用法:
+		传回一个□围从 0  到 n - 1  的假性乱数.
+	手册翻译:
+		Phoebus@ZH	97.May.2.		(Writen 5/23/97)
+	译按:
+		真正的乱数必须先给予一个种子数 (seed number), 
+		再藉由查乱数表取得一组乱数, 而这些乱数值均介於
+		0 与 1  之间.

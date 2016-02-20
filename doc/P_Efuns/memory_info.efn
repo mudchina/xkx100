@@ -1,0 +1,18 @@
+
+	memory_info(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		memory_info - 取得一个对象或整个 mud 的内存使用量.
+	函数语法:
+		varargs int memory_info( object ob );
+
+		不定参数 整数 memory_info( 对象 ob );
+	函数用法:
+		如果指定 ob,  则 memory_info()  传回 ob 正在使用的记忆
+		体量. 如果没有指定参数, 则传回整个 mud  的内存使用量.
+		请注意, 整个 mud  的内存使用量不是实际上系统配置给
+		mud 的内存量.
+	参考函数:
+		debug_info(3), malloc_status(3), mud_status(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.15.		(Writen 5/23/97)

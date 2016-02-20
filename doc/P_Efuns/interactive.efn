@@ -1,0 +1,17 @@
+
+	interactive(3)		LP MudOSv21c7		(7 Jul 1996)
+	函数名称:
+		interactive() - 判断一个指定的对象是否为「可互动的」
+				(interactive)
+	函数语法:
+		int interactive( object ob );
+
+		整数 interactive( 对象 ob );
+	函数用法:
+		如果 ob 是一个可互动的玩家, 就传回非零值. 如果玩家
+		断线 (link dead), 则传回 0.
+	参考函数:
+		query_ip_number(3), query_ip_name(3), enable_commands(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.14.		(Writen 5/23/97)
+

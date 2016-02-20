@@ -1,0 +1,36 @@
+
+	unique_array(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		unique_array() - 将一个对象数组分组.
+	函数语法:
+		mixed unique_array( object *obarr, string separator,
+			void | mixed skip ); 
+		mixed unique_array( mixed *arr, function f,
+			void | mixed skip );
+
+		混合 unique_array( 对象 *obarr, 字符串 separator,
+			无参数 或 混合 skip );
+		混合 unique_array( 混合 *arr, 函数指针 f,
+			无参数 或 混合 skip );
+	函数用法:
+		unique_array()  将函数 separator  传回同值的对象分为
+		同组. obarr 只能是一个对象数组, 其他数据类型则予以忽
+		视. 在 obarr  中的每一个对象各会调用函数 separator  
+		一次. 如果指定参数 skip,  会先过滤掉符合 skip 的对象
+		元素.
+		而第二种语法的作用略有不同. 数组中的每一个元素将依次
+		作为 f  的参数, 元素仍依照 f  的传回值分类. 但是数组
+		不限定为对象类型.
+	传回值:
+		传回的值是含有多个数组的数组, 格式如下:
+
+		({
+			({第一组:1, 第一组:2, .... 第一组:N }),
+			({第二组:1, 第二组:2, .... 第二组:N }),
+			({第三组:1, 第三组:2, .... 第三组:N }),
+				....
+			({第 N 组:1, 第 N 组:2, .... 第 M 组:N }),
+		})
+	手册翻译:
+		Phoebus@ZH	97.jul.25.		(Writen 5/23/97)

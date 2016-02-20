@@ -1,0 +1,17 @@
+
+	pointerp(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		pointerp() -  判断指定的变量是否为一个数组 (array).
+	函数语法:
+		int pointerp( mixed arg );
+
+		整数 pointerp( 混合 arg );
+	函数用法:
+		如果 arg 是一个数组, 则传回 1.
+	参考函数:
+		mapp(3), stringp(3), objectp(3), intp(3), bufferp(3),
+		floatp(3), functionp(3), nullp(3), undefinedp(3), 
+		errorp(3), arrayp(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.24.		(Writen 5/23/97)

@@ -1,0 +1,33 @@
+
+	function_profile(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		function_profile() -  对一个对象取得函数的侧写 
+				      (profiling) 信息.
+	函数语法:
+		mixed *function_profile( object ob );
+
+		混合 *function_profile( 对象 ob );
+	函数用法:
+		传回对 ob 或是 this_object() (如果不予指定 ob ) 的
+		函数侧写信息. 这个函数只有在驱动程序 (driver) 编译
+		时有定义 PROFILE_FUNCTIONS 才有效.
+	传回值:
+		此函数传回一个映射变量的数组, 每一个在 ob 中的函数
+		传回的映射格式如下:
+
+		([ "name"     : 函数的名称,
+		   "calls"    : 调用的次数,
+
+		/* cpu 时间以微秒 (microsecond) 为单位 */
+                    "self"     : cpu_time_spent_in self,
+                    "children" : cpu_time_spent_in_children
+                 ])
+
+		此处的用途与 CPU 时脉有关, 虽然单位为微秒
+		(microseconds), 但实际上的精确度要差得多.
+	参考函数:
+		rusage(3), time_expression(3), opcprof(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.26.		(Writen 5/23/97)
+

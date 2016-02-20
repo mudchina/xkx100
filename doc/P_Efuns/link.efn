@@ -1,0 +1,23 @@
+
+	link(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		link() - 将一个文件与另一个文件链结
+	函数语法:
+		void link( string original, string reference );
+
+		无传回值 link( 字符串 original, 字符串 reference );
+	函数用法:
+		将文件 reference  链结到文件 original . link()  会使
+		主宰对象 (master object)  调用 valid_link( original,
+		reference). 如果 valid_link() 传回 0, 则这次的 link()
+		失败. 如果 valid_link() 传回 1, 则还要由 rename() 以
+		同样的参数 (argument) 调用, 判断是否成功. 如果 rename()
+		, valid_link()  均传回 1, 则 link() 成功.
+
+		注意: link() 函数创造一个强链结 (hard link) , 而非符
+		号链结 (symbolic link).
+	参考函数:
+		rm(3), rmdir(3), rename(3), mkdir(3), cp(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.18.		(Writen 5/23/97)

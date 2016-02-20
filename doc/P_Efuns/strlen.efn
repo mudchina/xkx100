@@ -1,0 +1,15 @@
+
+	strlen(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		strlen() - 传回一个字符串的长度.
+	函数语法:
+		int strlen( string str );
+
+		整数 strlen( 字符串 str );
+	函数用法:
+		strlen() 传回一个字符串中有多少个字符 (characters).
+	参考函数:
+		sizeof(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.23.		(Writen 5/23/97)

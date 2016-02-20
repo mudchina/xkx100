@@ -1,0 +1,38 @@
+
+	rusage(3)		MudOS	v21c2		(7 Jul 1996)
+
+	函数名称:
+		rusage() - 报告以系统调用 (system call) getrusage() 收集的
+			   信息.
+	函数语法:
+		mapping rusage( void );
+
+		映射 rusage( 无参数 );
+	函数用法:
+		这个超越函数 (efun) 透过 getrusage() 的系统调用收集信息.
+		请参阅 getrusage() 线上手册的说明以查询收集的信息种类. 
+		有的系统没有 getrusage(), 但是有 times() 的系统调用. 在
+		这种系统里只有 utime 和 stime 两项数据. 报告的时间单位
+		是微秒 (millisecond). 
+
+		以下是 rusage() 的□例:
+
+		void
+		create()
+		{
+			mapping info;
+
+			info = rusage();
+			write("使用者时间 = " + info["utime"] + "微秒\n");
+			write("系统时间 = " + info["stime"] + "微秒\n");
+		}
+
+		可以使用的项目有:
+
+		utime, stime, maxrss, ixrss, idrss, isrss, minflt,
+		majflt, nswap, inblock, oublock, msgsnd, msgrcv,
+		nsignals, nvcsw, nivcsw.
+	参考函数:
+		time_expression(3), function_profile(3), time(3), uptime(3)
+	手册翻译:
+		Phoebus@ZH	97.Jun.2.		(Writen 5/23/97)

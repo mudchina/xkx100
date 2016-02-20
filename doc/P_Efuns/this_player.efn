@@ -1,0 +1,19 @@
+
+	this_player(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数语法:
+		object this_player( int flag );
+
+		对象 this_player( 整数 flag );
+	函数用法:
+		传回调用此函数的玩家 (player) 对象. 请注意, 即使是从
+		玩家对象内部使用 this_player(), 其传回值也可能与
+		this_object() 不同. 如果以 this_player(1) 调用, 则传
+		回调用此函数的可互动 (interactive)  对象. 
+		this_player(1)  的传回值在某些情形下与 this_player()
+		不同. 例如: 系统管理者 (admin)  使用 command()  强制
+		一名玩家做出一些动作时.
+	参考函数:
+		this_object(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.25.		(Writen 5/23/97)

@@ -1,0 +1,28 @@
+
+	throw(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		throw() - 强制一个对象产生错误.
+	函数语法:
+		void throw(mixed);
+
+		无传回值 throw( 混合 );
+	函数用法:
+		throw()  可以用於强制一个对象产生错误. 当 throw()  和
+		catch()  两者一起使用时, 让程序设计者可以设计发生编译
+		时段错误时 (runtime error) 显示何种错误讯息. 当使用
+		throw() 时, 应一起使用 catch() 函数. 
+		以下为典型的函数用法:
+
+		string err;
+		int rc;
+
+		err = catch(rc = ob->move(dest));
+		if (err) {
+			throw("move.c: ob->move(dest): " + err + "\n");
+			return;
+		}
+	参考函数:
+		catch(3), error(3), error_handler(4)
+	手册翻译:
+		Phoebus@ZH	97.Jul.25.		(Writen 5/23/97)

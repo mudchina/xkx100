@@ -1,0 +1,17 @@
+
+	clone_object(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		clone_object() - 载入一个对象的复制对象
+	函数语法:
+		object clone_object( string name );
+
+		对象 clone_object( 字符串 name );
+	函数用法:
+		根据定义的 name 载入一个新的对象 (object) , 并且给此
+		对象一个独有的名称. 此函数传回一个新的对象. 一个对象
+		的 environment()  传回值如果不为 0  的话, 就无法复制.
+	参考函数:
+		destruct(3), move_object(3), new(3)
+	手册翻译:
+		Phoebus@ZH	97.Jan.27.		(Writen 5/23/97)

@@ -1,0 +1,19 @@
+
+	next_inventory(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		next_inventory() - 传回同一对象内容物 (inventory)中的 
+		下一个对象.
+	函数语法:
+		object next_inventory( object ob );
+
+		对象 next_inventory( 对象 ob );
+	函数用法:
+		传回在对象的内容物中, 在 ob 之後的下一个对象.
+
+		警告: 如果对象 ob 被 move_object()  移走, 则 
+		next_inventory() 会从新的内容物列表中传回对象.
+	参考函数:
+		first_inventory(3), all_inventory(3), deep_inventory(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.24.		(Writen 5/23/97)

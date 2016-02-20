@@ -1,0 +1,31 @@
+
+	keys(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		keys() - 传回在一个映射变量 (mapping) 中所有
+			 (关键字, 内容值) (即 (key, value) ) 数据
+			 关键字的数组 (array).
+	函数语法:
+		mixed *keys( mapping m );
+
+		混合 *keys( 映射 m );
+	函数语法:
+		keys()  照顺序传回一个在映射变量 m  中 (关键字, 内容值) 
+		之所有关键字的数组.
+
+		□例:
+
+		mapping m;
+		m = (["hp" : 35, "sp" : 42, "mass" : 100]);
+
+		则:
+
+		keys(m) == ({"hp", "sp", "mass"})
+
+		请注意: 关键字不会排序. 而与 values() 传回内容值的
+			原来顺序相同.
+
+	函数用法:
+		values(3), each(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.18.		(Writen 5/23/97)

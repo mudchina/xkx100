@@ -1,0 +1,28 @@
+
+	shutdown(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		shutdown() - 关闭 mud 驱动程序 (driver).
+	函数语法:
+		void shutdown( int how );
+
+		无传回值 shutdown( 整数 how );
+	函数用法:
+		这个函数可以关闭驱动程序. 比起因为程序错误、文件损毁、
+		驱动程序被 kill 或其他原因导致驱动程序发生严重问题而关闭
+		, 用 shutdown 算是正常控制驱动程序关闭的方式. 参数 how
+		指定驱动程序要送给 exit() 函数的整数值. 惯例上, 当 how
+		为 -1 时, 则一起关闭重新启动驱动程序的 script . 所以
+		reboot (重新启动 mud) 这个指令应该使用 shutdown(), 而
+		halt 指令 (停止 mud 执行) 应该使用 shutdown(-1) .  如果
+		您想要藉由上述的方式控制 mud 关闭的方式, 您应该在 script
+		中检查传回值.
+		shutdown() 显然是一个需要安全把关的函数. 在 simul_efun
+		中加上 shutdown()  并使用 exec(), 这样可以对执行 
+		shutdown() 作适当的检查. 请确定在主控对象 (master.c)
+		中也要设定 valid_override(4) 以防止 efun::shutdown()
+		这种方式逃过检查.
+	参考函数:
+		crash(4), slow_shutdown(4)
+	手册翻译:
+		Phoebus@ZH	97. Jul.23.		(Writen 5/23/97)

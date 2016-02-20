@@ -1,0 +1,20 @@
+
+	set_reset(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		set_reset - 更改一个对象距离下次重新设定 (reset) 的时间.
+	函数语法:
+		varargs void set_reset( object ob, int time );
+
+		不定参数 无传回值 set_reset( 对象 ob, 整数 time );
+	函数用法:
+		设定对象 ob 距离下次重新设定的时间为整数 time 指定的秒数.
+		如果不指定 time, 则使用驱动程序普通设定的公式.
+
+		公式:
+			reset time = current_time + reset_time / 2 +
+			random(reset_time / 2)
+	参考函数:
+		reset(4)
+	手册翻译:
+		Phoebus@ZH	97.Jul.21.		(Writen 5/23/97)

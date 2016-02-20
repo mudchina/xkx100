@@ -1,0 +1,26 @@
+
+	filter_mapping(3)  	LP MudOSv21c7  		(7 Jul 1996)
+
+	函数名称:
+		filter_mapping() - 以一个函数为准, 移除一个映射变量
+				   中的某些元素.
+	函数语法:
+		mapping filter_mapping( mapping map, string fun, 
+			object ob, mixed extra, ... );
+		mapping map_mapping( mapping map, function f, 
+			mixed extra, ... );
+
+		映射 filter_mapping( 映射 map, 字符串 fun,
+			对象 ob, 混合 extra, ... );
+		映射 filter_mapping( 映射 map, 函数 f,
+			混合 extra, ... );
+	函数用法:
+		传回一个与 map  有相同关键字 (keys) 的映射变量, 而
+		map 中的所有项目 (item) 都会经过 ob->fun()  或 f
+		的过滤. 每一个在 map  中的元素都会调用 fun  或 f
+		一次, 而函数 fun 或 f 的传回值会放在每一个项目之後.
+	参数:
+		filter_array(3), sort_array(3), map(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)
+

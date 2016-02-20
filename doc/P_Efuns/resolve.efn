@@ -1,0 +1,28 @@
+
+	resolve(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		resolve() - 转换一个网际网路地址 (internat address) 为
+			    网域名称 (domain name), 反之亦然..
+	函数语法:
+		int resolve( string address, string callback_func );
+
+		整数 resolve( 字符串 address, 字符串 callback_func );
+	函数用法:
+		resolve() 会转换像 "140.128.136.11" 形式的 address  成为
+		"bbs.csmc.edu.tw" 这种形式的网域名字. 或是把
+		"bbs.csmc.edu.tw" 这种形式的 address  转换成 
+		"140.128.136.11"  形式的地址. 转换成功後, 会调用目前对象
+		的 callback_func. callback_func 的格式为:
+
+		void callback(string address, string resolved, int key);
+
+		无传回值 callback( 字符串 address, 字符串 resolved, 整数 key );
+
+		key 是 resolve() 的传回值. address 是转换後的地址或网域.
+		如果转换失败, 则会传回 0.
+	参考函数:
+		query_host_name(3), socket_address(3), query_ip_name(3),
+		query_ip_number(3)
+	手册翻译:
+		Phoebus@ZH	97.Jun.2.		(Writen 5/23/97)

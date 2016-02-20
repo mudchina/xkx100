@@ -1,0 +1,18 @@
+
+	destruct(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		destruct() - 从游戏中销毁一个对象.
+	函数语法:
+		void destruct( object ob );
+
+		无传回值 destruct( 对象 ob );
+	函数用法:
+		完全摧毁对象 ob. 在调用 destruct() 之後, 会清除所有
+		的全域变量 (global variables), 只剩下区域变量和参数.
+		如果 ob 是 this_object() , 此函数仍会执行, 但是最好
+		立刻传回一个数值.
+	参考函数:
+		clone_object(3), new(3), destruct_env_of(4), move(4)
+	手册翻译:
+		Phoebus@ZH	97.Feb.04.		(Writen 5/23/97)

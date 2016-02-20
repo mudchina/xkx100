@@ -1,0 +1,38 @@
+
+	map_delete(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		map_delete() -  以关键字从一个映射变量中删除一对
+				 (关键字, 内容值) ((key, value)).
+	函数语法:
+		void map_delete( mapping m, mixed element );
+
+		无传回值 map_delete( 映射 m, 混合 element );
+	函数用法:
+		map_delete 删除映射变量中关键字符合 element  的
+		(关键字, 内容值) .
+
+		□例:
+
+		mapping names;
+
+		names = ([]);
+		names["truilkan"] = "john";
+		names["wayfarer"] = "erik";
+		names["jacques"] = "dwayne";
+
+		则:
+
+		map_delete(names,"truilkan");
+
+		会使映射变量 names 成为:
+
+		(["wayfarer" : "erik", "jacques" : "dwayne"])
+
+		在 map_delete( names, "truilkan" ) 之後, key(names)
+		就不会包含 truilkan (除非後来又用 ("truilkan", *)
+		把 truilkan 加回映射变量里)
+	参考函数:
+		allocate_mapping(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.18.		(Writen 5/23/97)

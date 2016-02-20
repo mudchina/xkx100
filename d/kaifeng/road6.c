@@ -1,0 +1,24 @@
+// /kaifeng/road6.c
+// Last modified by winder 2003.10.20
+
+inherit ROOM;
+
+void create()
+{
+	set("short", "御街");
+	set("long", @LONG
+御街是横贯开封的主要街道，也是皇上出巡的要道。街道两边店铺
+亭台不断，小贩叫卖，行人来往，车马喧哗，一派繁华，东面一座高的
+铁塔就是有名的开封铁塔。
+LONG);
+	set("no_clean_up", 0);
+	set("exits", ([
+		"east"  : __DIR__"jieyin",
+		"south" : __DIR__"road5",
+		"north" : __DIR__"xuandemen",
+	]));
+	set("outdoors", "kaifeng");
+
+	setup();
+	replace_program(ROOM);
+}

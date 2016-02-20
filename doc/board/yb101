@@ -1,0 +1,41 @@
+猫儿点评xkx100    总论--详析 combatd.c   神算猫-zhouyi(Tue Jan 26)
+----------------------------------------------------------------------
+    在xkx一类的mud中,打muren 的方法是十分重要的。fandog 的post
+里说“要让muren 比自己强一点”是非常正确的，但强多少，如何强，这
+里面的技巧就很多了。
+    exp 和pot 是怎么来的？
+    muren 是一个很特别的npc,你fight muren 时，muren 就复制你的状
+态，这时假设fight muren 时你的攻击力是FAP,躲闪力是FDP；hit muren
+时你的攻击力是HAP,躲闪力是HDP：
+    假如FAP>HDP,那么，你每躲开muren 一次攻击，
+                        可能（exp add 1,dodge add 1）
+                      你每格开muren 一次攻击，
+                        可能（exp add 1,parry add 1）
+    假如FDP>HAP,那么，你每命中muren 一次，可能 (exp add 1,pot add 1)
+
+    上面都有“可能”，这个可能性和你的悟性有关，悟性越高，可能性越大，
+还和（精/max精）有关，所以大家hit muren 时一定要保持自己的精=max精。
+
+    AP 和 DP是如何计算的？
+    设一个人的攻击有效技能等级为lvl,臂力为str,身法为dex,经验为exp,
+              dodge有效技能等级为lvl2
+
+    那么if lvl=0
+           ap=exp/2
+        else
+           ap=[exp+(lvl^3)/3]*str/30
+        endif
+
+        if lvl2=0
+           dp=exp/2
+        else
+          dp=[exp+(lvl2^3)/3]*dex/30
+        endif
+
+    至此，打muren 时如何fight muren 大家就有个定量的计算公式了，至于
+戏法人人会变，各有巧妙不同，如何选天赋，练适合fight muren的技能大家就
+见仁见智了。这里还有很多小的关键的窍门，大家很快就能领悟到的。hehe
+
+    只要细心调节muren 的状态，天赋也合适，3k exp 就可以去打muren,
+打5个muren 应不小于100 exp 10 pot/min.
+

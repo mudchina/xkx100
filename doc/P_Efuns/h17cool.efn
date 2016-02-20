@@ -1,0 +1,18 @@
+Wife Version 1.0
+　　去年我的一位朋友将GirlFriend 6.0版升级到了Wife 1.0版，发现这耗费了大量内存，几乎没有给其它应用程序留下一点系统资源。现在他还注意到Wife 1.0正在孕育着 Child-Processes，这将消耗更多有价值的资源。显然Wife 1.0是一个单任务、单通道、独占系统全部资源的程序。
+　　在产品的宣传手册和文档中并没有指出这种特别的现象，尽管其它用户曾经提醒他根据应用程序的自然规律这是可以预料的。不仅如此，Wife 1.0自动安装成在系统初始化时自动运行，以监视所有其它的应用程序的运行。他发现诸如PokerNight 10.3， BeerBash 2.5和PubNight 7.0等等应用程序再也不能运行了，一选择系统便挂起（尽管这些程序以前都工作得很好）。
+　　在安装时，Wife 1.0自动装载了用户所不期望的Plug-Ins，例如Mother-In-Law 55.8（岳母）和Brother-In-Law Beta发行版（内弟）。结果是系统性能日渐下降。
+　　他希望能在即将发行的Wife 2.0版中看到以下功能：
+　“Don't remind me again”（别再提醒我）按钮
+　Minimise（最小化）按钮
+　Install Shield（安装保护）功能，在安装Wife 2.0时可以选择随时Uninstall而不损失任何缓存和系统资源。
+　在混杂(premiscuous)模式下运行网络驱动器的选择，这样可以使系统硬件探查功能发挥更大的作用。
+　　我自己则尽量避免由过分亲密的Girlfriend 2.0而和Wife 1.0相关联所引起的所有的令人头痛的事。但我还是遇到很多问题。
+　　显然，你不能在Girlfriend 1.0上安装Girlfriend 2.0。你必须先Uninstall Girlfriend 1.0。其它用户说这是我应该注意的一个永远的bug。显然，Girlfriend的不同版本在共享I/O端口上是相互冲突的。当然如果你的时间片分配得合理的话，暂时也不会引起很大的不兼容性。
+ 　更糟的是，Girlfriend 1.0的Uninstall程序工作得不是很好，在系统中常常会留下意想不到的程序运行轨迹。
+　　另一个令人烦恼的问题是Girlfriend的各个版本不停地弹出有关升级到Wife 1.0的好处的消息。
+***** BUG WARNING *****
+Wife 1.0有一个未公开的bug。如果你想安装Mistress 1.1（情人），Wife 1.0将在自己 Uninstall前删除硬盘中所有的MS-Money文件。这样Mistress 1.1会声明系统资源不足，拒绝安装。
+***** BUG WORK-AROUNDS *****
+　　为避免上述Bug，建议在不同的系统上安装Mistress 1.1，并不再使用任何文件传输软件，比如Laplink 6.0。同时注意一些相似的带有病毒的共享软件可能感染Wife 1.0。
+　　另一个解决方法是，使用匿名访问UseNet provider来运行Mistress 1.1。再次提醒，谨防意外从UseNet上下载的病毒。

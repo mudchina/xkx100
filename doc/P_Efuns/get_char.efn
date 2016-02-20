@@ -1,0 +1,42 @@
+
+	get_char(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		get_char - 让之後输入的字符送往一个指定的函数.
+	函数语法:
+		varargs void get_char( string | function fun,
+			int flag, ... );
+
+		不定参数 无传回值 get_char( 字符串 或 函数指针 fun,
+			整数 flag, ... );
+	函数用法:
+		让使用者之後输入的字符送往函数指针 fun, 作为 fun  的
+		参数. 驱动程序 (driver) 不会分析 (parse)  输入的字符.
+
+		请注意 get_char 是「非阻隔性」 (non-blocking) 的, 意
+		即调用 get_char 的对象不会暂停下来等待使用者的输入动
+		作. 调用 get_char 的对象会继续执行随後任何的程序叙述.
+		在收到输入的字符之前, 指定的函数 fun  不会被调用.
+
+		如果同一个对象调用 get_char() 超过一次以上, 就只有第
+		一次的调用有效.
+
+		如果可以选择的参数 flag 指定为非零值 (non-zero),  则
+		玩家输入的字符就不会回传 (echo) , 对象被窃听时也不会
+		回传 (用在输入密代码时很有用).
+
+		调用函数指针 fun  时, 使用者输入的字符会被当作是函数
+		的第一个参数 (变量类型为字符串) . 在 flag 之後指定的参
+		数会当作函数 fun  的其他参数.
+	问题:
+		get_char 在 MudOS 0.9 及更早的版本有一个非常明显的问
+		题. 在较差之远端终端机协定 (telnet negotiation) 的许
+		多作业系统上 (按: 所有市场上早期的主流品牌之工作站) 
+		, get_char  会使画面输出的结果变得非常奇怪. 除非这些
+		问题得到解决, 在一般的 mudlib 程序代码中, 还是建议别用
+		get_char  这个函数.  (目前只知道 get_char 对使用 NeXT
+		工作站连线的使用者不会有此问题. )
+	参考函数:
+		call_other(3), call_out(3), input_to(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.14.		(Writen 5/23/97)

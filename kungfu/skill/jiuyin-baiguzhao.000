@@ -1,0 +1,166 @@
+//jiuyin-baiguzhao.c 九阴白骨爪
+// Last Modified by sega on Mar. 10 2000
+
+#include <ansi.h>;
+#include <ansi.h>
+inherit SKILL;
+
+mapping *action = ({
+([	"action" : "$N左爪虚晃，右爪蓄力，一招「勾魂夺魄」直插向$n的$l",
+	"force" : 320,
+	"dodge" : -10,
+	"damage": 30,
+	"lvl"   : 0,
+	"skill_name" : "勾魂夺魄" ,
+	"damage_type" : "抓伤"
+]),
+([	"action" : "$N双手连环成爪，爪爪钩向$n，「九子连环」已向$n的$l抓出",
+	"force" : 380,
+	"dodge" :-10,
+	"damage": 45,
+	"lvl"   : 20,
+	"skill_name" : "九子连环" ,
+	"damage_type" : "抓伤"
+]),
+([	"action" : "$N身形围$n一转，使出「天罗地网」，$n的$l已完全笼罩在爪影下",
+	"force" : 400,
+	"dodge" :  5,
+	"damage": 55,
+	"lvl"   : 40,
+	"skill_name" : "天罗地网" ,
+	"damage_type" : "抓伤"
+]),
+([	"action" : "$N使一招「风卷残云」，双爪幻出满天爪影抓向$n全身",
+	"force" : 500,
+	"dodge" : 10,
+	"damage": 70,
+	"lvl"   : 60,
+	"skill_name" : "风卷残云" ,
+	"damage_type" : "抓伤"
+]),
+([	"action" : "$N吐气扬声，一招「唯我独尊」双爪奋力向$n天灵戳下",
+	"force" : 570,
+	"dodge" : 5,
+	"damage": 100,
+	"lvl"   : 100,
+	"skill_name" : "唯我独尊" ,
+	"damage_type" : "抓伤"
+]),
+});
+
+int valid_enable(string usage) { return usage=="claw" ||  usage=="parry"; }
+
+int valid_learn(object me)
+{
+	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
+		return notify_fail("练九阴白骨爪必须空手。\n");
+        if ((int)me->query("max_neili") < 200)
+		return notify_fail("你的内力太弱，无法练九阴白骨爪。\n");
+	return 1;
+}
+
+string query_skill_name(int level)
+{
+	int i;
+	for(i = sizeof(action); i > 0; i--)
+		if(level >= action[i-1]["lvl"])
+			return action[i-1]["skill_name"];
+}
+
+mapping query_action(object me, object weapon)
+{
+	int i, level;
+	level = (int) me->query_skill("jiuyin-baiguzhao",1);
+	for(i = sizeof(action); i > 0; i--)
+		if(level > action[i-1]["lvl"])
+            return action[NewRandom(i, 5, level/5)];
+
+}
+int practice_skill(object me)
+{
+	object* ob, obj;
+	int i,skill,damage;
+
+	skill = me->query_skill("jiuyin-baiguzhao",1);
+	if (me->query_temp("weapon") || me->query_temp("secondary_weapon"))
+		return notify_fail("你的必须空手才能练习。\n");
+	if ((int)me->query("qi") < 50)
+		return notify_fail("你的体力太低了。\n");
+	if ((int)me->query("neili") < 50)
+		return notify_fail("你的内力不够练九阴白骨爪。\n");
+	if( environment(me)->query("no_fight") )
+		return notify_fail("这里练功会误伤他人。\n");
+	if( environment(me)->query("sleep_room") )
+		return notify_fail("这里练功会打扰别人休息。\n");
+        if( !objectp(obj=present("corpse", environment(me))))
+		return notify_fail("练九阴白骨抓需有尸体。\n");
+        if( skill > 100 && me->query("shen") > -100)
+		return notify_fail("这种邪恶武功不是侠义道当练的。\n");
+	me->receive_damage("qi", 40);
+	me->add("neili", -40);
+	tell_room(environment(me), 
+HIB"只见"+me->query("name")+"左手上圈下钩、左旋右转，连变了七八般花样，蓦地里右手一伸，噗的
+一响，五根手指直插入地上尸体的脑门。随后五根手指"HIR"血淋淋"HIB"的提将起来。\n");
+/*
+	ob = all_inventory(environment(me));
+	for(i=0; i<sizeof(ob); i++)
+	{
+		if( !living(ob[i]) || ob[i]==me ) continue;
+		if(skill+random(skill/2)<(int)ob[i]->query("con")*2) continue;
+		damage = skill - ((int)ob[i]->query("neili") );
+		if( damage > 0 )
+		{
+			ob[i]->receive_damage("qi", damage );
+			if( (int)ob[i]->query("neili") < skill * 2 )
+				ob[i]->receive_wound("qi", damage);
+			tell_object(ob[i], HIB"忽然眼前黑影狂舞，你觉得眼前一阵阴气直袭面门，全身骤然感到要被撕裂开一样！\n"NOR);
+		}
+		if( userp(ob[i]) ) ob[i]->fight_ob(me);
+		else if( !ob[i]->is_killing(me) ) ob[i]->kill_ob(me);
+	}
+*/
+	return 1;
+}
+
+void skill_improved(object me)
+{
+	tell_object(me, HIR "你忽然从心底生出一股恶念：杀、杀、杀！我要杀绝天下人！\n" NOR );
+//	me->add("shen", -200);
+}
+
+mixed hit_ob(object me, object victim, int damage_bonus)
+{
+	if( damage_bonus < 100 ) return 0;
+
+	if( random(damage_bonus/2) > victim->query_str() ) {
+		victim->receive_wound("qi", (damage_bonus - 100) / 2 );
+		return HIR "你听到「喀啦」一声轻响，竟似是骨碎的声音！\n" NOR;
+	}
+}
+
+int help(object me)
+{
+	write(HIC"\n九阴白骨爪："NOR"\n");
+	write(@HELP
+
+    徽宗皇帝于政和年间，遍搜普天下道家之书，雕版印行，一共
+有五千四百八十一卷，称为‘万寿道藏’。皇帝委派刻书之人，叫
+做黄裳。他生怕这部大道藏刻错了字，皇帝发觉之后不免要杀他的
+头，因此上一卷一卷的细心校读。他居然便因此精通道学，更因此
+而悟得了武功中的高深道理。他无师自通，修习内功外功，竟成为
+一位武功大高手。他因此涉及江湖仇杀，退隐山林。不知不觉竟已
+过了四十多年，终于对每一个敌人所使过的招数，他都想通了破解
+的法子对付。于是出得山来，去报仇雪恨。不料那些敌人全都已不
+在人世了。黄裳心想：‘原来我也老了，可也没几年好活啦。’他
+花了这几十年心血，想出了包含普天下各家各派功夫的武学，过得
+几年，这番心血岂不是就此湮没？于是他将所想到的法门写成了上
+下两卷书，那就是《九阴真经》。九阴白骨爪就是依此书练成的霸
+道功夫。
+
+	学习要求：
+		内力200
+HELP
+	);
+	return 1;
+}
+

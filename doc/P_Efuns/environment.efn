@@ -1,0 +1,17 @@
+
+	environment(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		environment() - 传回一个对象所身处的环境.
+	函数语法:
+		object environment( object ob );
+
+		对象 environment( 对象 ob );
+	函数用法:
+		传回含有对象 ob 的环境对象. 如果没有指定参数 (argument)
+		, ob 预设为 this_object().
+	参考函数:
+		this_object(3)
+	手册翻译:
+		pock @ FF	97.Feb.12.		(Writen 5/23/97)
+

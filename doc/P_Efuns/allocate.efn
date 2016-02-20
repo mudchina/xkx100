@@ -1,0 +1,18 @@
+
+	allocate(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		allocate() - 配置内存给一个数组 (array).
+	函数语法:
+		mixed *allocate( int size );
+
+		混合 *allocate( 整数 size );
+	函数用法:
+		配置内存给一个有 size 个元素 (element)  的数组. 
+		元素的数目必须大於 0, 而且不可以超过系统设定的上限
+		(通常约 10000 左右) . 所有元素的初始值 (initialized)
+		均为 0.
+	参考函数:
+		sizeof(3), allocate_mapping(3)
+	手册翻译:
+		Phoebus@ZH	1997.Aug.12.		(Writen 5/23/97)

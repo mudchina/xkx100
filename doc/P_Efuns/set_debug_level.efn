@@ -1,0 +1,21 @@
+
+	set_debug_level(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		set_debug_level() - 设定驱动程序 (driver) 使用 debug()
+				    巨集 (macro) 时, 其除错 (debug) 的
+				    等级.
+	函数语法:
+		void set_debug_level( int level );
+
+		无传回值 set_debug_level( 整数 level );
+	函数用法:
+		这个超越函数 (emulated function, efun) 只有在编译驱动程序
+		时使用 -DDEBUG_MACRO 才有效. set_debug_macro() 让 mud  执
+		行时, 可以从内部控制除错讯息的量及种类.
+
+		请参考驱动程序原始代码中的 debug.h, 其中有详细的定义.
+	参考函数:
+		set_malloc_mask(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.20.		(Writen 5/23/97)

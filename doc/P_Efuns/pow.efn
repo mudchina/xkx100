@@ -1,0 +1,16 @@
+
+	pow(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		pow() - 计算一个浮点数 (float) 的乘方.
+	函数语法:
+		float pow( float x, float y );
+
+		浮点数 pow( 浮点数 x, 浮点数 y );
+	函数用法:
+		pow() 传回 x 的 y 次方值. 如果 x 是 0.0, y 必须为正数.
+		如果 x 为负数, y 必须为一个整数.
+	参考函数:
+		exp(3), log(3), sqrt(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.24.		(Writen 5/23/97)

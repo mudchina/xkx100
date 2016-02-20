@@ -1,0 +1,17 @@
+
+	remove_call_out(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		remove_call_out() - 取消一个延迟中的外部调用 (call_out).
+	函数语法:
+		int remove_call_out( string fun );
+
+		整数 remove_call_out( 字符串 fun );
+	函数用法:
+		取消目前这个对象延迟调用的外部调用函数 fun. 传回值就是
+		外部调用还剩下多少延迟时间. 如果函数 fun  已经没有延迟
+		的外部调用, 就传回 -1.
+	参考函数:
+		call_out(3), call_out_info(3).
+	手册翻译:
+		Phoebus@ZH	97.May.27.		(Writen 5/23/97)

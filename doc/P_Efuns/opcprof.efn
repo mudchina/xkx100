@@ -1,0 +1,19 @@
+
+	opcprof(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		opcprof() - 报告一些超越函数 (efuns) 被调用的频率.
+	函数语法:
+		void opcprof( string | void );
+
+		无传回值 opcprof( 字符串 或 无参数 );
+	函数用法:
+		这个函数印出每一个超越函数 (efunction)  和超越操作子
+		(eoperator) 的统计数字列表. 如果没有指定参数, 所有的
+		数据都会倾印到 /OPCPROF.efun 和 /OPCPROF.eoper  这两
+		个文件里. 如果指定了一个字符串, 则此字符串就用作倾印的档
+		案名称.
+	参考函数:
+		function_profile(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.24.		(Writen 5/23/97)

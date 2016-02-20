@@ -1,0 +1,21 @@
+
+	set_eval_limit(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		set_eval_limit() - 设定执行耗费时间 (evaluation cost) 
+				   的上限值.
+	函数语法:
+		void set_eval_limit( int );
+
+		无传回值 set_eval_limit( 整数 );
+	函数用法:
+		以一个非零值的参数指定给 set_eval_limit() 函数, 则设定
+		任何一个执行绪 (thread) 在发生错误之前所允许的最高执行
+		耗费时间. 如果参数为 0, 则将目前的执行耗费时间计数器
+		(counter) 归零, 并传回目前执行耗费时间的上限值. 
+		set_eval_limit(-1) 传回剩下的执行耗费时间.
+	参考函数:
+		catch(3), error(3), throw(3), error_handler(4),
+		eval_cost(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.21.		(Writen 5/23/97)

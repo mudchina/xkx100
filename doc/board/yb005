@@ -1,0 +1,72 @@
+自动画地图的机器人                            楚狂人(Thu Jul  2)
+----------------------------------------------------------------------
+
+　　在zmud中提供了一个内建的地图编辑器可以帮助我们绘制mud世界的地图，避
+免在神秘莫测的mud世界中迷途不归。
+
+　　为了使automapper可用，需要针对不同的mud对automapper进行一些简单的配
+置:
+
+1.打开automapper，选择菜单edit/preferences...；
+2.在strings的look command中填入look；
+3.在full parsing、brief parsing、look parsing三页中的exit pattern中
+  填入“的出口是”，exit types选 whole words，选中exit in prompt;
+4.在brief parsing页中将BRIEF Parsing order 框中的Room description删除；
+完成上述步骤，即可使用automapper了，如果需要名副其实的auto，这只是万
+里长征的第一步。
+
+二、修改speedwalking中的方向代码
+　　单击 zmud 顶行按钮Paths，选择Directions页，将其中的代码l改为m，别忘
+了改动与其相对应的代码h中的Reverse code:l。
+　　之所以需要修改方向代码，是因为在机器人运行时需要用的到这些代码中，l
+与 mud 命令 look 相同。
+三、触发
+　　在triggers中增加class map，该类中包括以下triggers：
+#TRIGGER {的出口是} {#wait 5000;0map} {map} 548
+#TRIGGER {^什么} {#gag} {map} 548
+#TRIGGER {闲聊} {#gag} {map} 548
+#TRIGGER {谣言} {#gag} {map} 548
+#TRIGGER {离开} {#gag} {map} 548
+　　上述triggers中，第一条的延时请根据网络速度自行调整，别名0map在下面会
+说明。其余几条的功能都是删除有可能对地图数据产生干扰的信息，通常可以用
+tune all off来避免大多数干扰，其他的干扰信息，例如：
+
+太阳已经高高地挂在东方的天空中
+xx走了过来...等等，请自行添加。
+
+四、添加aliases
+
+在zmud的中aliases中添加以下内容：
+
+#ALIAS start {pass=1;#t+ map}
+#ALIAS h {nw}
+#ALIAS j {ne}
+#ALIAS k {sw}
+#ALIAS m {se}
+#ALIAS 0map {mexit=%numwords(%roomexit(),|);
+#if (%null(%roomnote(,))) {%roomnote(,##)} {%roomnote(,%roomnote(,)#)};
+#math passn %len(%roomnote(,))/2;
+#if (@passn>@mexit) {%roomnote(,);
+#math passn @pass+1;
+#math pass @pass+1};
+#if (@passn>@mexit) {passn=1};
+#if (@pass>3) {#t- map;pass=1};
+#exec %word(%roomexit(),@passn,|)}
+
+　　至此，自动的地图绘制者正式完成，你只需打开地图编辑器，按下edit键，
+输入start;look就可以了。
+
+五、主意事项
+
+1.按照%roomexit()函数的输出顺序，最好从地图的西南角开始运行，如果从东
+  南角开始，可使变量passn=mexit-passn+1；
+2.对于较大区域（zone）的地图，本程序通常不能一次性完成整个地图的绘制工
+  作，当程序停止时，你可以移动到地图的边缘，再次start；
+3.当遇到有npc阻拦而无法进入的room时，程序会自动停止，此时需按下automapper
+  的off键，然后重新开始，以免造成混乱；
+4.zmud的automapper不能表示su,nd等方向的room，但用户可以将通过su、nd等方
+  向连接的区域（zone）用automapper提供的teleport功能连接起来，具体做法
+  请参考zmud的帮助文件。
+
+
+

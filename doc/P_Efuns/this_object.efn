@@ -1,0 +1,18 @@
+
+	this_object(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		this_object() - 传回调用此函数对象的对象指针. 
+				(object pointer).
+	函数语法:
+		object this_object( void );
+
+		对象 this_object( 无参数 );
+	函数用法:
+		传回这个对象的对象指针. 如果想调用同一个对象却非同一个
+		程序代码文件的函数时 (即调用所继承 (inherite) 对象的函数)
+		, 可用 this_object()  达到目的.
+	参考函数:
+		this_player(3), previous_object(3), origin(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.25.		(Writen 5/23/97)

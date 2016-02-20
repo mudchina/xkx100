@@ -1,0 +1,23 @@
+
+	catch(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		catch() - 找出函数运作的错误.
+	函数语法:
+		mixed catch( mixed expr );
+
+		混合 catch( 混合 expr );
+	函数用法:
+		处理 expr 式子. 如果没有出错就传回 0  , 如果有标准
+		错误, 则传回一个第一个字符是 * 的字符串.
+
+		函数 throw()  也可以用来马上传回任何非零值. catch()
+		实际上并不是真正的函数调用, 而是编译器 (compiler)
+		的一个指令.
+
+		catch() 有点耗费系统资源, 请您别到处用它. 把 catch()
+		放在出错时可能会摧毁系统结构 (consistency)  的地方.
+	参考函数:
+		error(3), throw(3), error_handler(4)
+	手册翻译:
+		Phoebus@ZH	1997.Aug.24.		(Writen 5/23/97)

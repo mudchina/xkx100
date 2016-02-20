@@ -1,0 +1,23 @@
+
+	command(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		command() - 如同该对象般, 执行一个命令.
+	函数语法:
+		int command( string str, object ob );
+
+		整数 command( 字符串 str, 对象 ob );
+	函数用法:
+		让对象 ob 执行 str  的命令. 如果不指定 ob , 则视同为
+		this_object().  请注意, 第二个参数可以使用的□围是由
+		该 MUD  的系统管理者所决定, 所以您经常无法使用您所指
+		定的对象动作. 如果该对象无法执行命令, 函数则会传回 0
+		值. 如果可以执行, 则会传回一个数字. 此数字是 LPC  执
+		行的该命令的「执行花费时间」 (evaluation cost). 数字
+		越大则此命令就越费时, 但是这个数字并不够精确, 其所使
+		用的量度 (scale)  是主观 (subjective) 而不可靠
+		(unreliable)  的.
+	参考函数:
+		add_action(3), enable_commands(3)
+	手册翻译:
+		Phoebus@ZH	97.Jan.27.		(Writen 5/23/97)

@@ -1,0 +1,17 @@
+
+	arrayp(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		arrayp() - 看一个给定的变量是否为数组 (array).
+	函数语法:
+		int arrayp( mixed arg );
+
+		整数 arrayp( 混合 arg );
+	函数用法:
+		如果 arg 是一个数组, 就传回 1.
+	参考函数:
+		mapp(3), stringp(3), objectp(3), intp(3), bufferp(3),
+		floatp(3), functionp(3), nullp(3), undefinedp(3), 
+		errorp(3), pointerp(3)
+	手册翻译:
+		Phoebus@ZH	1997.Aug.16.		(Writen 5/26/97)

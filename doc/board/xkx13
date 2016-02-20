@@ -1,0 +1,39 @@
+		武功技能命令
+                ============
+
+abandon|fangqi <技能名称>        放弃一项你所学过的技能。
+apprentice|bai [cancel]|<对象>   让你拜某人为师。
+enable|jifa [<技能种类> <技能名称> | none]
+enable|jifa ?                    指定所要用的技能，需指明技能种类和技能名称。
+enforce|jiali <使出几点内力伤敌>|none
+                                 指定每次击中敌人时，要发出几点内力伤敌。
+exercise|dazuo [<耗费「气」的量> 必须多于 10]
+                                 打坐，运气练功，将气转为内力。
+exert|yun <功能名称>[<施用对象>] 用内力进行一些特异功能。某一种内功的特异功
+                                 能之前，须先enable你要使用的内功。
+                          如 enable force 你的内功名。
+      主要功能名：yun regenerate 恢复精
+                  yun recover    恢复气
+                  yun transfer   传送内力
+                  yun heal       用内力替自己疗伤
+                  yun lifeheal   用内力替他人疗伤
+                  yun roar       用内力发出吼声，震昏同一房间的其他生物
+                  yun powerup    用内力短时间内将自己的战斗力提高一倍
+      后四种不一定每种内功都有。有些内功还有特别的功能。请见武功说明。
+expell|kaichu <某人>             让你开除不成才的弟子，
+jingzuo                          静坐。峨嵋弟子专用。
+learn|xue <某人> <技能>          你向别人请教有关某一种技能的疑难问题。
+respirate|tuna [<耗费「精」的量>]打坐修行，将你的精转变成精力。
+perfrom [<武功种类>.]<招式名称> [<施用对象>]
+                                 使用你所学的外功(拳脚、剑法、刀法....)
+                                 的一些特殊的攻击方式或招式（绝招）。
+persuade|quanjia                 劝架。峨嵋弟子专用。
+practice|lian <技能种类>         练习某个种类的技能，这个技能必须是经过
+                                 enable 的专业技能。
+prepare|bei [<拳术技能名称>|<拳术技能名称> | none]
+prepare|bei ?                    指定所要用的拳术技能。
+recruit|shou [cancel]|<对象>     让你收某人为弟子。
+skills|cha [<某人>]              让你查询所学过的技能。
+study|du <物品名称>              通过阅读秘笈或其他物品自学某些技巧。
+teach|jiao  <某人> <技能>        向你的伴侣解释有关某一种技能的疑难问题。
+

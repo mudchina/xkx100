@@ -1,0 +1,17 @@
+
+	getuid(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		getuid() - 传回一个对象的使用者识别名称 (user id, uid)
+	函数语法:
+		string getuid( object ob );
+
+		字符串 getuid( 对象 ob );
+	函数语法:
+		传回一个对象的使用者识别名称. 一个对象的 uid  由对象
+		创造当时的 creator_file() 函数决定.
+	参考函数:
+		seteuid(3), geteuid(3), export_uid(3), this_object(3),
+		previous_object(3), creator_file(4), valid_seteuid(4)
+	手册翻译:
+		Phoebus@ZH	97.Feb.14.		(Writen 5/23/97)

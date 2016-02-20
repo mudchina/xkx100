@@ -1,0 +1,22 @@
+
+	set_heart_beat(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		set_heart_beat() - 开始或取消一个对象的心跳 (heartbeat).
+	函数语法:
+		int set_heart_beat( int flag );
+
+		整数 set_heart_beat( 整数 flag );
+	函数用法:
+		参数指定为 0  取消对象的心跳.
+		参数指定为 1  会使这个对象每一次心跳调用 heart_beat() 
+		函数一次.  (每一次心跳的秒数通常是两秒钟, 但是 mud  的
+		管理者可以定义不同的秒数)
+		参数指定为大於 1  的数字, 则这个对象每隔多少次心跳才
+		调用一次 heart_beat().
+		需要注意的是, 您的 mud  管理者可能将系统设定为大於 1  
+		的数字视为 1.
+	参考函数:
+		heart_beat(4), query_heart_beat(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.21.		(Writen 5/23/97)

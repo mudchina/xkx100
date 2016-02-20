@@ -1,0 +1,19 @@
+
+	snoop(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		snoop() - 窥视一个可互动的使用者 (interactive user).
+	函数语法:
+		varargs object snoop( object snooper, object snoopee );
+
+		不定参数 对象 snoop( 对象 snooper, 对象 snoopee );
+	函数用法:
+		有两个参数时, 则 snooper 开始窥视 snoopee. 如果不指定
+		第二个参数, 则停止 snooper 所有的窥视状态. 通常会使用
+		simul_efun  作为控制 snoop() 的安全措施. 有两个参数时
+		, snoop() 成功会传回 snoopee. 只有一个参数时, 则传回 
+		snooper. 传回 0  表示失败. 
+	参考函数:
+		query_snoop(3), query_snooping(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.23.		(Writen 5/23/97)

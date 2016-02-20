@@ -1,0 +1,24 @@
+
+	function_exists(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		function_exists() - 找出含有指定函数的文件.
+	函数语法:
+		string function_exists( string str, object ob );
+
+		字符串 function_exists( 字符串 str, 对象 ob );
+	函数用法:
+		传回定义有函数 str  之对象 ob 的文件名称. 如果函数
+		str 是被定义在 ob 所继承的对象中, 传回的文件名称可
+		能会与 file_name( ob ) 传回的不同.
+
+		如果对象 ob 中没有定义函数 str  则传回 0.
+
+		注意, function_exists() 不会检查 ob 的投影对象
+		(shadows).
+	参考函数:
+		call_other(3), call_out(3), functionp(3),
+		valid_shadow(4)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)
+

@@ -1,0 +1,16 @@
+
+	load_object(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		load_object() - 以文件名称来寻找或载入一个对象
+	函数语法:
+		object load_object( string str );
+
+		对象 load_object( 字符串 str );
+	函数用法:
+		用文件名称 str  寻找对象. 如果文件存在而且对象尚未
+		载入, 则载入文件. 否则此函数就传回 0.
+	参考函数:
+		file_name(3), stat(3), find_object(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.18.		(Writen 5/23/97)

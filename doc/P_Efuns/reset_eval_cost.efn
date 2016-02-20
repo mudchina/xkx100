@@ -1,0 +1,15 @@
+
+	reset_eval_cost(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		reset_eval_cost() - 重新设定剩下的执行耗费时间数字.
+	函数语法:
+		void reset_eval_cost();
+	函数用法:
+		reset_eval_cost() 把剩下的执行耗费时间数字设定成最高
+		执行耗费时间数.
+	参考函数:
+		catch(3), error(3), throw(3), error_handler(4),
+		eval_cost(3), set_eval_limit(3)
+	手册翻译:
+		Phoebus@ZH	97.Jun.2.		(Writen 5/23/97)

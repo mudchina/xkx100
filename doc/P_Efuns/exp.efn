@@ -1,0 +1,16 @@
+
+	exp(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		exp() - 以一个浮点数为指数, 自然对数 e  为底数
+			计算其值.
+	函数语法:
+		float exp( float f );
+
+		浮点数 exp( 浮点数 f );
+	函数用法:
+		exp() 传回 e^f 的值.
+	参考函数:
+		log(3), pow(3), sqrt(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)

@@ -1,0 +1,17 @@
+
+	tell_object(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		tell_object() - 将讯息送给一个对象.
+	函数语法:
+		void tell_object( object ob, string str );
+
+		无传回值 tell_object( 对象 ob, 字符串 str );
+	函数用法:
+		将讯息 str  送给对象 ob. 如果 ob 是一个可互动的
+		(interactive) 对象 (玩家), 此段讯息就对 ob 显示.
+		反之, 则会送给 ob 的函数 catch_tell().
+	参考函数:
+		message(3), write(3), shout(3), say(3), tell_room(3)
+	手册翻译:
+		Phoebus@ZH	97.jul.24.		(Writen 5/23/97)

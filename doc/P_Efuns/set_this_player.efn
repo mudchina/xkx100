@@ -1,0 +1,18 @@
+
+	set_this_player(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		void set_this_player( object who );
+
+		无传回值 set_this_player( 对象 who );
+	函数语法:
+		set_this_player() 使对象 who  变成新的 this_player().
+		这个超越函数 (efun) 只有在定义 __NO_ADD_ACTION__ 及
+		mudlib  解释和处理命令时使用了 __NO_ADD_ACTION__ 的
+		情形下才有效.
+
+		who 可以是零, 而 this_player() 即设定为零.
+	参考函数:
+		this_player(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.21.		(Writen 5/23/97)

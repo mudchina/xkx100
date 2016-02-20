@@ -1,0 +1,25 @@
+
+	call_out(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		call_out() - 延迟调用同一个对象中的函数.
+	函数语法:
+		void call_out( string | function fun, int delay, 
+			mixed arg );
+
+		无传回值 call_out( 字符串 或 函数 fun, 整数 delay,
+			混合 arg );
+	函数用法:
+		设定在 this_object() 中, 延迟 delay 秒调用函数 fun.
+		而 arg 当作参数传入 fun 中.
+
+		请注意, 你不能在 fun 中调用 write() 或 say(), 因为
+		this_player() 被设定成 0. 你可以用 tell_object()
+		代替.
+
+		如果在 driver 的 options.h 中定义 
+		THIS_PLAYER_IN_CALL_OUT, 就可以解决这个问题.
+	参考函数:
+		remove_call_out(3), call_out_info(3)
+	手册翻译:
+		Phoebus@ZH	1997.Aug.16.		(Writen 5/23/97)

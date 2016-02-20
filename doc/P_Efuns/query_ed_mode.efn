@@ -1,0 +1,19 @@
+
+	query_ed_mode(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		query_ed_mode() - 询问目前编辑程序 (ed) 执行的状态.
+	函数语法:
+		int query_ed_mode()
+
+		整数 query_ed_mode()
+	函数用法:
+		寻问目前此对象执行编辑程序 (ed) 的状态. query_ed_mode() 的
+		传回值如下:
+		
+		0  - 此对象正在普通的 ed 提示符号 ( ':', 冒号) 下.
+		-1 - 此对象并没有进入 ed 里
+		-2 - 此对象正处於 ed 求助说明第一页的 more 提示符号下.
+		>0 - 此对象正在编辑一行内容, 这个数字就是第几行.
+	手册翻译:
+		Phoebus@ZH	97.Apr.30.		(Writen 5/23/97)

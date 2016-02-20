@@ -1,0 +1,25 @@
+									gebi1()      room-ji1(小屋)// npc li ji
+										\       |
+								  		 room-ji(草棚) ++
+								      	            |	  \   +++++
+					      				    ++      |	    大草原++
+								         +++++++    |	   /  +++++
+				sroom(哈萨克帐篷)			+++草原++ road2(小路) 
+					\			         ++  |++   /
+					shop(哈萨克小店)  --------	road1(小路)
+			                      |              \ 		     |
+天山	天山				      |                  \           |
+  \  /	     +++++++			      |                      \       |
+senlin(森林)+++草原+++		              |             		caoyuan3(草原边缘)
+	\    + + | ++			      |                        /     |
+senlin1-shanqiu(小山丘)---   road(小路)	--pmchang(跑马场) -- caoyuan2(草原)  |      ++
+	     +++| ++++	                /     |                 |     \      |     +++++
+ 	    ++++草原+++	               /      |                 |	caoyuan(草原边缘)+++
+	      +++++++	 	      /       |                 |      /           ++++++
+			   shuijing(坎儿井)--caochang(草场)--caoyuan1(草原) /       +++
+ 			/				      |         |  /
+	caoyuan7-room-su(苏鲁克的家)-caoyuan7             majiu(马棚) --  hsk(哈萨克帐篷)
+			 |                               		/
+		caoyuan7(大草原)		  caoyuan8()---room-che(车尔库的家)--caoyuan8()
+								|
+							     caoyuan8(大草原)

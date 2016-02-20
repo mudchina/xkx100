@@ -1,0 +1,17 @@
+
+	in_input(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		in_input() - 判断一个玩家是否正在 input_to 函数的输入
+			     模式中
+	函数语法:
+		int in_input( object default : F_THIS_OBJECT );
+
+		整数 in_input( 对象 默认值 : F_THIS_OBJECT );
+	函数用法:
+		如果对象正在 input_to 或是 get_char 函数的输入模式中,
+		则传回 1.
+	参考函数:
+		get_char(3), input_to(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.14.		(Writen 5/23/97)

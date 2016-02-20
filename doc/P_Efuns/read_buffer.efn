@@ -1,0 +1,32 @@
+
+	read_buffer(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		read_buffer() - 以缓冲区数据 (buffer) 的类型传回文件的内容,
+			        或是以字符串类型 (string) 传回缓冲区一部份的资
+				料.
+	函数语法:
+		string | buffer read_buffer( string | buffer src,
+			int start,  int len );
+
+		字符串 或 缓冲区 read_buffer( 字符串 或 缓冲区 src,
+			整数 start, 整数 len );
+	函数用法:
+		如果 src  是一个字符串 (文件名称) , 就会从 start  指定的第几
+		字节组 (byte) 开始, 读取 len  指定长度的文件内容. 读取的内
+		容以缓冲区的数据类型传回. 如果不指定 start 和 len , 则会读
+		取整个文件的内容.
+
+		如果 src  是一个缓冲区, 就从 start  指定的第几字节开始读取
+		len 长度的内容. 然後以字符串的类型传回.
+
+		请注意, 你可以从一个文件读进缓冲区的数据, 受到编译时段组态
+		文件 (runtime config file)  中定义的 maximum byte transfer
+		(最大字节组传输量) 控制.
+	参考函数:
+		write_buffer(3), allocate_buffer(3), bufferp(3),
+		read_bytes(3), write_bytes(3)
+	作者:
+		Truilkan
+	手册翻译:
+		Phoebus@ZH	97.May.24.		(Writen 5/23/97)

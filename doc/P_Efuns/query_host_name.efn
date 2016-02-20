@@ -1,0 +1,20 @@
+
+	query_host_name(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		query_host_name() - 传回使用的主机名称 (host name)
+	函数语法:
+		string query_host_name( void );
+
+		字符串 query_host_name( 无参数 );
+	函数用法:
+		query_host_name() 传回使用的主机名称.
+	传回值:
+		如果询问主机成功, 则传回一个字符串.
+
+		如果失败, 则传回一个空字符串.
+	参考函数:
+		resolve(3), socket_address(3), query_ip_name(3),
+		query_ip_number(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.30.		(Writen 5/23/97)

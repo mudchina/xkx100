@@ -1,0 +1,25 @@
+
+	children(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		children() - 传回一个指定对象 (object) 所复制出来的
+			     对象数组.
+	函数语法:
+		object * children( string name );
+
+		对象 *children( 字符串 name );
+	函数用法:
+		这个函数传回一个对象数组 (array), 对象群则是文件名称
+		为 name 的对象所复制出来的. 一个使用的□例是找出所有
+		从使用者对象 (user object)  复制出来的对象:
+
+			object *list;
+
+			list = children("/obj/user");
+
+		这样可以让您找出所有的使用者 (包括已经断线的使用者),  而
+		users() 只会回报还能互动的 (interactive) 使用者.
+	参考函数:
+		deep_inherit_list(3), inherit_list(3), objects(3)
+	手册翻译:
+		Phoebus@ZH	97.Jan.26.		(Writen 5/23/97)

@@ -1,0 +1,16 @@
+
+	tail(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		tail() - 显示一个文件的最後一部份.
+	函数语法:
+		int tail( string path );
+
+		整数 tail( 字符串 path );
+	函数用法:
+		此超越函数 (efun) 显示文件 path 的最後一部份. 成功则
+		传回 1, 不成功传回 0. (例如文件读取权限不够)
+	参考函数:
+		read_file(3), read_buffer(3), file_size(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.24.		(Writen 5/23/97)

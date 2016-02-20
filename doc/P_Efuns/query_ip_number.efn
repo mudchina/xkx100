@@ -1,0 +1,16 @@
+
+	query_ip_number(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		query_ip_number() - 传回玩家对象的 ip 号代码.
+	函数语法:
+		string query_ip_number( object ob );
+
+		字符串 query_ip_number( 对象 ob );
+	函数用法:
+		传回玩家 ob 的 ip 号代码 (aaa.bbb.ccc.ddd 的格式).
+	参考函数:
+		query_ip_name(3), query_host_name(3), resolve(3),
+		socket_address(3)
+	手册翻译:
+		Phoebus@ZH	97.May.1.		(Writen 5/23/97)

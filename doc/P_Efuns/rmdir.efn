@@ -1,0 +1,17 @@
+
+	rmdir(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		rmdir() - 删除一个目录.
+	函数语法:
+		int rmdir( string dir );
+
+		整数 rmdir( 字符串 dir );
+	函数用法:
+		删除 dir 这个目录.
+	传回值:
+		成功就传回非零值 (nonzero), 失败则传回 0.
+	参考函数:
+		rm(3), mkdir(3), link(3)
+	手册翻译:
+		Phoebus@ZH	97.Jun.2.		(Writen 5/23/97)

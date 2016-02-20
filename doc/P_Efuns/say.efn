@@ -1,0 +1,21 @@
+
+	say(3)			LP MudOSv21c7		(7 Jul 1996) 
+
+	函数名称:
+		say() - 把讯息送给所有在同一个环境中的使用者.
+	函数语法:
+		varargs void say( string str, object obj );
+
+		不定参数 无传回值 say( 字符串 str, 对象 obj );
+	函数用法:
+		把讯息送给位於跟发出讯息者同一环境的物体, 以及所有在发出
+		讯息者里面的物体. 发出讯息者只能是 this_player(), 或是
+		this_player() == 0 的 this_object().
+
+		第二个参数可有可无. 如果指定了第二个参数 obj, 则讯息不会
+		送给 obj. 如果 obj 不是一个对象, 而是一个对象数组 (an array
+		of objects) , 则讯息就不会送给数组内的对象.
+	参考函数:
+		message(3), write(3), shout(3), tell_object(3), tell_room(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.4.		(Writen 5/23/97)

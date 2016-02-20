@@ -1,0 +1,17 @@
+
+	this_interactive(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		this_interactive - 传回调用此函数的玩家对象.
+	函数语法:
+		object this_interactive();
+
+		对象 this_interactive();
+	函数用法:
+		传回调用此函数的玩家对象. 基本上 this_interactive()
+		会传回 this_player(), 而不像 this_player() 会受到
+		enable_commands() 或 command()  的影响.
+	参考函数:
+		this_object(3), this_player()
+	手册翻译:
+		Phoebus@ZH	97.Jul.24.		(Writen 5/23/97)

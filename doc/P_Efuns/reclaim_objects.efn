@@ -1,0 +1,20 @@
+
+	reclaim_objects(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		reclaim_objects - 清除残留在内存中的对象.
+	函数语法:
+		int reclaim_objects( void );
+
+		整数 reclaim_objects( 无参数 );
+	函数用法:
+		这个函数重复检查每一个载入的对象, 并尽力把残留在内存
+		中的对象清除掉. 这样可以清出一些内存, 清理的数量多寡
+		要看  mud 本身的程序是如何写的. 如果一个对象被其他对象
+		里面的全域变量 (global variable)指针 (pointer)  指向到
+		, 就会残留在内存中, 然後再被摧毁掉. 这个超越函数
+		(efun)  会传回变量遇到的被摧毁的对象数目.
+	参考函数:
+		destruct(3)
+	手册翻译:
+		Phoebus@ZH	97.May.24.		(Writen 5/23/97)

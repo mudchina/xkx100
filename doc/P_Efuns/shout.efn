@@ -1,0 +1,16 @@
+
+	shout(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		shout() - 对所有活著的 (living) 对象送出讯息.
+	函数语法:
+		void shout( string str );
+
+		无传回值 shout( 字符串 str );
+	函数用法:
+		除了 this_player() 以外, 对所有活著的对象送出字符串 str.
+	参考函数:
+		message(3), write(3), tell_object(3), tell_room(3), 
+		say(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.23.		(Writen 5/23/97)

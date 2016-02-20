@@ -1,0 +1,28 @@
+
+	origin(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		origin() - 判断目前的函数是如何被调用的.
+	函数语法:
+		int origin( void );
+
+		整数 origin( 无参数 );
+	函数用法:
+		传回一个整数值, 指出目前的函数是如何被调用的.
+		传回值代表的意义如下:
+
+		1	驱动程序 (driver) (heart_beats, 其他)
+
+		2	区域函数的调用 (local function call)
+
+		4	call_other()
+
+		8	simul_efun 对象, 经由 simul_efun 调用
+
+		16	call_out()
+
+		32	被超越函数 (efun) 调用 (sort_array, 其他)
+	参考函数:
+		previous_object(3), /include/origin.h
+	手册翻译:
+		Phoebus@ZH	97.Apr.24.		(Writen 5/23/97)

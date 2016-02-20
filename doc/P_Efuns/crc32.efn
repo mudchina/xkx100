@@ -1,0 +1,15 @@
+
+	crc32(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		crc32() - 计算一个缓冲区或字符串的循环重覆代码
+			(cycle redundency code)
+	函数语法:
+		int crc32( buffer | string x );
+
+		整数 crc32( 缓冲区 | 字符串 x );
+	函数用法:
+		计算并传回给定的缓冲区或是字符串 x 的 CRC-32 代码.
+	手册翻译:
+		Phoebus@ZH	97.Jan.27.		(Writen 5/23/97)
+

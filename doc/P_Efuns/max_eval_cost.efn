@@ -1,0 +1,17 @@
+
+	max_eval_cost(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		max_eval_cost() - 传回最高的执行耗费时间 (evaluation cost)
+	函数语法:
+		void max_eval_cost()
+
+		无传回值 max_eval_cost()
+	函数用法:
+		max_eval_cost() 在驱动程序 (driver) 判断此时是否陷入
+		一个无穷回圈之前, 传回是否可以执行的指示数字.
+	参考函数:
+		catch(3), error(3), throw(3), error_handler(4),
+		set_eval_limit(3), reset_eval_cost(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.15.		(Writen 5/23/97)

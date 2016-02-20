@@ -1,0 +1,31 @@
+
+	message(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		message() - 送讯息给活著的 (living) 对象.
+	函数语法:
+		void message( mixed class, string message, mixed target,
+			mixed exclude );
+
+		无传回值 message( 混合 class, 字符串 message, 混合 target,
+			混合 exclude );
+	函数用法:
+		message() 调用目标名单中所有对象 (除了 exclude 名单以外) 
+		的 receive_message( 混合 class, 字符串 message ) 函数.
+		这样基本上只是告诉此对象一个讯息.
+		
+		class 是此段讯息的种类, 用於处理讯息的介面之类的地方.
+		例如 combat, shout, emergency 等等.
+
+		message 是欲送出的讯息字符串.
+
+		target 是欲送达讯息的对象名单, 可以是一个对象或对象指针
+		(pointer). 如果目标是一个非活著的 (non-living) 的对象,
+		在此对象内的所有对象都会收到讯息.
+
+		exclude 是不应收到此讯息的对象名单, 可以是一个对象或对象
+		数组 (array).
+	参考函数:
+		say(3), write(3), shout(3), tell_object(3), tell_room(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.15.		(Writen 5/23/97)

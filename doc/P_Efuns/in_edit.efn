@@ -1,0 +1,16 @@
+
+	in_edit(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		in_edit() - 判断一个玩家是否在文书编辑程序中.
+	函数语法:
+		string in_edit( object default : F_THIS_OBJECT );
+
+		字符串 in_edit( 对象 默认值 : F_THIS_OBJECT );
+	函数用法:
+		如果一个指定的对象正在文书编辑工作中, 就传回被编辑
+		文件名称. 如果不是, 就传回 0.
+	参考函数:
+		ed(3), in_input(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.14.		(Writen 5/23/97)

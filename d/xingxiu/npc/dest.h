@@ -1,0 +1,82 @@
+// Last Modified by Winder on Apr. 25 2001
+
+mapping *dest = ({
+([	"name":"shanjiao",
+	"context":
+	({
+		"/d/xingxiu/silk5",
+		"/d/xingxiu/tugu",
+		"/d/xingxiu/shazhou",
+		"/d/xingxiu/silk4",
+		"/d/xingxiu/shimen",
+		"/d/xingxiu/silk3",
+		"/d/xingxiu/songmoya",
+		"/d/xingxiu/silk2",
+		"/d/xingxiu/chouchishan",
+		"/d/xingxiu/silk1",
+})]),
+([	"name":"xinglongshan",
+	"context":
+	({
+		"/d/xingxiu/shimen",
+		"/d/xingxiu/yanzhishan",
+		"/d/xingxiu/rentou",
+		"/d/xingxiu/shazhou",
+		"/d/xingxiu/silk4",
+		"/d/xingxiu/shimen",
+		"/d/xingxiu/silk3",
+		"/d/xingxiu/songmoya",
+		"/d/xingxiu/silk2",
+		"/d/xingxiu/shuiliandong",
+		"/d/xingxiu/xianrenya",
+		"/d/xingxiu/silk1",
+})]),
+([	"name":"silk1",
+	"context":
+	({
+		"/d/xingxiu/chouchishan",
+		"/d/xingxiu/silk2",
+		"/d/xingxiu/songmoya",
+		"/d/xingxiu/silk3",
+		"/d/xingxiu/shimen",
+		"/d/xingxiu/silk4",
+		"/d/xingxiu/shazhou",
+		"/d/xingxiu/tugu",
+		"/d/xingxiu/silk5",
+		"/d/xingxiu/shanjiao",
+})]),
+([	"name":"tugu",
+	"context":
+	({
+		"/d/xingxiu/shazhou",
+		"/d/xingxiu/rentou",
+		"/d/xingxiu/yanzhishan",
+		"/d/xingxiu/shimen",
+		"/d/xingxiu/rentou",
+		"/d/xingxiu/silk4",
+		"/d/xingxiu/songmoya",
+		"/d/xingxiu/silk2",
+		"/d/xingxiu/chouchishan",
+		"/d/xingxiu/shuiliandong",
+		"/d/xingxiu/xianrenya",
+		"/d/xingxiu/silk1",
+	})]),
+([	"name":"xianrenya",
+	"context":
+	({
+		"/d/xingxiu/shuiliandong",
+		"/d/xingxiu/silk1",
+		"/d/xingxiu/chouchishan",
+		"/d/xingxiu/silk2",
+		"/d/xingxiu/songmoya",
+		"/d/xingxiu/silk3",
+		"/d/xingxiu/shimen",
+		"/d/xingxiu/yanzhishan",
+		"/d/xingxiu/rentou",
+		"/d/xingxiu/shazhou",
+		"/d/xingxiu/tugu",
+		"/d/xingxiu/silk5",
+		"/d/xingxiu/shanjiao",
+})]),
+});
+

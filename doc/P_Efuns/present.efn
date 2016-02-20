@@ -1,0 +1,20 @@
+
+	present(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		present() - 以物品的辨识名称 (id) 寻找对象.
+	函数语法:
+		object present( mixed str, object ob );
+
+		对象 present( 混合 str, 对象 ob );
+	函数用法:
+		如果一个对象的名字为 str, 就传回此对象.
+
+		str 也可以是一个对象, 这样会比较快而简单.
+
+		如果指定 ob, present() 会寻找 ob 的内容物 (inventory),
+		不然会寻找目前对象的内容物, 以及目前对象所处环境的内容物.
+	参考函数:
+		move_object(3), environment(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.24.		(Writen 5/23/97)

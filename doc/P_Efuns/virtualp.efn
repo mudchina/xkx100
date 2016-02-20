@@ -1,0 +1,20 @@
+
+	virtualp(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		virtualp() - 判断指定的变量是否指向一个虚拟 (virtual) 
+			     对象.
+	函数语法:
+		int virtualp( object arg );
+
+		整数 virtualp( 对象 arg );
+	函数用法:
+		如果对 arg  来说, objectp() 为 1, 并设定 O_VIRTUAL 
+		标识, virtualp()  就传回真值 (即 1) . 经由主宰对象 
+		(master.c)  之 compile_object 函数创造出来的对象,
+		驱动程序 (driver) 皆对其设定 O_VIRTUAL  标识.
+	参考函数:
+		clonep(3), userp(3), wizardp(3), objectp(3), new(3),
+		clone_object(3), call_other(3), file_name(3)
+	手册翻译:
+		Phoebus@ZH	97.jul.25.		(Writen 5/23/97)

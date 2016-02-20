@@ -1,0 +1,55 @@
+
+	functionp(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		functionp() - 判断指定的变量是否为一个函数指针
+			      (function pointer). 如果是函数指针, 
+			      则再判断为何种类型. 
+	函数语法:
+		int functionp( mixed arg );
+
+		整数 functionp( 混合 arg );
+	函数用法:
+		如果 arg 是一个函数指针则传回非零值 (nonzero), 如果
+		不是则传回 0.
+		函数指针是一种「函数」(function) 类型的指针变量.
+		以下是一个□例:
+
+		f = (: obj, func :);
+
+		传回的值指示出函数指针的类型, 而这些传回值被定义在
+		驱动程序中的 "include/function.h" 文件中.
+
+		function pointer type		value 
+		---------------------------------------------
+		call_other			FP_CALL_OTHER 
+		lfun				FP_LOCAL 
+		efun              		FP_EFUN 
+		simul_efun			FP_SIMUL 
+		functional			FP_FUNCTIONAL
+
+		另外在某些情形下, 会加上以下的值:
+
+		(有参数)			FP_HAS_ARGUMENTS 
+		(创造函数的对象被摧毁)		FP_OWNER_DESTED 
+		(函数无法连结)			FP_NOT_BINDABLE
+
+		最後三个值为字节值 (bit value), 可以用字节测试.
+		FP_MASK 可以忽略这些字节值, 测试基本的函数指针类型
+
+		□例:
+
+		测试一个函数指针变量是否为超越函数指针:
+
+		if ((functionp(f) & FP_MASK) == FP_EFUN) ...
+
+		测试其是否有参数:
+
+		if (functionp(f) & FP_HAS_ARGUMENTS) ...
+	参考函数:
+		mapp(3), stringp(3), pointerp(3), objectp(3), intp(3),
+		bufferp(3), floatp(3), nullp(3), undefinedp(3),
+		errorp(3), bind(3), lpc/types/function
+	手册翻译:
+		Phoebus@ZH	97.Jul.26.		(Writen 5/23/97)
+

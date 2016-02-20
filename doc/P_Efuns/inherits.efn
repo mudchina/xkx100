@@ -1,0 +1,17 @@
+
+	inherits(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		inherits() - 判断一个对象是否继承一个指定的文件
+	函数语法:
+		int inherits( string file, object obj );
+
+		整数 inherits( 字符串 file, 对象 obj );
+	函数用法:
+		如果 obj 不是继承 file, inherits() 传回 0. 如果 obj
+		继承最新复制的 file 则传回 1, 如果继承旧的复制的 file
+		则传回 2.
+	参考函数:
+		deep_inherit_list(3), inherit_list(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.14.		(Writen 5/23/97)

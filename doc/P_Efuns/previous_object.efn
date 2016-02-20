@@ -1,0 +1,23 @@
+
+	previous_object(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		previous_object() - 传回调用目前这个函数的对象 
+				     (或对象列表).
+	函数语法:
+		mixed previous_object( int | void );
+
+		混合 previous_object( 整数 或 无参数 );
+	函数用法:
+		传回一个调用目前函数之对象的对象指针. 请注意, 区域函数
+		(local function)  的调用不会让 previous_object()  设定
+		为目前的对象, 不会改变 previous_object()  传回的对象.
+		如果指定一个正整数为参数, 就传回先前第几个调用的对象.
+		previous_object(0) 如同 previous_object(),
+		previous_object(1) 是 previous object 的
+		previous_object(), 以此类推.  previous_object(-1) 则传
+		回所有的 previous object 数组.
+	参考函数:
+		call_other(3), call_out(3), origin(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.24.		(Writen 5/23/97)

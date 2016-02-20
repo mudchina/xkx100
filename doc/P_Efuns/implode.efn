@@ -1,0 +1,17 @@
+
+	implode(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		implode() - 连结多个字符串.
+	函数语法:
+		string implode( mixed *arr, string del );
+
+		字符串 implode( 混合 *arr, 字符串 del );
+	函数用法:
+		把数组 arr 中可以找到的所有字符串连结在一起, 每一个
+		字符串之间以字符串 del 隔开. 这个函数只会使用数组中的
+		字符串. 数组中不是字符串的元素 (element) 会予以忽略.
+	参考函数:
+		explode(3), sprintf(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.14.		(Writen 5/23/97)

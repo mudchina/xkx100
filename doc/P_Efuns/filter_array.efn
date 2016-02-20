@@ -1,0 +1,25 @@
+
+	filter_array(3)	  	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		filter_array() - 传回一个过滤旧数组内容的新数组.
+	函数语法:
+		mixed *filter_array( mixed *arr, string fun, object ob,	mixed extra, ... );
+		mixed *filter_array( mixed *arr, function f, mixed extra, ... );
+
+		混合 *filter_array( 混合 *arr, 字符串 fun, 对象 ob,混合 extra, ... );
+		混合 *filter_array( 混合 *arr, 函数 f, 混合 extra, ... );
+	函数用法:
+		filter_array()  传回一个数组, 这个数组里保留 arr 经过
+		对象 ob 中的函数 fun  过滤之後的结果. 每一个在数组 arr
+		中的元素 (element)  会调用函数 fun  一次, 并且当成 fun
+		的参数 (parameter). 如果指定参数 extra  与之後的参数, 
+		则在每一次调用函数 fun  时当成第二、第三个参数....一个
+		对象在 fun  传回 1  之後, 才视为成功地通过 fun  的过滤
+		 (之後对象也包含在传回的数组中) . 在第二种语法中, 如果
+		指定的参数是函数 f, 就与第一种语法中的 ob->fun()  的用
+		法相同. 如果 arr  不是一个数组, filter_array()  传回 0.
+	参考函数:
+		sort_array(3), map_array(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)

@@ -1,0 +1,16 @@
+
+	time(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		time() - 传回现在时刻距离 1970 年一月一日有多少秒.
+	函数语法:
+		int time( void );
+
+		整数 time ( 无参数 );
+	函数用法:
+		传回从 1970 年一月一日午夜 (格林威治时间) 开始到现在,
+		总共过了多少秒.
+	参考函数:
+		ctime(3), localtime(3), time_expression(3), uptime(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.25.		(Writen 5/23/97)

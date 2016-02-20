@@ -1,0 +1,30 @@
+
+	sscanf(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		sscanf() - 从一个字符串中读进与指定格式相符的数据.
+	函数语法:
+		int sscanf( string str, string fmt,
+			mixed var1, mixed var2 ... );
+
+		整数 sscanf( 字符串 str, 字符串 fmt,
+			混合 var1, 混合 var2 ... );
+	函数用法:
+		以指定的格式 fmt  去解读字符串 str. fmt 中除了 %d 和 %s
+		以外, 亦可包含其他的字符串作为格式. 每一个 %d 或 %s 都
+		对应一个参数, 按顺序为 var1, var2 ... %d  读入一个整
+		数到参数中, 而 %s 读入一个字符串. * 亦可用於格式中, (
+		即 %*d  和 %*s) 加了星号 (*)  表示跳过此数据不读入.
+		(也就是不把此数据读入参数中)  LPC 的 sscanf() 与 C
+		的 sscanf() 虽然相似, 但仍有不同之处. LPC 的 sscanf()
+		不需要 (也不可) 提供变量的内存位址给 sscanf(),  只
+		需要给予变量的名字. 另一个不同点是, LPC 的 sscanf()
+		对於: sscanf( str, "%s %s", str1, str2 ); 的语法, 将
+		会把 str 中的第一个英文单字  (即第一个空白字符以前的
+		内容) 读入 str1, 後面其馀的内容读入 str2.		
+
+		sscanf() 会传回符合格式的 %d 和 %s 总数.
+	参考函数:
+		explode(3), replace_string(3), strsrch(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.23.		(Writen 5/23/97)

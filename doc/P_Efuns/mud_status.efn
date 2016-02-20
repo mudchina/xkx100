@@ -1,0 +1,19 @@
+
+	mud_status(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		mud_status() -  报告一些驱动程序 (driver) 及 mud 函数库
+				(mudlib)  的统计数字.
+	函数语法:
+		void mud_status( int extra );
+
+		无传回值 mud_status( 整数 extra );
+	函数用法:
+		这个函数把一些驱动程序及 mud  函数库的统计数字显示在
+		调用这个函数的人的萤幕上. 如果参数 extra  为非零值, 
+		则会显示更多的附加数据. 这个函数取代了 vanilla 3.1.2
+		版本中的 status 及 status tables 指令.
+	参考函数:
+		debug_info(3), dumpallobj(3), memory_info(3), uptime(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.15.		(Writen 5/23/97)

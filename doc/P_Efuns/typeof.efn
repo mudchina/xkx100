@@ -1,0 +1,25 @@
+
+	typeof(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		typeof() - 传回一个式子 (expression) 的数据类型 (type).
+	函数语法:
+		int typeof( mixed var );
+
+		整数 typeof( 混合 var );
+	函数用法:
+		传回一个式子的数据类型. <typeof.h> 中定义传回值为:
+
+		整数		INT		2
+		字符串		STRING		4
+		数组		ARRAY		8 
+		对象		OBJECT		16
+		映射		MAPPING		32
+		函数指针	FUNCTION	64
+		浮点数		FLOAT		128
+		缓冲区		BUFFER		256
+
+	参考函数:
+		allocate(3), allocate_mapping(3), strlen(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.25.		(Writen 5/23/97)

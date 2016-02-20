@@ -1,0 +1,20 @@
+
+	export_uid(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		export_uid() -  设定一个对象的使用者识别名称 (user id,
+				uid).
+	函数用法:
+		int export_uid( object ob );
+
+		整数 export_uid( 对象 ob );
+	函数用法:
+		设定 ob 的使用者识别名称 (uid) 为 this_object() 的
+		有效使用者识别名称 (effective user id, effective uid).
+		这个函数只有在 ob 的有效使用者识别名称为 0 时有效.
+	参考函数:
+		this_object(3), seteuid(3), getuid(3), geteuid(3),
+		previous_object(3), valid_seteuid(4)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)
+

@@ -1,0 +1,44 @@
+
+	trace(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		trace() - 设定追踪标识 (trace flags) 并传回旧的标识值.
+	函数语法:
+		int trace( int traceflags );
+
+		整数 trace( 整数 traceflags );
+	函数用法:
+		设定追踪标识, 并传回旧的追踪标识. 处於追踪状态时, 会印
+		出很多信息.
+
+		以下是追踪信息 (trace bits):
+
+		Trace all function calls to lfuns.
+		 (追踪所有对区域函数的函数调用)
+
+		Trace all calls to "call_other".
+		 (追踪所有对 call_other 的调用)
+
+		Trace all function returns.
+		 (追踪所有函数的回传值)
+
+		Print arguments at function calls and return values.
+		 (印出调用函数的参数, 及函数的回传值)
+
+		Print all executed stack machine instructions
+			(produces a lot of output!)
+		 (印出所有执行的堆叠机器代码 (这样子输出的数据可真多!) )
+			
+		Enable trace in heart beat functions.
+		 (开始追踪心跳函数)
+
+		Trace calls to apply.
+		 (追踪申请的调用)
+
+		Show object name in tracing.
+		 (显示追踪时的对象名称)
+
+	参考函数:
+		traceprefix(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.25.		(Writen 5/23/97)

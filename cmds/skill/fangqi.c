@@ -1,0 +1,1 @@
+inherit __DIR__"abandon";

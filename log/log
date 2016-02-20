@@ -1,0 +1,10 @@
+d/beijing/aobai7.c line 59: Warning: Return type doesn't match prototype ( int vs void )
+adm/simul_efun/object.c line 85: Invalid simulated efunction override
+adm/simul_efun/object.c line 85: Invalid simulated efunction override
+adm/simul_efun/object.c line 85: Invalid simulated efunction override
+adm/simul_efun/object.c line 71: Undefined variable 'DOMAIN_UID'
+adm/simul_efun/object.c line 101: Undefined variable 'MUDLIB_UID'
+adm/simul_efun/object.c line 125: Invalid simulated efunction override
+adm/simul_efun/object.c line 96: Invalid simulated efunction override
+adm/simul_efun/object.c line 85: Invalid simulated efunction override
+adm/simul_efun/object.c line 85: Invalid simulated efunction override

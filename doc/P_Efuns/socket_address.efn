@@ -1,0 +1,23 @@
+          socket_address() - return the remote address for an efun
+          socket
+
+          #include <socket_err.h>
+
+          string socket_address( int s );
+
+          socket_address() returns the remote address for an efun
+          socket s.  The returned address is of the form:
+
+               "127.0.0.1 23".
+
+          socket_address() returns:
+
+               a string format address on success.
+
+               an empty string on failure.
+
+          socket_connect(3), socket_create(3), resolve(3),
+          query_host_name(3), query_ip_name(3), query_ip_number(3)
+
+     Page 1                                          (Writen 5/23/97)
+

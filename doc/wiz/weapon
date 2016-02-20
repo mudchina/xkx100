@@ -1,0 +1,60 @@
+峨嵋    倚天剑     1000
+冰火岛  屠龙刀     1000
+铁掌    鱼肠剑     1000
+高昌    玄铁剑      800
+少林    伏魔刀      500
+关外    闯王宝刀    500
+雪山寺  血刀        400
+嵩山    湛卢剑      300
+江陵    越王剑      300
+剑冢    玄铁剑      300
+明教    狼牙棒      200
+北京    匕首        200
+五毒教  金钩        200
+剑冢    青光剑      150
+梅庄    南海神木    150
+雪山寺  银轮        150
+五毒教  五毒剪      150
+凌霄城  干将        100
+凌霄城  莫邪        100
+凌霄城  金乌杖      100
+梅庄    白玉瑶琴    100
+明教    夺命金花    100
+侠客岛  白虹剑      100
+黑木崖  绣花针      100
+华山    碧水剑      100
+华山村  游龙剑      100
+
+binghuo/obj/dragonblade.c:	init_blade(1000);
+city2/obj/bishou.c:	init_sword(200);
+emei/obj/skysword.c:       init_sword(1000);
+gaochang/obj/xuantie-sword.c:       init_sword(800);
+jiangling/obj/yuewangjian.c:    	init_sword(300);
+jianzhong/obj/qingguangjian.c:       init_sword(150);
+jianzhong/obj/xuantie-jian.c:	init_sword(300);
+jinshe/obj/jinshe-jian.c:	init_sword(150);
+lingxiao/obj/ganjiang.c:	init_sword(100);
+lingxiao/obj/jinwu-staff.c:        init_staff(100);
+lingxiao/obj/moye.c:	init_sword(100);
+meizhuang/obj/qin.c:        init_sword(100);
+meizhuang/obj/sea-wood.c:        init_sword(150);
+mingjiao/obj/fumo-dao.c:	init_blade(1000);
+mingjiao/obj/jinhua.c:        init_throwing(100);
+mingjiao/obj/langyabang.c:        init_staff(200);
+shaolin/obj/fumo-dao.c:	init_blade(500);
+songshan/obj/zhanlu-jian.c:	init_sword(300);
+tiezhang/obj/ycj.c:	init_sword(1000);
+wudujiao/obj/jiandao.c:	init_hook(150);
+wudujiao/obj/jinfenggou.c:	init_hook(200);
+xiakedao/obj/baihongjian.c:        init_sword(100);
+xueshan/obj/xblade.c:	init_blade(400);
+xueshan/obj/yinlun.c:	init_hammer(150);
+guanwai/npc/obj/cwbdao.c:	init_blade(500);
+heimuya/npc/obj/zhen.c:	init_sword(100);
+huashan/npc/obj/green_water_sword.c:        init_sword(100);
+jianzhong/npc/obj/qingguangjian.c:       init_sword(150);
+jianzhong/npc/obj/xuantie-jian.c:	init_sword(300);
+shaolin/npc/obj/fumo-dao.c:	init_blade(500);
+village/npc/obj/youlong.c:        init_sword(100);
+wudujiao/npc/obj/jiandao.c:	init_hook(150);
+wudujiao/npc/obj/jingou.c:	init_hook(200);

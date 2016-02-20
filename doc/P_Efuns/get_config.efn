@@ -1,0 +1,18 @@
+
+	get_config(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		get_config() - 询问一些驱动程序 (driver) 的系统设定值
+			       (config settings)
+	函数语法:
+		string | int get_config( int );
+
+		字符串 或 整数 get_config( 整数 );
+	函数用法:
+		这个超越函数 (efun) 用来询问一些驱动程序的系统设定值.
+		请参考 runtime_config.h 以了解目前有哪些可以使用的选
+		择项目.
+	参考函数:
+		/include/runtime_config.h
+	手册翻译:
+		Phoebus@ZH	97.Feb.14.		(Writen 5/23/97)

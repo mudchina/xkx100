@@ -1,0 +1,18 @@
+
+	floatp(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		floatp() - 判断指定的变量是否为浮点数
+	函数语法:
+		int floatp( mixed arg );
+
+		整数 floatp( 混合 arg );
+	函数用法:
+		如果 arg 是一个浮点数则传回 1, 如果不是传回 0.
+	参考函数:
+		mapp(3), stringp(3), pointerp(3), objectp(3), intp(3),
+		bufferp(3), functionp(3), nullp(3), undefinedp(3), 
+		errorp(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)
+

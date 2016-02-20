@@ -1,0 +1,46 @@
+
+	process_string(3)	MudOS	v21c2		(7 Jul 1996)
+
+	函数名称:
+		process_string() - 在字符串中以调用函数的结果替代某些字.
+	函数语法:
+		string process_string( string combinestring );
+
+		字符串 process_string( 字符串 combinestring );
+	函数用法:
+		以指定的格式替代一个字符串中的某些字. 这个格式相当於调用
+		函数所传回的字符串.
+
+		格式如下:
+
+		"@@函数名称[:文件名称][ | 参数 1 | 参数 2....| 参数 N ]@@"
+
+		上面这行可以当作是下面这行的函数调用:
+
+		文件名称->函数名称( 参数 1, 参数 2, ....., 参数 N );
+
+		请注意, process_string()  不会接受函数递回 (recuse) 调用
+		传回第二次以後的字符串. 如果函数传回第二次字符串, 
+		process_string()  不会换掉第一次传回的字符串.
+
+		在 combinestring  中调用用来处理字符串的函数, 如果传回值不
+		是字符串, 则关於调用格式的那些字都会维持不变地放在字符串里.
+
+		请注意, 对象的文件名称、参数都以表示可有可无的 [] 中括号
+		框起来. 请勿把这些括号也写进字符串里.
+	参考函数:
+		process_value(3)
+	警告:
+		在 mud  函数库 (mudlib) 中, 常常使用函数调用的传回值.
+		最好能在使用 process_string() 之前, 设定对象的有效使
+		用者辨识名称 (effuserid, euid)  为 0  . 
+	□例:
+		"@@query_the_name:/obj/monster#123@@正在你身後穷追不舍."
+
+		会以下面的形式替换掉一些字:
+
+		"安老大正在你身後穷追不舍."
+
+		 (假设 monster#123 的 query_the_name 函数传回 "安老大")
+	手册翻译:
+		Phoebus@ZH	97.Apr.25.		(Writen 5/23/97)

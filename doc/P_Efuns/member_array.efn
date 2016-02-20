@@ -1,0 +1,20 @@
+
+	member_array(3)		LP MudOSv21c7		(5 Sep a994)
+
+	函数名称:
+		member_array() -  在一个数组 (array)  或字符串 (string) 中
+				  找寻指定的项目 (item) , 并传回此项目为
+				  第几项的索引.
+	函数语法:
+		int member_array( mixed item, mixed * | string arr, void |
+			int start );
+
+		整数 member_array( 混合 item, 混合 * 或 字符串 arr, 无参数 或
+			整数 start );
+
+	函数用法:
+		传回 item 在数组 arr  中第一次出现时, 出现在第几项. 如果
+		使用 start 参数, 则从 start 指定的第几项之後找起. 如果找
+		不到 item, 则传回 -1.
+	手册翻译:
+		Phoebus@ZH	97.Apr.15.		(Writen 5/23/97)

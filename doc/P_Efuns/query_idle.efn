@@ -1,0 +1,16 @@
+
+	query_idle(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		query_idle()  - 询问一个互动的 (interactive) 玩家已经
+				发呆 (idle) 几秒.
+	函数语法:
+		int query_idle( object ob );
+
+		整数 query_idle( 对象 ob );
+	函数用法:
+		询问一个互动的 (interactive) 玩家对象已经发呆 (idle) 几秒.
+	参考函数:
+		in_edit(3), in_input(3)
+	手册翻译:
+		Phoebus@ZH	97.May.1.		(Writen 5/23/97)

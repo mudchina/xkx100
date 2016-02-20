@@ -1,0 +1,18 @@
+
+	write_bytes(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		write_bytes() - 将连续的字节组写入文件.
+	函数语法:
+		int write_bytes( string path, int start,
+			string series );
+
+		整数 write_bytes( 字符串 path, 整数 start,
+			字符串 series );
+	函数用法:
+		write_bytes() 以连续的字节组, 从文件 path 的第 start
+		字节组开始写入. 如果失败则传回 0, 成功传回 1.
+	参考函数:
+		write_file(3), read_bytes(3)
+	手册翻译:
+		Phoebus@ZH	97.jul.25.		(Writen 5/23/97)

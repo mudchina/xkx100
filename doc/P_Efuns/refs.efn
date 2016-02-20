@@ -1,0 +1,17 @@
+
+	refs(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		refs - 传回一个数据结构的参考数字.
+	函数语法:
+		int refs( mixed data );
+
+		整数 refs( 混合 data );
+	函数用法:
+		refs() 会传回 data 的参考数字. 这个函数可以在传回 data
+		以前, 判断是否要复制一份数据结构.
+	参考函数:
+		children(3), inherit_list(3), deep_inherit_list(3),
+		objects(3)
+	手册翻译:
+		Phoebus@ZH	97.May.24.		(Writen 5/23/97)

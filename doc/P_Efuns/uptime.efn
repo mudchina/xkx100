@@ -1,0 +1,16 @@
+
+	uptime(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		uptime() - 传回上一次驱动程序 (driver) 启动至今的
+			   秒数.
+	函数语法:
+		int uptime( void );
+
+		整数 uptime( 无参数 );
+	函数用法:
+		uptime() 传回上一次驱动程序重新启动至今有几秒.
+	参考函数:
+		time(3), ctime(3), localtime(3), time_expression(3)
+	手册翻译:
+		Phoebus@ZH	97.jul.25.		(Writen 5/23/97)

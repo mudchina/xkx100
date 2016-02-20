@@ -1,0 +1,24 @@
+
+        seteuid(3)              LP MudOSv21c7             (7 Jul 1996)
+
+	函数名称:
+		seteuid() - 设定一个对象的有效使用者识别名称 (effective
+			    user id, euid)
+	函数语法:
+		int seteuid( string str );
+
+		整数 seteuid( 字符串 str );
+	函数用法:
+		设定有效使用者识别名称为 str  的内容. 在 master.c 中的
+		valid_seteuid() 函数决定著一个对象的有效使用者识别名称
+		可以设定为何.
+
+		当一个对象的有效使用者识别名称为 0, 则这个对象的使用者
+		识别名称 (uid)  只能用 export_uid() 更改.
+
+		同时, 这个对象不能载入或是复制任何对象.
+	参考函数:
+		export_uid(3), getuid(3), geteuid(3), this_object(3),
+		valid_seteuid(4)
+	手册翻译:
+		Phoebus@ZH	97.Jul.20.		(Writen 5/23/97)

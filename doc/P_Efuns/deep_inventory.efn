@@ -1,0 +1,18 @@
+
+	deep_inventory(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		deep_inventory() - 传回一个对象的内容物品, 如果物品中
+			 会以还含有物品, 将会以巢状的方式继续找下去.
+	函数语法:
+		object *deep_inventory( object ob );
+
+		对象 *deep_inventory( 对象 ob );
+	函数用法:
+		传回 ob 含有之所有物品的数组 (array), 深层的物品也
+		会继续寻找下去.
+	参考函数:
+		first_inventory(3), next_inventory(3), all_inventory(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.04.		(Writen 5/23/97)
+

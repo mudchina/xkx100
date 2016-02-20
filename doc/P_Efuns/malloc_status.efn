@@ -1,0 +1,19 @@
+
+	malloc_status(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		malloc_status() - 报告一些内存使用情形的统计数据
+	函数语法:
+		void malloc_status( void );
+
+		无传回值 malloc_status( 无参数 );
+	函数用法:
+		这个函数把内存使用情形的统计数据显示在调用此函数
+		的人的萤幕上. 这个函数已经取代了 vanilla 3.1.2  的
+		malloc  命令. 请注意, malloc_status() 输出的结果, 
+		依编译驱动程序时, options.h 中定义的内存管理方式
+		不同而有所差异.
+	参考函数:
+		mud_status(3), dumpallobj(3), memory_info(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.18.		(Writen 5/23/97)

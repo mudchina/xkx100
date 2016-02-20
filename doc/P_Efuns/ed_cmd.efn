@@ -1,0 +1,17 @@
+
+	ed_cmd(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		ed_cmd() -  对一个正在执行的 ed 工作 (session)  
+			    送出一个命令.
+	函数语法:
+		string ed_cmd( string cmd )
+
+		字符串 ed_cmd( 字符串 cmd )
+	函数用法:
+		这个函数只有在 __OLD_ED__ 不予定义 (define) 时有效.
+
+		命令 cmd 会被送到一个正在执行的 ed 工作 (session) , 
+		并传回命令执行後输出的结果.
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)

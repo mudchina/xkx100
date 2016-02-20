@@ -1,0 +1,20 @@
+
+	replace_program(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		replace_program() - 把 this_object() (目前这个对象) 
+				    的程序置换掉.
+	函数语法:
+		void replace_program( string str );
+
+		无传回值 replace_program( 字符串 str );
+	函数用法:
+		replace_program() 会把 this_object()  替换成这个对象
+		继承的对象. 字符串 str  是要进行置换的文件名称. 对象进
+		行置换之後, 目前的对象就相当於继承对象的复制品. 只是
+		保留目前对象的文件名称和全域变量 (global variable)
+		不变. 在目前的对象程序执行完毕以前, 不会进行置换的动作.
+	参考函数:
+		clone_object(3), new(3)
+	手册翻译:
+		Phoebus@ZH	97.May.27.		(Writen 5/23/97)

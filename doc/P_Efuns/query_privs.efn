@@ -1,0 +1,20 @@
+
+	query_privs(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		query_privs() - 传回一个对象的私有字符串 (privs string).
+	函数语法:
+		string query_privs( object ob );
+
+		字符串 query_privs( 对象 ob );
+	函数用法:
+		传回一个对象的私有字符串. 此私有字符串由主宰对象 (master
+		object) 於编译程序时, privs_file()  函数决定. 而此字
+		串可由 set_privs()  函数更改.
+
+		query_privs() 只有在驱动程序 (driver) 编译时, 定义
+		PRIVS 才有效.
+	参考函数:
+		privs_file(4), set_privs(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.25.		(Writen 5/23/97)

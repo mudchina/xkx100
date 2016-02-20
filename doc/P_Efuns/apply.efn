@@ -1,0 +1,18 @@
+
+	apply(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		apply() - 处理函数指针 (function pointer).
+	函数语法:
+		mixed apply( mixed f, mixed *args )
+
+		混合 apply( 混合 f, 混合 *args )
+	函数用法:
+		如果 f 是一个函数, 就会调用 f 并用数组 args 当作 f
+		的参数 (argument).
+
+		□例:
+			apply( f, ({ 1, 2, 3 }) ); 与 
+			evaluate( f, 1, 2, 3 ); 是相同的.
+	手册翻译:
+		Phoebus@ZH   1997.Aug.14.			(Writen 5/23/97)

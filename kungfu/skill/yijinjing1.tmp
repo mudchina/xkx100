@@ -1,0 +1,109 @@
+// yijinjing.c 少林 易筋经神功
+// Last Modified by sega on Mar. 10 2000
+// Feb.21 1998 by Java
+#include <ansi.h>
+inherit FORCE;
+string type() { return "martial"; }
+string martialtype() { return "force"; }
+
+int learn_bonus() { return 0; }
+int practice_bonus() { return 0; }
+int success() { return 10; }
+int power_point() { return 1; }
+
+int valid_enable(string usage) { return usage == "force"; }
+
+int valid_learn(object me)
+{
+	int i, nb, nf, oh, nh, ns, ts;
+	nb = (int)me->query_skill("buddhism", 1);
+	nf = (int)me->query_skill("force", 1);
+	oh = (int)me->query_skill("hunyuan-yiqi", 1);
+	nh = (int)me->query_skill("yijinjing", 1);
+	ns = (int)me->query("guilty");
+
+	if ( oh < 100 )
+		return notify_fail("你的混元一气太低，无法学习易筋经神功！\n");
+	if ( me->query("couple/have_couple") )
+		return notify_fail("你已经破了色戒，无法再学习易筋经神功！\n");
+
+	if ( me->query("gender") != "男性" )
+		return notify_fail("你非童男之体，不能练习易筋经神功。\n");
+
+	if ( nb < 100 && nb <= nh )
+		return notify_fail("你的禅宗心法修为不够，无法领会更高深的易筋经神功。\n");
+
+	if ( nf < 10)
+		return notify_fail("你的基本内功火候还不够，无法领会易筋经神功。\n");
+
+	if ( ns > 0 ) 
+		return notify_fail("你屡犯僧家数戒，无法领会更高深的易筋经神功。\n");
+
+	if ( me->query_skill("bahuang-gong",1)
+	|| me->query_skill("beiming-shengong",1)
+	|| me->query_skill("bibo-shengong",1)
+	|| me->query_skill("hamagong",1)
+	|| me->query_skill("huagong-dafa",1)
+	|| me->query_skill("huashan-neigong",1)
+	|| me->query_skill("huntian-qigong",1)
+	|| me->query_skill("jiuyang-shengong",1)
+	|| me->query_skill("kuihua-xinfa",1)
+	|| me->query_skill("kurong-changong",1)
+	|| me->query_skill("linji-zhuang",1)
+	|| me->query_skill("longxiang",1)
+//	|| me->query_skill("mizong-xinfa",1)
+	|| me->query_skill("shenlong-xinfa",1)
+	|| me->query_skill("shenyuan-gong",1)
+	|| me->query_skill("taiji-shengong",1)
+	|| me->query_skill("wudu-shengong",1)
+	|| me->query_skill("xiantian-qigong",1)
+	|| me->query_skill("xiaowuxiang",1)
+//	|| me->query_skill("yijinjing",1)
+	|| me->query_skill("yunlong-shengong",1)
+	|| me->query_skill("yunv-xinfa",1)
+	|| me->query_skill("zixia-shengong",1) )
+		return notify_fail("你不先散了别派内功，怎能学易筋经神功？！\n");
+
+	return 1;
+}
+
+
+int practice_skill(object me)
+{
+	return notify_fail("易筋经神功只能用学(learn)的来增加熟练度。\n");
+}
+
+string exert_function_file(string func)
+{
+	return __DIR__"yijinjing/" + func;
+}
+
+//add by sega
+mixed be_hit_ob(object me,object victim,int damage_bonus,int factor)
+
+//factor= 加力 damage_bonus=臂力 .
+{
+	int ap,dp;
+//内功相差太多(至少2倍以上),内力伤害全部抵消,基本上不出现
+	ap=me->query("force");
+	dp=victim->query("force");
+	if ((int)random(ap/2)>dp && me->query("neili")>2000)
+	{
+
+		if (random(10)==1) tell_object(victim,"你只觉得如同击在金属上,头脑里闪过一个念头:金属罩!\n");
+		else tell_object(victim,HIY"你只觉得劲力如同击在金属罩,根本无法伤他分毫!\n"NOR);
+		tell_object(me,HIY"你只觉得尽力袭体,急忙运起金钟罩神功,一股真气弥漫全身!\n"NOR);
+		me->add("neili",-2*damage_bonus);
+		return -damage_bonus;
+	}
+	else if ((random(ap*2)>dp) && me->query("neili")>1500)
+	{
+		if (random(10)==1) tell_object(victim,HIY"你只觉得如同击在金属上,头脑里闪过一个念头:\"金属罩\"!\n"NOR);
+		else tell_object(victim,HIY"你只觉得劲力如同击在金属上,虎口隐隐作痛!\n"NOR);
+		tell_object(me,HIY"你只觉得尽力袭体,勉力运起金钟罩,一股真气弥漫全身!\n"NOR);
+		me->add("neili",-damage_bonus);
+		return -random(damage_bonus);
+	}
+	return 0;
+}
+

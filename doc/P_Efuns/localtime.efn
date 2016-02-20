@@ -1,0 +1,41 @@
+
+	localtime(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		localtime() - 转换成本地时间
+	函数语法:
+		#include <localtime.h>
+
+		mixed *localtime( int time );
+
+		混合 *localtime( 整数 time );
+	函数用法:
+		localtime() 转换一个整数的时间值 (像是 time() 传回
+		值) 成为一个数组. 这个数组就是目前的本地时间. 在以
+		前 time() 是函数用来取得格林威治时间 (GMT (UTC)),
+		而本地时间的定义是与格林威治时间的差值. 现在这种换
+		算的方法已经没有必要了. localtime() 传回秒数、分钟
+		、小时、日期、月数、年数、星期几、一年中的第几天、
+		本地的时区名称、本地时区与格林威治时区的差值. 这些
+		时间的信息直接由作业系统取得, 而且使驱动程序不需要
+		用到 MUD  本身的设定文件.
+
+		localtime() 传回一个包含上述时间信息的数组. 每一个
+		时间值的索引关键字 (index)  由 localtime.h  定义. 
+		下表则整理出 localtime()  传回的数组内容.
+
+		int	LT_SEC		秒数 (0..59)
+		int	LT_MIN		分钟 (0..59)
+		int	LT_HOUR		小时 (0..23)
+		int	LT_MDAY		日数 (1..31)
+		int	LT_MON		月数 (0..11)
+		int	LT_YEAR		年份 (必须大於 1900)
+		int	LT_WDAY		星期几 (0..6)
+		int	LT_YDAY		一年中的第几天 (0..365)
+		int	LT_GMTOFF 	格林威治时间相差的秒数 (UTC)
+		string	LT_ZONE		本地时区的名称
+	参考函数:
+		ctime(3), time(3), time_expression(3), uptime(3),
+		/include/localtime.h
+	手册翻译:
+		Phoebus@ZH	97.Feb.18.		(Writen 5/23/97)

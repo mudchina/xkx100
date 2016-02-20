@@ -1,0 +1,33 @@
+
+	set_author(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		set_author - 设定与一个对象相关的作者.
+	函数语法:
+		void set_author( string author );
+
+		无传回值 set_author( 字符串 author );
+	函数用法:
+		为了要统计作者和区域 (domain) 的状况, 所有的对象都有
+		相关的作者和区域. 区域只能由主宰对象 (master object)
+		的 domain_file(4) 函数设定. 
+		作者可以由主宰对象的 author_file(4) 设定一些默认值
+		(default value),  也可以使用 set_author() 函数来更改.
+
+		调用 set_author() 的对象, 其相关的作者就会经由 
+		set_author()  更改之. 这个设定的作者会影响以後 mud
+		函数库 (mudlib) 的统计数字. 结果可能会导致一些统计项
+		目出现奇怪的数字, 例如: 对象 (objects)  和数组大小
+		(array_size)  两项. 因为这个对象可能有初始的数组
+		(initialized arrays), 或由原始的作者创造出来. 但是可
+		能中途用 set_author() 改成其他的作者, 又摧毁此对象或
+		是释放数组的空间. 这样一来, 统计数字上减去的项目就不
+		是原来作者的值, 而是另一个作者的.
+
+		要解决这个问题, 只可以在 create(4) 中使用 set_author()
+		, 而且尽量用在任何数组说明之前.
+	参考函数:
+		author_file(4), domain_file(4), author_stats(3),
+		set_author(3), domain_stats(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.20.		(Writen 5/23/97)

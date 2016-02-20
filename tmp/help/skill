@@ -1,0 +1,227 @@
+──────────────────────────────────
+                     【侠客行一百武技篇】
+──────────────────────────────────
+    武技是玩家在游戏中所能学到的武功和技能。
+
+    武功分空手拳脚和兵器。
+    一般来说，长兵器武功攻击范围大，敌手不容易闪避，却容易招架；而
+短兵器的功夫灵巧近身，敌手不易招架到，多选择闪避。兵器有锋锐与否以
+及沉重与否的分别，这也影响到对敌手的伤害程度以及敌手所采取的克制招
+数的选择。
+
+    我们在后面给出了目前侠客行一百的武功列表（按拼音字母顺序）。你
+可以利用help命令浏览各个门派的帮助文件，以了解本门功夫的详细情况，
+也直接用help 武功名 来查询每个武功的介绍、学习条件以及它的绝招、绝
+招的效力和出手条件等。
+    如：help bibo-shengong，将显示碧波神功的介绍和内外功使用。如果
+ help bibo-shengong.roar，将显示碧波神功之碧海生潮曲的介绍和使用条
+件。 
+    技能是除了武功以外，你在侠客行一百里还可以学到的其他东西。在这
+里，武功的学习是受你的经验限制的。但是技能不受经验限制，限制技能学
+习的，主要是你的天赋、门派限制以及相互冲突的其他技能的限制。这些技
+能中，对每个玩家来说，读书写字(literate)是必须学的。
+
+        〖combine   〗  武功互备列表
+        〖knowledge 〗  技能详解列表
+        〖wuguan    〗  武馆
+        〖neigong   〗  内功功用
+
+                             技能列表
+基本阵法   array        叫化绝活   begging      禅宗心法   buddhism
+道听途说   checking     城字十八破 chengzi18po  土木机关   construction
+烹饪手艺   cookery      阴阳八卦   count        掘地术     digging
+梨园旧艺   dramaturgy   五毒毒技   five-poison  基本赌技   gambling
+纹枰手谈   goplaying    园艺莳花   horticulture 左右互搏   hubo
+密宗心法   lamaism      读书写字   literate     绕梁琴艺   luteplaying
+大乘涅磐功 mahayana     济世之术   medicine     降伏法     necromancy
+泼墨丹青   painting     渡世济人   persuading   基本毒技   poison
+奇门五行   qimen-wuxing 青字九打   qingzi9da    驱蜂术     qufeng
+妙手空空   stealing     道学心法   taoism       驭兽术     training
+西毒毒技   xidu-poison  云龙心法   yunlong-xinfa正气诀     zhengqijue
+紫氲吟     ziyunyin
+
+
+                              内功(force)
+八荒六合功   逍遥   bahuang-gong      白云心法     恒山   baiyun-xinfa
+北冥神功     逍遥   beiming-shengong  碧波神功     桃花   bibo-shengong
+冰雪心法     凌霄   binxue-xinfa      毒龙大法     神龙   dulong-dafa
+归元吐纳法   铁掌   guiyuan-tunafa    蛤蟆功       白驼   hamagong
+寒冰真气     嵩山   hanbing-zhenqi    红花神功     红花会 honghua-shengong
+华山内功     华山   huashan-neigong   混天气功     丐帮   huntian-qigong
+混元一气功   少林   hunyuan-yiqi      回雁心法     衡山   huiyan-xinfa
+化功大法     星宿   huagong-dafa      九阳神功     明教   jiuyang-shengong
+葵花心法     黑木崖 kuihua-xinfa      枯荣禅功     大理   kurong-changong
+临济十二庄   峨嵋   linji-zhuang      龙象般若功   雪山寺 longxiang
+磐石神功     泰山   panshi-shengong   青冥玄功     青城   qingming-xuangong
+神元功       慕容   shenyuan-gong     神照经       公共   shenzhao-jing
+太极神功     武当   taiji-shengong    太玄功       公共   taixuan-gong
+五毒神功     五毒   wudu-shengong     先天气功     全真   xiantian-qigong
+小无相功     雪山寺 xiaowuxiang       吸星大法     黑木崖 xixing-dafa
+玄天无极功   昆仑   xuantian-wuji     易筋经       南北少林 yijinjing
+云龙神功     云龙   yunlong-shengong  玉女心法     古墓   yunv-xinfa
+站桩功       南少林 zhanzhuang-gong   紫霞神功     华山   zixia-shengong
+
+                              轻功(dodge)
+暗影浮香     桃花   anying-fuxiang    辟邪剑法     公共   bixie-jian
+蟾蜍步法     白驼   chanchu-bufa      穿花绕树     青城   chuanhua
+飞星术       星宿   feixing-shu       飞燕回翔     华山   feiyan-huixiang
+风神诀       泰山   fengshenjue       浮光掠影     嵩山   fuguanglueying
+华山身法     华山   huashan-shenfa    金雁功       全真   jinyan-gong
+昆仑身法     昆仑   kunlun-shenfa     凌虚步       恒山   lingxu-bu
+凌波微步     逍遥   lingboweibu       飘逸步法     黑木崖 piaoyibu
+乾坤大挪移   明教   qiankun-danuoyi   青蝠身法     明教   qingfu-shenfa     
+秋雁南回     衡山   qiuyan-nanhui     少林身法     少林   shaolin-shenfa    
+身空行       雪山寺 shenkong-xing     神行百变     公共   shenxing-baibian  
+铁掌水上飘   铁掌   shuishangpiao     梅雪飘香步   凌霄   snowstep
+太玄功       公共   taixuan-gong      踏雪无痕     昆仑   taxue-wuhen
+天南步法     大理   tiannan-step      梯云纵       武当   tiyunzong
+五毒烟萝步   五毒   wudu-yanluobu     逍遥游       丐帮   xiaoyaoyou
+燕双飞       公共   yanfly            燕灵身法     慕容   yanling-shenfa
+一苇渡江     南少林 yiwei-dujiang     意形步法     神龙   yixingbu
+月影舞步     逍遥   yueying-wubu      玉女身法     古墓   yunv-shenfa
+云龙身法     云龙   yunlong-shenfa    游龙身法     红花   youlong-shenfa
+诸天化身步   峨嵋   zhutian-bu        摘星功       星宿   zhaixinggong
+
+                              剑法(sword)
+辟邪剑法     公共   bixie-jian        假辟邪剑法   公共   bixie-sword
+冲灵剑法     华山   chongling-sword   达摩剑       少林   damo-jian
+达摩剑       南少林 damo-sword        段家剑       大理   duanjia-sword
+伏魔剑       少林   fumo-jian         伏魔剑       南少林 fumo-sword
+恒山剑法     恒山   hengshan-jian     衡山剑法     衡山   hengshan-sword
+华山剑法     华山   huashan-sword     回风拂柳剑   峨嵋   huifeng-jian
+玄铁剑法     古墓   iron-sword        金蛇剑法     公共   jinshe-jian
+狂风剑法     华山   kuangfeng-jian    正两仪剑法   昆仑   liangyi-sword
+两仪剑法     武当   liangyi-jian      烈火剑法     明教   liehuo-jian
+独孤九剑     华山   lonely-sword      落花十三剑   红花   luohua-jian
+落英神剑     桃花   luoying-shenjian  美人三招     神龙   meiren-sanzhao
+不动明王剑   雪山   mingwang-jian     慕容剑法     慕容   murong-sword
+青蟒剑法     五毒   qingmang-sword    全真剑法     全真   quanzhen-jian
+圣火令法     明教   shenghuo-ling     松风剑法     青城   songfeng-jian
+嵩山剑法     嵩山   songshan-sword    太极剑法     武当   taiji-jian
+泰山剑法     泰山   taishan-sword     唐诗剑法     公共   tangshi-jian
+天羽奇剑     逍遥   tianyu-qijian     武当剑法     武当   wudang-jian
+五韵七弦剑   黑木崖 wuyun-jian        雪山剑法     凌霄   xueshan-sword
+迅雷十六剑   昆仑   xunlei-sword      云龙剑法     云龙   yunlong-jian
+玉女金针剑   华山   yunu-sword        玉女素心剑   古墓   yunv-jian
+玉箫剑法     桃花   yuxiao-jian       泼墨披麻剑法 黑木崖 pomopima-jian
+
+                               斧法(axe)
+断云斧       大理   duanyun-fu
+
+                              刀法(blade)
+慈悲刀       少林   cibei-dao         慈悲刀       南少林 cibei-blade
+反两仪刀法   华山   fanliangyi-dao    胡家刀法     公共   hujia-daofa
+金乌刀法     凌霄   jinwu-blade       狂风刀法     公共   kuangfeng-blade
+烈焰刀法     明教   lieyan-dao        四象六合刀   丐帮   liuhe-blade
+慕容刀法     慕容   murong-blade      秋歌七刀     红花   qiuge-dao
+燃木刀法     南少林 ranmu-blade       如意刀法     逍遥   ruyi-dao
+太极刀法     武当   taiji-dao         修罗刀       南少林 xiuluo-blade
+修罗刀       少林   xiuluo-dao        五虎断门刀   云龙   wuhu-duanmendao
+血刀         雪山寺 xue-dao           雁行刀       峨嵋   yanxing-dao
+
+                              爪法(claw)
+龙爪功       南少林 dragon-claw       鹰爪功       南少林 eagleg-claw
+寂灭爪       南少林 jimie-claw        九阴白骨爪   公共   jiuyin-baiguzhao
+龙爪功       少林   longzhua-gong     三阴蜈蚣爪   星宿   sanyin-wugongzhao
+搜骨鹰爪功   明教   sougu             鹰爪功       少林   yingzhua-gong
+云龙爪       云龙   yunlong-zhua
+
+                              棍法(club)
+韦陀棍       南少林 weituo-club       韦驮杵       南少林 weituo-chu
+韦陀棍       少林   weituo-gun        少林醉棍     南少林 zui-club
+少林醉棍     少林   zui-gun
+
+                              拳法(cuff)
+太祖长拳     公共   changquan         虎鹤双形拳   公共   huhe-quan
+少林南拳     南少林 shaolin-cuff      猴拳         云龙   houquan
+金玉拳       大理   jinyu-quan        金刚瑜迦母拳 雪山   yujiamu-quan
+少林罗汉拳   少林   luohan-quan       少林罗汉拳   南少林 luohan-cuff
+百花错拳     红花   baihua-cuoquan    震天拳法     昆仑   zhentian-cuff
+蛤蟆拳       白驼   hamaquan          破玉拳       华山   poyu-quan
+纯阳拳       全真   chunyang-quan     七伤拳       明教   qishang-quan
+大金刚拳     南少林 jingang-cuff      大金刚拳     少林   jingang-quan
+
+                              短兵(dagger)
+石鼓打穴笔法 黑木崖 shigu-bifa
+
+                              指法(finger)
+多罗叶指     南少林 duoluoye-finger   参合指       慕容   canhe-finger
+摩诃指       南少林 mohe-finger       拈花指       南少林 nianhua-finger
+拈花指       少林   nianhua-zhi       一指禅       南少林 one-finger       
+一阳指       大理   sun-finger        六脉神剑     大理   six-finger
+弹指神通     桃花   tanzhi-shentong   天罡指穴法   峨嵋   tiangang-zhi
+无相劫指     南少林 wuxiang-finger    玄天无情指   黑木崖 xuantian-zhi
+英雄三招     神龙   yingxiong-sanzhao 一指禅       少林   yizhi-chan
+
+                              锤法(hammer) 
+日月轮法     雪山寺 riyue-lun
+
+                              手法(hand)
+奔雷手       红花会 benlei-shou       波罗蜜手     南少林 boluomi-hand
+穿云手       恒山   chuanyun-shou     大手印       雪山寺 dashou-yin
+风云手       南少林 fengyun-hand      风云手       少林   fengyun-shou
+兰花拂穴手   桃花   lanhua-shou       大落雁手     衡山   luoyan-hand
+破云手       嵩山   poyun-hand        云龙手       云龙   yunlong-shou
+如来千叶手   南少林 qianye-hand       如来千叶手   少林   qianye-shou
+千蛛万毒手   五毒   qianzhu-wandushou 岳家散手     公共   sanshou
+神龙八式     神龙   shenlong-bashi    蛇行刁手     白驼   shexing-diaoshou
+锁喉擒拿手   丐帮   suohou-hand       天山折梅手   逍遥   zhemei-shou
+
+                              钩法(hook)
+如意钩法     神龙   ruyi-hook         五毒钩法     五毒   wudu-goufa
+
+                              腿法(leg)
+穿云腿法     昆仑   chuanyun-leg      绝命腿       神龙   jueming-leg
+如影随形腿   南少林 ruying-leg        少林弹腿     南少林 shaolin-leg       
+
+                              枪法(spear)
+铁血枪法     铁掌   tiexue-qiang      中平枪法     公共   zhongping-qiang
+
+                              杖法(staff)
+段家剑       大理   duanjia-sword     疯魔杖法     丐帮   fengmo-staff
+灵蛇杖法     白驼   lingshe-zhangfa   普渡杖法     南少林 pudu-staff
+普渡杖法     少林   pudu-zhang        神龙杖法     神龙   shenlong-staff
+天山杖法     星宿   tianshan-zhang    无常杖法     南少林 wuchang-staff
+无常杖法     少林   wuchang-zhang     金刚降魔杵   雪山寺 xiangmo-chu
+裴将军诗杖法 黑木崖 jiangjun-zhang 
+
+                              棒法(stick)
+打狗棒法     丐帮   dagou-bang
+
+                              掌法(strike)
+般若掌       少林   banruo-zhang      般若掌       南少林 boruo-strike
+抽髓掌       星宿   chousui-zhang     摧心掌       青城   cuixin-strike
+蛤蟆功       白驼   hamagong          寒冰绵掌     明教   hanbing-mianzhang
+昊天掌       全真   haotian-zhang     火焰刀       雪山   huoyan-dao
+黑砂掌       红花   heisha-zhang      化骨绵掌     神龙   huagu-mianzhang
+混元掌       华山   hunyuan-zhang     金顶绵掌     峨嵋   jinding-zhang
+大金刚神掌   南少林 jingang-strike    金蛇游身掌   公共   jinshe-zhang
+快活十三掌   泰山   kuaihuo-strike    昆仑掌       昆仑   kunlun-strike
+天山六阳掌   逍遥   liuyang-zhang     散花掌       南少林 sanhua-strike
+散花掌       少林   sanhua-zhang      飞雪映梅掌   凌霄   snow-strike
+大嵩阳掌     嵩山   songyang-strike   天长掌法     恒山   tianchang-zhang
+铁掌掌法     铁掌   tiezhang-zhangfa  韦陀掌       南少林 weituo-strike
+五毒掌       五毒   wudu-zhang        五罗轻烟掌   大理   wuluo-zhang
+降龙十八掌   丐帮   xianglong-zhang   星移掌       慕容   xingyi-strike
+朱砂掌       铁掌   zhusha-zhang
+
+                              拳脚(unarmed)
+黯然销魂掌   古墓   anran-zhang       华山拳法     华山   huashan-ken
+空明拳       公共   kongming-quan     美女拳       古墓   meinv-quan
+神照经       公共   shenzhao-jing     太极拳       武当   taiji-quan
+太玄功       公共   taixuan-gong      武当拳       武当   wudang-quan
+无影腿       青城   wuying-leg        旋风扫叶腿   桃花   xuanfeng-leg
+
+                              鞭法(whip)
+断云鞭法     全真   duanyun-bian      飞凤鞭法     大理   feifeng-whip
+九节鞭法     南少林 jiujie-whip       秋风尘法     古墓   qiufeng-chenfa
+日月鞭法     少林   riyue-bian        日月鞭法     南少林 riyue-whip
+五毒鞭法     五毒   wudu-whip         降魔鞭       南少林 xiangmo-whip
+云龙鞭       云龙   yunlong-bian        
+
+                              暗器(throwing)
+夺命金花     明教   duoming-jinhua    飞星术       星宿   feixing-shu
+寒星八打     红花会 hanxing-bada      金蛇锥法     公共   jinshe-zhui
+满天花雨     昆仑   mantian-huayu     无影飞刀     红花   wuying-feidao
+轩辕箭       公共   xuanyuan-arrow      
+

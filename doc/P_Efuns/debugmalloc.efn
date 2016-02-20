@@ -1,0 +1,22 @@
+
+	debugmalloc(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		debugmalloc() - 将已配置的内存 (malloc'd memory) 
+			        信息倾印到一个文件里.
+	函数语法:
+		void debugmalloc( string filename, int mask );
+
+		无传回值 debugmalloc( 字符串 filename, 整数 mask );
+	函数用法:
+		这个超越函数 (efun) 必须在编译驱动程序 (driver) 时
+		, 於 options.h  同时定义 DEBUGMALLOC 和 
+		DEBUGMALLOC_EXTENSIONS  两者才有效. debugmalloc()
+		会倾印 DMALLOC()  配置的内存区块的信息及相关的
+		macros. (如果 macro 有 mask bitwise and'd (&) with
+		the tag, 即 mask & tag  不是零) 详细情形请参阅驱动
+		程序原始代码中的 md.c 及 config.h
+	参考函数:
+		set_malloc_mask(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.23.		(Writen 5/23/97)

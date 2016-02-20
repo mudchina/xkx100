@@ -1,0 +1,15 @@
+
+	lower_case(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		lower_case() - 转换一个指定字符串的内容为小写
+	函数语法:
+		string lower_case( string str );
+
+		字符串 lower_case( 字符串 str );
+	函数用法:
+		传回一个指定字符串的小写样式 (原来的字符串不会变更) .
+	参考函数:
+		capitalize(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.18.		(Writen 5/23/97)

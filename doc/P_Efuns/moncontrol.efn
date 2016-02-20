@@ -1,0 +1,19 @@
+
+	moncontrol(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		moncontrol() - 开启或关闭侧写 (profiling).
+	函数语法:
+		void moncontrol( int on );
+
+		无传回值 moncontrol( 整数 on );
+	函数用法:
+		如果参数 on 为 1, moncontrol()  就开启侧写. 如果 on 指定
+		为 0  , moncontrol()  会关闭侧写. 执行驱动程序 (driver)
+		时可以随时开关侧写, 典型的用法是只想侧写某些部份执行的情形.
+		如果驱动程序编译 (compile) 时, 没有开启侧写功能, 
+		moncontrol() 就没有效果.
+	参考函数:
+		opcprof(3), function_profile(3)
+	手册翻译:
+		Phoebus@ZH	97.Apr.15.		(Writen 5/23/97)

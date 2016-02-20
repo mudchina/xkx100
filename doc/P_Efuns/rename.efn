@@ -1,0 +1,17 @@
+
+	rename(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		rename() - 更改一个文件的名称.
+	函数语法:
+		int rename( string src, string dst );
+
+		整数 rename( 字符串 src, 字符串 dst );
+	函数用法:
+		把叫做 src 的文件改名叫做 dst.
+	传回值:
+		改名成功就传回 0.  失败则传回非零值.
+	参考函数:
+		rm(3), rmdir(3), cp(3), link(3)
+	手册翻译:
+		Phoebus@ZH	97.May.27.		(Writen 5/23/97)

@@ -1,0 +1,17 @@
+
+	file_size(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		file_size() - 取得文件的大小.
+	函数语法:
+		int file_size( string file );
+
+		整数 file_size( 字符串 file );
+	函数用法:
+		file_size() 传回文件 file 的字节数. 传回 -1 代表 file
+		不存在, 或是您的权限无法读写此文件. 传回 -2 则代表
+		file  是一个目录.
+	参考函数:
+		stat(3), get_dir(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)

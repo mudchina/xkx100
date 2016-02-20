@@ -1,0 +1,18 @@
+
+	find_player(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		find_player() - 用名字寻找一个玩家
+	函数语法:
+		object find_player( string str );
+
+		对象 find_player( 字符串 str );
+	函数用法:
+		与 find_living()  相似, 但是只寻找可互动的 (interactive)
+		或是曾经为可互动的对象.
+	参考函数:
+		lower_case(3), find_living(3), livings(3), users(3),
+		set_living_name(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)
+

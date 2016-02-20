@@ -1,0 +1,26 @@
+
+	strsrch(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		strsrch() - 在一个字符串中寻找特定的字符串.
+	函数语法:
+		int strsrch( string str, string substr | int char,
+			int flag );
+
+		整数 strsrch( 字符串 str, 字符串 substr 或 整数 char,
+			整数 flag );
+	函数用法:
+		strsrch() 在字符串 str  中寻找第一个出现的 substr.
+		如果 flag 为 -1,  则寻找最後一个出现的 substr. 
+		如果第二个参数是整数, 则只寻找一个字符 (character)
+		 (如同 C  的 strchr() 及 strrchr() ). strsrch()
+		无法寻找空字符串或 (empty string) 是空值 (null value)
+		.
+	传回值:
+		strsrch() 传回符合的第一个或最後一个字符串出现在 str
+		中的位置. 如果没有符合的字符串, 则传回 -1,  或是错误
+		讯息 (有问题的参数等等).
+	参考函数:
+		explode(3), sscanf(3), replace_string(3), regexp(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.23.		(Writen 5/23/97)

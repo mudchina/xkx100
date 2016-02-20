@@ -1,0 +1,18 @@
+
+	floor(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		floor() - 找到最靠近一个浮点数, 而小於或等於此
+			  浮点数的整数, 意即把一个浮点数的小数
+			  位舍去.
+	函数语法:
+		float floor( float f );
+
+		浮点数 floor( 浮点数 f );
+	函数用法:
+		传回一个最靠近浮点数 f, 而等於或小於 f  的整数.
+	参考函数:
+		ceil(3), to_int(3), to_float(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.12.		(Writen 5/23/97)
+

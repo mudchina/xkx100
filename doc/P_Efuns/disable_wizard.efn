@@ -1,0 +1,17 @@
+
+	disable_wizard(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		disable_wizard() - 取消一个对象的巫师特权.
+	函数语法:
+		void disable_wizard( void );
+
+		无传回值 disable_wizard( 无参数 );
+	函数用法:
+		这个函数与 enable_wizard() 函数的功用相反. 把目前
+		对象的巫师特权取消掉.
+	参考函数:
+		enable_wizard(3), wizardp(3)
+
+	手册翻译:
+		Phoebus@ZH	97.Feb.04.		(Writen 5/23/97)

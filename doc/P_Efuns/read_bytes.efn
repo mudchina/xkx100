@@ -1,0 +1,20 @@
+
+	read_bytes(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		read_bytes() - 从一个文件或是一个字符串读取一连串连续的字节组
+				(byte).
+	函数语法:
+		string read_bytes( string path, int start, int length );
+
+		字符串 read_bytes( 字符串 path, 整数 start, 整数 length );
+	函数用法:
+		这个函数读取 path 指定的文件内容, 从 start  指定的第几字节组
+		开始读取到 length 指定长度的数据. 传回的字节组为字符串的类型.
+		注意, start + length  的大小绝对不可以超过文件的末端, 否则
+		read_bytes()  读取的动作会失败. 如果不指定第二及第三个参数,
+		则会读取整个文件.
+	参考函数:
+		read_file(3), write_bytes(3)
+	手册翻译:
+		Phoebus@ZH	97.May.24.		(Writen 5/23/97)

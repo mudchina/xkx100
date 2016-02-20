@@ -1,0 +1,36 @@
+
+	each(3)			LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		each() - 分次传回一个映射变量 (mapping) 的各个
+			(key, value) 的内容.
+	函数语法:
+		mixed *each( mapping m, int reset );
+	函数用法:	
+		each()  函数把一个映射变量里的每对 (key, value) 一次
+		一次地传回. each() 传回来的次序与 keys() 和 values()  
+		两个函数传回来的次序一样. 当 each() 读到映射变量的尾
+		端时, 会传回一个空的向量 (null vector, 即 (0,0)). 而
+		在传回空向量之後, 下一个 each() 传回的内容又会从头开
+		始. 
+
+		当不同的对象使用 each() 读取相同的映射变量时, 一定都会
+		从头开始. 虽然 MudOS 有单执行绪 (single thread) 的性质
+		, 但是也不致於让 each() 执行时出现问题. ( 实际上一个物
+		件无法於使用 each() 读取映射函数读到一半时, 跳开目前读
+		(key, value) 的位置)
+
+		如果指定第二个参数为 1, 则 each() 会重新从头开始读取.
+
+		□例:
+
+		mixed *pair;
+
+		while ((pair = each(x)) != ({})) {
+			write("key   = " + pair[0] + "\n");
+			write("value = " + pair[1] + "\n");
+		}
+	参考函数:
+		keys(3), values(3)
+	手册翻译:
+		Phoebus@ZH	97.Feb.7.		(Writen 5/23/97)

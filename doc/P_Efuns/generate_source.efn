@@ -1,0 +1,19 @@
+
+	generate_source(3)	LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		generate_source() - 产生与指定对象相对照的 C 程序代码
+	函数语法:
+		void generate_source( string file,
+			void | string out_file );
+
+		无传回值 generate_source( 字符串 file,
+			无参数 或 字符串 out_file );
+	函数用法:
+		generate_source() 调用 LPC -> C 的编译程序, 产生指定
+		对象的原始代码. 如果没有指定输出的文件, 则输出的结果会
+		放在 SAVE_BINARIES  的目录.
+	参考函数:
+		valid_asm(4), valid_compile_to_c(4)
+	手册翻译:
+		Phoebus@ZH	97.Feb.13.		(Writen 5/23/97)

@@ -1,0 +1,70 @@
+
+	debug_info(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		debug_info() - 显示除错 (debug) 信息
+	函数语法:
+		mixed debug_info( int operation, ... );
+		mixed debug_info( 0, object ob );
+		mixed debug_info( 1, object ob );
+
+		混合 debug_info( 整数 operation, ... );
+		混合 debug_info( 0, 对象 ob );
+		混合 debug_info( 1, 对象 ob );
+	函数用法:
+		debug_info()  是一个普通用途的措施, 用来为 MudOS
+		驱动程序除错. 而所需要的除错信息则由第一个参数决定. 
+		其馀的参数则由第一个参数的动作 (operation)  决定.
+
+		存在的动作 (0 与 1) 需要第二个对象参数, 而可能用来显示
+		MudOS 对象结构的不同□围 ( various fields of the MudOS
+		object structure).
+
+		以下的 LPC 代码用来产生一个简单的输出结果:
+
+		程序一:
+		/* di0.c */
+			create() {
+				debug_info(0, this_object());
+			}
+
+		结果一:
+	                O_HEART_BEAT      : FALSE
+        	        O_IS_WIZARD       : FALSE
+                	O_ENABLE_COMMANDS : FALSE
+	                O_CLONE           : FALSE
+        	        O_DESTRUCTED      : FALSE
+                	O_SWAPPED         : FALSE
+	                O_ONCE_INTERACTIVE: FALSE
+        	        O_RESET_STATE     : FALSE
+                	O_WILL_CLEAN_UP   : FALSE
+	                O_WILL_RESET: TRUE
+        	        total light : 0
+                	next_reset  : 720300560
+	                time_of_ref : 720299416
+        	        ref         : 2
+                	swap_num    : -1
+	                name        : 'u/c/cynosure/di0'
+        	        next_all    : OBJ(bin/dev/_update)
+                	This object is the head of the object list.
+
+		程序二:
+		/* di1.c */
+			create() {
+				debug_info(1, this_object());
+			}
+
+		结果二:
+	                program ref's 1
+        	        Name u/c/cynosure/di1.c
+                	program size 10
+	                num func's 1 (16)
+        	        num strings 0
+                	num vars 0 (0)
+	                num inherits 0 (0)
+        	        total size 104
+
+	参考函数:
+		dump_file_descriptors(3), dump_socket_status(3)
+	手册翻译:
+		Phoebus@ZH	97.Jan.27.		(Writen 5/23/97)

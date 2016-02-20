@@ -1,0 +1,17 @@
+
+	tell_room(3)		LP MudOSv21c7		(7 Jul 1996)
+
+	函数名称:
+		tell_room - 对一个房间中的所有对象送出讯息.
+	函数语法:
+		void tell_room( mixed ob, string str, object *exclude );
+
+		无传回值 tell_room( 混合 ob, 字符串 str, 对象 *exclude );
+	函数用法:
+		把讯息 str  送给房间 ob 中的所有对象. ob 可以是此房间的
+		文件名称. 如果指定第三个参数 exclude, 在 exclude 这个阵
+		列里的对象都收不到此段讯息.
+	参考函数:
+		message(3), write(3), shout(3), say(3), tell_object(3)
+	手册翻译:
+		Phoebus@ZH	97.Jul.24.		(Writen 5/23/97)

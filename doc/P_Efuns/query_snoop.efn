@@ -1,0 +1,16 @@
+
+	query_snoop(3)		LP MudOSv21c7	(7 Jul 1996)
+
+	函数名称:
+		query_snoop() - 传回谁正在监听指定的互动 (interactive) 对象.
+	函数语法:
+		object query_snoop( object ob );
+
+		对象 query_snoop( 对象 ob );
+	函数用法:
+		如果互动对象 ob 正被另一个互动对象监听, 就传回监听者对象.
+		如果没有监听者, 则传回 0.
+	参考函数:
+		snoop(3), query_snooping(3)
+	手册翻译:
+		Phoebus@ZH	97.May.1.		(Writen 5/23/97)

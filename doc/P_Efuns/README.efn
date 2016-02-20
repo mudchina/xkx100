@@ -1,0 +1,124 @@
+	------	LP MudOSv21c7 超越函数 (emulated function, efun)
+		中文翻译手册说明		97.Jul.25.  ------
+
+
+	此一版本的超越函数原件采用附於 ES2 mudlib 1.1e 中,
+	doc/efuns 下纯文字格式的超越函数文件, 相较於原 LP MudOSv21c7
+	原始代码中的附件, 并没有按照其主要功能分类.
+
+	此次无分类的超越函数说明文件适於放在 mudlib 本身的说明文件
+	目录中, 以便於线上查询. 所有的文件以纯文字的 ASCII  形式储
+	存, 可以一般的方式读取. 译者往後将会有按照功能分类的版本.
+
+	此文件并非 LPC  之教学文件, 其作用在於简介各超越函数之用途
+	, 提供快速的查询数据. 如果您想学习 LPC  , 方法请向该 mud  
+	之巫师群洽询.
+
+	受限於译者本身所学有限, 原文中部分关於 UNIX 系统文件处理、
+	程序内存管理与除错、通讯处理的部分无法翻译其众多的专门技
+	术名词, 因此无法提供中文翻译文件. 如果您愿意提供此不足部份
+	的翻译, 请您不吝赠与译者一份, 并告知是否愿意将作品收录於往
+	後的版本中, 特此致谢.
+
+	碍於译者之翻译经验有限, 英文程度亦非上选. 此版本虽经译者校
+	对一次, 文中谬误、错漏及语句不通顺之处仍多, 请您不吝来函指
+	正. 如果您发现文件中有必须补充说明之处, 也烦请来函指导.
+
+	有些说明文件中, 参考一栏所提之相关的文件, 於原始 v21c2  的
+	已无附件, 对於这些无说明附件的超越函数, 译者往後如果行有馀
+	力, 会试著於其他版本的 MudOS  附件中找寻. 如果您愿意来函告
+	知一二, 在此先行谢过.
+
+	中文翻译文件中有许多专门的技术名词, 译者都想尽办法赋予其适
+	合的中文名词. 有许多名词直接看英文名词较传神, 也较易理解. 
+	但是这也许是译者本身的固执所致, 译者自己希望让 LPC  的初学
+	者不要因为看到英文名词而备感吃力. 当然, 重要的翻译名词之後
+	会附上原文以求精确.
+
+	请注意, 文件中有些超越函数属於模拟超越函数 (simulate
+	emulated functions, simul_efun 其程序代码位於 adm/simul_efun
+	目录里. 这些超越函数属於 mudlib 可以更动的□围, 其中有些函
+	式的用法不见得与说明文件相符, 请先查阅您所工作的 mud 中, 
+	adm/simul_efun  目录里相关的程序代码, 或询问该 mud  的系统管
+	理者.
+
+	「让科学说德文 !」这是本世纪初, 德国科学家在面对大学里清一
+	色的英文课本所发的感叹. 数十年之後, 这句话实现了. 翻译的重
+	要, 看看日本人的出版品即可略知一二. 面对国内 mud  程序苦无
+	中文翻译文件之时, 让译者吃了不少苦头. 藉此机会, 译者愿将此
+	份文件於网路上, 在不修改内文的原则下, 自由传播及流通. 
+
+	任何公开架设之 MudOS  系统的 LP mud 上, 如欲采用此份中文翻
+	译文件, 不需译者同意即可. 但是请来函知会笔者, 谢谢.
+
+					Phoebus@ZH	97.Jul.26.
+
+	附注一:
+		以下所采用之中文译名, 文件中大多不再补注其英文原名.
+
+		admin			mud 系统管理者
+		administrator		admin 的原文, 但在此通常指
+					  主机管理员
+		Annihilator		安老大, 安尼席洛特
+		argument		参数
+		array			数组
+		buffer			缓冲区
+		character		字符
+		driver			驱动程序
+		efun			超越函数, emulated function
+		element			元素
+		euid			effective user id 之缩写.
+					  译为有效使用者识别名称.
+		flag			标识
+		force, the		原力
+		function		函数或函数指针
+		global			全域
+		heartbeat		心跳
+		id			识别名称
+		information		信息或数据
+		interger		整数
+		local			本域、区域
+		mapping			映射
+		message			讯息
+		mixed			译为「混合」, 此为 LPC  所
+					  特有的数据类型, 允许此资
+					  料为任何种类的数据类型.
+		null			空值
+		object			对象
+		player			玩家
+		pointer			指针
+		query			询问、查询
+		return			传回 (动词)
+		runtime			编译时段
+		string			字符串
+		source code		原始程序代码
+		system			系统
+		target			目标
+		uid			user id 之缩写. 使用者识别
+					  名称
+		value			值
+		void			原意为「无」, 视情况翻译为
+					  无传回值或无参数.
+		wizard			巫师
+		zero			零或零值
+
+	附注二:
+		以下为译者力有未逮, 未能翻译之超越函数文件.
+
+			dump_file_descriptors
+			dump_prog
+			dump_socket_status
+			parse_command
+			reg_assoc
+			regexp
+			socket_accept
+			socket_acquire
+			socket_address
+			socket_bind
+			socket_close
+			socket_connect
+			socket_create
+			socket_error
+			socket_listen
+			socket_release
+			socket_write
